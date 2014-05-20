@@ -1,0 +1,14 @@
+/**
+ * All your custom CSS should go into this file
+ */
+
+body {
+   padding-top: 15px;
+}
+#mainContainer{
+	
+	
+	
+	width:960px;
+	margin:0 auto  0 auto  ; 
+}
