@@ -6,6 +6,7 @@ class Menu_model extends MY_Model {
 	// constructor
 	function __construct()
 	{
-	  parent::__construct();
+	  
+	
 	}
 }
