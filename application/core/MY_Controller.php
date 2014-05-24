@@ -24,8 +24,9 @@ class MY_Controller extends CI_Controller {
 		$data['user'] = $this->_userId;
 		$this -> $cm -> save($data);
 
-		}
+		}else{
 		$this->load->template("admin/".$c."/".$cv);
+		}
 
 	}
 
@@ -79,6 +80,27 @@ class MY_Controller extends CI_Controller {
 		$data['user'] = $this->_userId;
 		$this -> $c -> save($data, $id);
 
+	}
+	
+	public function  validate()
+	{
+		$c  = $this -> uri -> rsegment(1) ;
+		$f  = $this -> uri -> rsegment(2) ;
+		$cm = $c."_model";
+		$cv  =  $c."_".$f;
+		$name  =  $this->input->post('name');
+		$value = $this->input->post('value');
+		$where  =  array($name=>$value);
+	  if($this -> $cm -> get_by($where)!=NULL)
+	  {
+	  	echo  "غير متاح";
+	  }else 
+	  	{
+	  		echo  "";
+			
+	  	}
+		
+		
 	}
 
 }

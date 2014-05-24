@@ -46,7 +46,13 @@ class MY_Model extends CI_Model {
 		/*if (!count($this->db->ar_orderby)) {
 		 $this->db->order_by($this->_order_by);
 		 }*/
-		return $this -> db -> get($this -> _table_name) -> $method();
+		 $ret  =  $this -> db -> get($this -> _table_name) -> $method();
+		 	$q = $this -> db -> affected_rows();
+			if ($q > 0) {
+				return $ret;
+			} else {
+				return  NULL;
+			}
 	}
 
 	public function get_by($where, $single = FALSE, $per_page = 1, $start = 0) {
@@ -91,10 +97,11 @@ class MY_Model extends CI_Model {
 			//$id = $this->db->insert_id();
 			$q = $this -> db -> affected_rows();
 			if ($q > 0) {
-				$this -> session -> set_userdata('msg', 'Record Saved Succefully');
+				$this -> session -> set_flashdata('msg', 'Record Saved Succefully');
 			} else {
-				$this -> session -> set_userdata('error_msg', 'Record did not Saved Succefully');
+				$this -> session -> set_flashdata('error_msg', 'Record did not Saved Succefully');
 			}
+			
 		}
 		// Update
 		else {
@@ -112,7 +119,7 @@ class MY_Model extends CI_Model {
 				$this -> session -> set_userdata('error_msg', '0 Records Updated');
 			}
 		}
-
+         $this->load->template('admin/users/users_save');
 		return $id;
 	}
 

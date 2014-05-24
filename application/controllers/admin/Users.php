@@ -58,6 +58,8 @@ class Users extends MY_Controller {
 		parent::archive();
 
 	}
+	
+	
 
 }
 ?>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +8,7 @@
     <meta name="author" content="">
     <meta charset = "utf-8"  >
     <link rel="shortcut icon" href="<?php echo HTTP_CSS_PATH; ?>favicon.png">
-    
+    <script  src  =  "<?php echo  HTTP_JS_PATH;   ?>jquery.js" > </script>
     <title>yabod- admin pannel</title>
     <!-- Bootstrap core CSS -->
     <link href="<?php echo HTTP_CSS_PATH; ?>bootstrap.css" rel="stylesheet">
@@ -17,6 +18,51 @@
       <script src="<?php echo HTTP_JS_PATH; ?>respond.min.js"></script>
     <![endif]-->
      <link href="<?php echo HTTP_CSS_PATH; ?>fam-icons.css" rel="stylesheet">
+     <?php $c  = $this -> uri -> rsegment(1) ;  ?>
+<script>
+Array.prototype.remove = function() {
+    var what, a = arguments, L = a.length, ax;
+    while (L && this.length) {
+        what = a[--L];
+        while ((ax = this.indexOf(what)) !== -1) {
+            this.splice(ax, 1);
+        }
+    }
+    return this;
+};
+
+var ary = Array();
+
+	$(document).ready(function(){
+		
+		$(".validate").keyup(function (e) { //user types username on inputfiled
+   var name = $(this).attr('name'); //get the string typed by user
+     var value = $(this).val(); //get the string typed by user
+    
+   $.post('<?php  echo  base_url();  ?>admin/<?php echo  $c;  ?>/validate', { 'name':name,'value':value }, function(data) { //make ajax call to check_username.php
+   $("#"+name+"_err").html(data); //dump the data received from PHP page
+      if(data==="غير متاح") {
+      	ary.push(name);
+      $("#submitbtn").attr('disabled','true') ;
+      }  else {
+      	ary.remove(name);
+      	if(ary.length === 0){
+      		  	$("#submitbtn").removeAttr('disabled') ;
+      	}
+      		
+      	    
+
+      	
+      }
+      
+      
+       });
+
+    
+	});
+	
+});
+</script>
   </head>
 <body>
     <?php
