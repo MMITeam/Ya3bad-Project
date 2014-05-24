@@ -6,13 +6,11 @@ class Media extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
-				
 
 	}
 
 	public function index() {
-$c = $this -> uri -> rsegment(1) ;
-		echo "you are in  ".$c." index";
+		parent::index();
 	}
 
 	public function save() {

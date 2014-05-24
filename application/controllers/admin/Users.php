@@ -6,17 +6,22 @@ class Users extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
-			
 
 	}
 
 	public function index() {
-$c = $this -> uri -> rsegment(1) ;
-		echo "you are in  ".$c." index";
+		$c  = $this -> uri -> rsegment(1) ;
+		$f  = $this -> uri -> rsegment(2) ;
+		$cm = $c."_model";
+		$cv  =  $c."_".$f;
+        
+       $data['users']  =  $this->users_model->get();
+		$this->load->template("admin/".$c."/".$cv,$data);
 	}
 
 	public function save() {
-		$fields = array("title", "image");
+
+		$fields = array("name", "username", "password", "email", "phone", "type");
 		parent::save($fields);
 
 	}
@@ -34,12 +39,12 @@ $c = $this -> uri -> rsegment(1) ;
 
 	public function search_by() {
 
-		$fields = array("title");
+		$fields = array("name");
 		parent::get_by($fields);
 	}
 
 	public function get_by_pagination() {
-		$fields = array("title");
+		$fields = array("name");
 		parent::get_by($fields);
 
 	}

@@ -1,19 +1,31 @@
 <?php
 class MY_Controller extends CI_Controller {
+
+	protected $_userId = '';
 	function __construct() {
 		parent::__construct();
 		$c = $this -> uri -> rsegment(1) . "_model";
-		
-		$this -> load -> model('admin/'.$c);
+		$this->_userId = $this -> session -> userdata('userId');
+		$this -> load -> model('admin/' . $c);
 	}
-
-
+  
 	public function save($fields) {
-$c = $this -> uri -> rsegment(1) . "_model";
-
-		$data = $this -> $c -> array_from_post($fields);
 		
-		$this -> $c -> save($data);
+		$c  = $this -> uri -> rsegment(1) ;
+		$f  = $this -> uri -> rsegment(2) ;
+		$cm = $c."_model";
+		$cv  =  $c."_".$f;
+        
+         
+		
+		
+		if($this->input->post('submit')  ){
+			$data = $this -> $cm -> array_from_post($fields);
+		$data['user'] = $this->_userId;
+		$this -> $cm -> save($data);
+
+		}
+		$this->load->template("admin/".$c."/".$cv);
 
 	}
 
@@ -55,6 +67,7 @@ $c = $this -> uri -> rsegment(1) . "_model";
 		$c = $this -> uri -> rsegment(1) . "_model";
 		$id = $this -> input -> post('id');
 		$data = array('status' => 'approved');
+		$data['user'] = $this->_userId;
 		$this -> $c -> save($data, $id);
 
 	}
@@ -63,6 +76,7 @@ $c = $this -> uri -> rsegment(1) . "_model";
 		$c = $this -> uri -> rsegment(1) . "_model";
 		$id = $this -> input -> post('id');
 		$data = array('status' => 'archive');
+		$data['user'] = $this->_userId;
 		$this -> $c -> save($data, $id);
 
 	}

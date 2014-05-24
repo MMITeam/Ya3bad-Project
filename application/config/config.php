@@ -14,7 +14,9 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/Ya3bad-Project/';
+$config['base_url']	= 'http://localhost/yabod/';
+define('HTTP_CSS_PATH', $config['base_url'].'assets/css/'); 
+define('HTTP_JS_PATH', $config['base_url'].'assets/js/'); 
 
 /*
 |--------------------------------------------------------------------------
