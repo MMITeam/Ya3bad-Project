@@ -15,12 +15,19 @@ class Home extends MY_ControllerMain {
 	 
 	$this->load->templatemain("main.php",$data);
 	}
-	public function upload()
-	{
-			$this->load->templatemain("upload.php");
-		
-		
-		
+	
+	public function details() {
+      
+	 $data['menu']   = $this->menu_model->get();
+	 
+	$this->load->templatemain("details.php",$data);
+	}
+	
+	public function lists() {
+      
+	 $data['menu']   = $this->menu_model->get();
+	 
+	$this->load->templatemain("List.php",$data);
 	}
 
 }

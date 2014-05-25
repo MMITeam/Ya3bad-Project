@@ -178,5 +178,13 @@ class MY_Model extends CI_Model {
 
 		return $c;
 	}
+	
+	public function last ($number,$where){
+			$this->db->order_by("id", "desc");
+            $this->db->limit($number);
+			$this->db->where($where);
+			$singel = $number == 1 ? True : False;
+            return $this->get(null,$singel);
+	}
 
 }
