@@ -5,7 +5,6 @@
 	<script src="<?php  echo  HTTP_JS_PATH; ?>ckeditor.js"></script>
 	
     
-    <link href="<?php echo  HTTP_CSS_PATH;  ?>tQera.Uploader.Bootstrap.css" rel="stylesheet" />
     <link href="<?php echo  HTTP_CSS_PATH;  ?>app2.css" rel="stylesheet" />
 
 

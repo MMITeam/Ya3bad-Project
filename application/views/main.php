@@ -18,7 +18,8 @@
 						</div>
 						<div class="bc">
 							<div class="block_2_container">
-								<a href="http://www.wattan.tv/ar/news/93809.html"> <span class="bit_frame block_2_bit"> <span class="btitle"><span class="d"><strong>22:39</strong>20/05/2014</span><span class="t">إصابات بالاختناق خلال مواجهات مع الاحتلال في زبوبا</span></span> <span class="clear"></span> </span> </a>
+								
+								<a href="<?php  echo base_url; ?>home/details/<?php  //id  ?>"> <span class="bit_frame block_2_bit"> <span class="btitle"><span class="d"><strong>22:39</strong>20/05/2014</span><span class="t">إصابات بالاختناق خلال مواجهات مع الاحتلال في زبوبا</span></span> <span class="clear"></span> </span> </a>
 						
 							</div>
 						</div>
