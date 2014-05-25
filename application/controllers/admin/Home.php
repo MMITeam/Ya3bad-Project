@@ -11,7 +11,7 @@ class Home extends CI_Controller {
 
 	public function index() {
 
-	echo  "wellcome  to yabod  " ; 
+	$this->load->template("admin/admin_index.php");
 	}
 
 }

@@ -9,20 +9,15 @@ class Users extends MY_Controller {
 
 	}
 
-	public function index() {
-		$c  = $this -> uri -> rsegment(1) ;
-		$f  = $this -> uri -> rsegment(2) ;
-		$cm = $c."_model";
-		$cv  =  $c."_".$f;
-        
-       $data['users']  =  $this->users_model->get();
-		$this->load->template("admin/".$c."/".$cv,$data);
-	}
+	
 
-	public function save() {
+	public function save($id  = NULL) {
 
+    
 		$fields = array("name", "username", "password", "email", "phone", "type");
-		parent::save($fields);
+		 
+		parent::save($fields,$id);
+		
 
 	}
 
@@ -49,15 +44,8 @@ class Users extends MY_Controller {
 
 	}
 
-	public function approve() {
-		parent::approve();
+	
 
-	}
-
-	public function archive() {
-		parent::archive();
-
-	}
 	
 	
 

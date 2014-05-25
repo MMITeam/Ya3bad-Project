@@ -119,7 +119,6 @@ class MY_Model extends CI_Model {
 				$this -> session -> set_userdata('error_msg', '0 Records Updated');
 			}
 		}
-         $this->load->template('admin/users/users_save');
 		return $id;
 	}
 

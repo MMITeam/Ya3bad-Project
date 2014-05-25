@@ -7,8 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta charset = "utf-8"  >
+            <script  src  =  "<?php echo  HTTP_JS_PATH;   ?>jquery-1.9.1.min.js" > </script>
+
     <link rel="shortcut icon" href="<?php echo HTTP_CSS_PATH; ?>favicon.png">
-    <script  src  =  "<?php echo  HTTP_JS_PATH;   ?>jquery.js" > </script>
     <title>yabod- admin pannel</title>
     <!-- Bootstrap core CSS -->
     <link href="<?php echo HTTP_CSS_PATH; ?>bootstrap.css" rel="stylesheet">
@@ -20,6 +21,31 @@
      <link href="<?php echo HTTP_CSS_PATH; ?>fam-icons.css" rel="stylesheet">
      <?php $c  = $this -> uri -> rsegment(1) ;  ?>
 <script>
+
+function Delete(id)
+{
+	 $.post('<?php  echo  base_url();  ?>admin/<?php echo  $c;  ?>/delete', { 'id':id}, function(data) { //make ajax call to check_username.php
+      $('#tr'+id).hide(500);
+     
+   });
+   
+	
+}
+function Approve(id)
+{
+	 $.post('<?php  echo  base_url();  ?>admin/<?php echo  $c;  ?>/approve', { 'id':id}, function(data) { //make ajax call to check_username.php
+     window.location.reload(true);
+   });
+	 
+}
+function block(id)
+{
+	 $.post('<?php  echo  base_url();  ?>admin/<?php echo  $c;  ?>/block', { 'id':id}, function(data) { //make ajax call to check_username.php
+     window.location.reload(true);
+   });
+	 
+}
+
 Array.prototype.remove = function() {
     var what, a = arguments, L = a.length, ax;
     while (L && this.length) {
@@ -66,7 +92,7 @@ var ary = Array();
   </head>
 <body>
     <?php
-    $pg = isset($page) && $page != '' ?  $page :'users'  ;    
+    $pg =  $c;
     ?>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -77,21 +103,16 @@ var ary = Array();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo base_url(); ?>">yabod Admin Panel</a>
+          <a class="navbar-brand" href="<?php echo base_url(); ?>">لوحة التحكم في موقع يعبد</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li <?php echo  $pg =='dash' ? 'class="active"' : '' ?>><a href="<?php echo base_url(); ?>admin/dashboard">Dashboard</a></li>
-            <li <?php echo  $pg =='users' ? 'class="active"' : '' ?>><a href="<?php echo base_url(); ?>admin/users">Users</a></li>
-            <li <?php echo  $pg =='news' ? 'class="active"' : '' ?>><a href="<?php echo base_url(); ?>contactus">News</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Change Password</a></li>
-                <li class="divider"></li>
-                <li><a href="<?php echo base_url(); ?>admin/home/logout">Logout</a></li>
-              </ul>
-            </li>
+            <li <?php echo  $pg =='home' ? 'class="active"' : '' ?>><a href="<?php echo base_url(); ?>admin/">الرئيسية</a></li>
+            <li <?php echo  $pg =='users' ? 'class="active"' : '' ?>><a href="<?php echo base_url(); ?>admin/users">المستخدمين</a></li>
+            <li <?php echo  $pg =='category' ? 'class="active"' : '' ?>><a href="<?php echo base_url(); ?>admin/category">الفئات</a></li>
+
+            <li <?php echo  $pg =='news' ? 'class="active"' : '' ?>><a href="<?php echo base_url(); ?>admin/news">الاخبار</a></li>
+           
           </ul>
         </div>
       </div>

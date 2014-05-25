@@ -5,36 +5,76 @@ class MY_Controller extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$c = $this -> uri -> rsegment(1) . "_model";
-		$this->_userId = $this -> session -> userdata('userId');
+		$this -> _userId = $this -> session -> userdata('userId');
 		$this -> load -> model('admin/' . $c);
 	}
-  
-	public function save($fields) {
-		
+	public function index() {
 		$c  = $this -> uri -> rsegment(1) ;
 		$f  = $this -> uri -> rsegment(2) ;
 		$cm = $c."_model";
 		$cv  =  $c."_".$f;
         
-         
-		
-		
-		if($this->input->post('submit')  ){
-			$data = $this -> $cm -> array_from_post($fields);
-		$data['user'] = $this->_userId;
-		$this -> $cm -> save($data);
+       $data[$c]  =  $this->$cm->get();
+		$this->load->template("admin/".$c."/".$cv,$data);
+	}
+     public  function  edit()
+	 {
+	 		$c = $this -> uri -> rsegment(1);
+		$f = $this -> uri -> rsegment(2);
+		$cm = $c . "_model";
+		$cv = $c . "_" . $f;
 
-		}else{
-		$this->load->template("admin/".$c."/".$cv);
+		if ($this -> input -> post('submit')) {
+			$data = $this -> $cm -> array_from_post($fields);
+			$data['user'] = $this -> _userId;
+			$this -> $cm -> save($data);
+
 		}
+		else {
+			$this -> load -> template("admin/" . $c . "/" . $cv);
+		}
+		
+		
+	 }
+	public function save($fields,$id  = NULL) {
+
+		$c = $this -> uri -> rsegment(1);
+		$f = $this -> uri -> rsegment(2);
+		$cm = $c . "_model";
+		$cv = $c . "_" . $f;
+
+		if ($this -> input -> post('submit')) {
+			$data = $this -> $cm -> array_from_post($fields);
+			$data['user'] = $this -> _userId;
+			  if($id != NULL){
+			$this -> $cm -> save($data,$id);
+				  
+			  }else{
+			  	$this -> $cm -> save($data);
+			  }
+
+		}
+		 
+		  $data[$c] = "";
+		  if($id!=NULL)
+		  {
+		  	$where =  array("id"=>$id);
+			
+		  	$data[$c] = $this-> $cm  -> get_by($where,True);
+			
+		  }
+			$this -> load -> template("admin/" . $c . "/" . $cv,$data);
+		
 
 	}
+	
 
+   
 	public function delete() {
 		$id = $this -> input -> post("id");
 		$c = $this -> uri -> rsegment(1) . "_model";
 
-		$this -> $c -> delete(24);
+		$this -> $c -> delete($id);
 
 	}
 
@@ -68,39 +108,43 @@ class MY_Controller extends CI_Controller {
 		$c = $this -> uri -> rsegment(1) . "_model";
 		$id = $this -> input -> post('id');
 		$data = array('status' => 'approved');
-		$data['user'] = $this->_userId;
+		$data['user'] = $this -> _userId;
 		$this -> $c -> save($data, $id);
 
 	}
+     
+	 	public function block() {
+		$c = $this -> uri -> rsegment(1) . "_model";
+		$id = $this -> input -> post('id');
+		$data = array('status' => 'block');
+		$data['user'] = $this -> _userId;
+		$this -> $c -> save($data, $id);
 
+	}
 	public function archive() {
 		$c = $this -> uri -> rsegment(1) . "_model";
 		$id = $this -> input -> post('id');
 		$data = array('status' => 'archive');
-		$data['user'] = $this->_userId;
+		$data['user'] = $this -> _userId;
 		$this -> $c -> save($data, $id);
 
 	}
-	
-	public function  validate()
-	{
-		$c  = $this -> uri -> rsegment(1) ;
-		$f  = $this -> uri -> rsegment(2) ;
-		$cm = $c."_model";
-		$cv  =  $c."_".$f;
-		$name  =  $this->input->post('name');
-		$value = $this->input->post('value');
-		$where  =  array($name=>$value);
-	  if($this -> $cm -> get_by($where)!=NULL)
-	  {
-	  	echo  "غير متاح";
-	  }else 
-	  	{
-	  		echo  "";
-			
-	  	}
-		
-		
+
+	public function validate() {
+		$c = $this -> uri -> rsegment(1);
+		$f = $this -> uri -> rsegment(2);
+		$cm = $c . "_model";
+		$cv = $c . "_" . $f;
+		$name = $this -> input -> post('name');
+		$value = $this -> input -> post('value');
+		$where = array($name => $value);
+		if ($this -> $cm -> get_by($where) != NULL) {
+			echo "غير متاح";
+		} else {
+			echo "";
+
+		}
+
 	}
 
 }
