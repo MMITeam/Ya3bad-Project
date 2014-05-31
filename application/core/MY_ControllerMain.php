@@ -6,7 +6,7 @@ class MY_ControllerMain extends CI_Controller {
 		parent::__construct();
 		$cm = $this -> uri -> rsegment(1) . "_model";
 		$this -> _userId = $this -> session -> userdata('userId');
-		$this -> load -> model($cm);
+		
 	}
 
 
@@ -42,6 +42,13 @@ class MY_ControllerMain extends CI_Controller {
 
      
 	
+	public function last($number=1,$where=NULL){
+		$c = $this -> uri -> rsegment(1);
+		$f = $this -> uri -> rsegment(2);
+		$cm = $c . "_model";
+		$cv = $c . "_" . $f;
+		return $this -> $cm ->last($number,$where);
+	}
 	
 
 

@@ -72,6 +72,7 @@ class MY_Model extends CI_Model {
 	}
 
 	public function get_by_pagination($where, $single = FALSE, $per_page = 10, $start = 0) {
+		$this->db->order_by('id','desc');
 		$this -> db -> limit($per_page, $start);
 		return $this -> search_by($where, $single = FALSE);
 	}
@@ -80,9 +81,9 @@ class MY_Model extends CI_Model {
 
 		// Set timestamps
 		if ($this -> _timestamps == TRUE) {
-			$now = date('Y-m-d H:i:s');
-			$id || $data['created'] = $now;
-			$data['modified'] = $now;
+			$date = new DateTime();
+			$id || $data['created'] = $date->getTimestamp();
+			$data['modified'] = $date->getTimestamp();
 		}
 
 		// Insert
@@ -179,7 +180,7 @@ class MY_Model extends CI_Model {
 		return $c;
 	}
 	
-	public function last ($number,$where){
+	public function last ($number=1,$where=null){
 			$this->db->order_by("id", "desc");
             $this->db->limit($number);
 			$this->db->where($where);
