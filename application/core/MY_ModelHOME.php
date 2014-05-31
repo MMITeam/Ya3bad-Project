@@ -46,13 +46,13 @@ class MY_ModelHOME extends CI_Model {
 		/*if (!count($this->db->ar_orderby)) {
 		 $this->db->order_by($this->_order_by);
 		 }*/
-		 $ret  =  $this -> db -> get($this -> _table_name) -> $method();
-		 	$q = $this -> db -> affected_rows();
-			if ($q > 0) {
-				return $ret;
-			} else {
-				return  NULL;
-			}
+		$ret = $this -> db -> get($this -> _table_name) -> $method();
+		$q = $this -> db -> affected_rows();
+		if ($q > 0) {
+			return $ret;
+		} else {
+			return NULL;
+		}
 	}
 
 	public function get_by($where, $single = FALSE, $per_page = 1, $start = 0) {
@@ -89,6 +89,17 @@ class MY_ModelHOME extends CI_Model {
 		$c = $this -> db -> count_all_results();
 
 		return $c;
+	}
+
+	public function last($number = 1, $where = null) {
+		$this -> db -> order_by("id", "desc");
+		$this -> db -> limit($number);
+		if ($where != null) {
+			$this -> db -> where($where);
+		}
+
+		$singel = $number == 1 ? True : False;
+		return $this -> get(null, $singel);
 	}
 
 }

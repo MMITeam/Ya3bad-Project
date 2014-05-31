@@ -108,6 +108,8 @@ a {
 	height: 40px;
 	box-shadow: 0px 5px 12px 3px #8a2f8f inset;
 	direction:rtl;
+	display: inline-block;
+margin: -9px 25px;
 }
 #main_menu  li {
 	display: inline;
@@ -118,14 +120,17 @@ a {
 #main_menu  ul {
 	margin: 0px;
 	text-align: center;
-	float: right;
-	padding: 4px;
+	padding: 10px;
 	margin: 0px;
 }
 
 #main_menu  ul :hover {
 	color: #ff0;
 	cursor: pointer;
+}
+#main_menu li a{
+	color: #fff;
+	
 }
 /*
  *

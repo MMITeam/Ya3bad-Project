@@ -32,16 +32,20 @@
 					<ul>
 						<?php  
 						if(isset($menu))
+						$length =  count($menu);
+						$i = 0; 
 						foreach($menu as $menuItem)
 						{
 							?>
 							<li>
-							<a href  = "<?php   echo  $menuItem->link;  ?>"  ><?php   echo  $menuItem->text;  ?>   </a>
-							|
+							<a href  = "<?php   echo  $menuItem->link;  ?>"  ><?php   echo  $menuItem->text;  ?></a>
+							
 						     </li>
 							
 							<?php
-							
+							$i++;
+							if($i != $length)
+								echo '|';
 						}
 						
 						?>
