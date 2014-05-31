@@ -20,8 +20,10 @@ class Home extends MY_ControllerMain {
 		$data['first_tital'] = $this->category_model->get_by(array("id"=>1));
 		$where = array('cat_id' => 2);
 		$data['int_news'] = $this -> news_model -> last(6, $where);
+		$data['second_tital'] = $this->category_model->get_by(array("id"=>2));
 		$where = array('cat_id' => 3);
 		$data['spo_news'] = $this -> news_model -> last(6, $where);
+		$data['third_tital'] = $this->category_model->get_by(array("id"=>3));
 		$this -> load -> templatemain("main.php", $data);
 	}
 
