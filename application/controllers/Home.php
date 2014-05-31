@@ -13,8 +13,7 @@ class Home extends MY_ControllerMain {
 
 	public function index() {
 
-		$data['menu'] = $this -> menu_model -> get();
-		$data['weather'] = $this->getWeather();
+		$data['menu'] = $this -> menu_model -> get(); 
 		$data['lastNews'] = $this -> news_model -> last(10);
 		$where = array('cat_id' => 1);
 		$data['pal_news'] = $this -> news_model -> last(6, $where);
@@ -58,29 +57,6 @@ class Home extends MY_ControllerMain {
 		$data['pages'] = $this -> pagination -> create_links();
 		//
 		$this -> load -> templatemain("List.php", $data);
-	}
-
-	public function getWeather() {
-
-		//I am using the DOM(Document Object Model) library to read the entire XML document into memory first.
-		$doc = new DOMDocument();
-		$doc -> load('http://weather.yahooapis.com/forecastrss?p=SFXX0044&u=c');
-		//now I get all elements inside this document with the following name "channel", this is the 'root'
-		$channel = $doc -> getElementsByTagName("channel");
-		//now I go through each item withing $channel
-		foreach ($channel as $chnl) {
-			//I then find the 'item' element inside that loop
-			$item = $chnl -> getElementsByTagName("item");
-			foreach ($item as $itemgotten) {
-				//now I search within '$item' for the element "description"
-				$describe = $itemgotten -> getElementsByTagName("description");
-				//once I find it I create a variable named "$description" and assign the value of the Element to it
-				$description = $describe -> item(0) -> nodeValue;
-				//and display it on-screen
-				return $description;
-			}
-		}
-
 	}
 
 }

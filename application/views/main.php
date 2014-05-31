@@ -111,7 +111,7 @@
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
 					 //we
-					 <?php echo $weather;?>
+					 
 				</div>
 				<div class="clear"></div>
 
