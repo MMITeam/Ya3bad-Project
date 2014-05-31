@@ -43,7 +43,7 @@ Downloaded from http://devzone.co.in
                  <a href='<?php echo  base_url(); ?>admin/users/save/<?php echo  $user->id;  ?>' title='Edit'><i class="fam-user-edit"></i></a>
                 <a href='#' onclick  = "Approve(<?php  echo $user->id; ?>);"  title='Active'><i class="fam-user-green"></i></a>
                  <a href='#' onclick  = "block(<?php  echo $user->id; ?>);"  title='deActive'><i class="fam-user-gray"></i></a>
-                 <a href='#' onclick  = "Delete(<?php  echo $user->id; ?>);" title='Delete' ><i class="fam-user-delete"></i></a>
+                 <a href='#' onclick  = "Delete(<?php  echo $user->id; ?>,null);" title='Delete' ><i class="fam-user-delete"></i></a>
               </td>
             </tr>
                <?php   }  

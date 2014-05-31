@@ -17,6 +17,15 @@ class MY_Controller extends CI_Controller {
        $data[$c]  =  $this->$cm->get();
 		$this->load->template("admin/".$c."/".$cv,$data);
 	}
+		public function upload($id) {
+		$c  = $this -> uri -> rsegment(1) ;
+		$f  = $this -> uri -> rsegment(2) ;
+		$cm = $c."_model";
+		$cv  =  $c."_".$f;
+        
+       $data['id']  =  $id;
+		$this->load->template("admin/".$c."/".$cv,$data);
+	}
      public  function  edit()
 	 {
 	 		$c = $this -> uri -> rsegment(1);

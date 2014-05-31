@@ -40,7 +40,7 @@ Downloaded from http://devzone.co.in
                  <a href='<?php echo  base_url(); ?>admin/category/save/<?php echo  $cat->id;  ?>' title='Edit'><i class="fam-user-edit"></i></a>
                 <a href='#' onclick  = "Approve(<?php  echo $cat->id; ?>);"  title='Active'><i class="fam-user-green"></i></a>
                  <a href='#' onclick  = "block(<?php  echo $cat->id; ?>);"  title='deActive'><i class="fam-user-gray"></i></a>
-                 <a href='#' onclick  = "Delete(<?php  echo $cat->id; ?>);" title='Delete' ><i class="fam-user-delete"></i></a>
+                 <a href='#' onclick  = "Delete(<?php  echo $cat->id; ?>,'هل انت متاكد تريد حذف هذه الفئة ');" title='Delete' ><i class="fam-user-delete"></i></a>
               </td>
             </tr>
                <?php   }  
