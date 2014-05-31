@@ -1,4 +1,4 @@
-
+<?php 
 /**
  * PHP Class to get the current and future weather conditions
  * Created by: PaulUnd
@@ -45,3 +45,4 @@ class Google_Weather
 		return ucwords($this->location_);
 	}
 }
+?>
