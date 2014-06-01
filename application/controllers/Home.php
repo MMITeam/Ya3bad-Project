@@ -13,7 +13,7 @@ class Home extends MY_ControllerMain {
 
 	public function index() {
 
-		$data['menu'] = $this -> menu_model -> get(); 
+		$data['menu'] = $this -> menu_model -> get();
 		$data['lastNews'] = $this -> news_model -> last(10);
 		$where = array('cat_id' => 1);
 		$data['pal_news'] = $this -> news_model -> last(6, $where);
@@ -57,6 +57,19 @@ class Home extends MY_ControllerMain {
 		$data['pages'] = $this -> pagination -> create_links();
 		//
 		$this -> load -> templatemain("List.php", $data);
+	}
+
+	public function getWeather() {
+		//Fetch the feed
+		$feed = file_get_contents("http://rss.weather.com.au/sa/adelaide");
+		//Load it into simplexml
+		$weather = simplexml_load_string($feed);
+		//Get namespace descendants using the w namespace defined in the feed
+		$channelelements = $weather -> channel -> item -> children("http://rss.weather.com.au/w.dtd");
+		//Looping through each of the attributes and echoing them, you can do what you want with them at this point
+		foreach ($channelelements->attributes() as $k => $attr) {
+			echo $k . ' = ' . $attr . '<br />';
+		}
 	}
 
 }
