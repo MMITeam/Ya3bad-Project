@@ -110,8 +110,7 @@
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
-					 //we
-					 
+					 <div class="weather" id="weatherfeed"> </div>
 				</div>
 				<div class="clear"></div>
 
@@ -146,7 +145,7 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href=""><?php echo $first_tital[0] -> title; ?></a>
+					<a href="<?php echo base_url().'home/lists/'.$first_tital[0]->id;?>"><?php echo $first_tital[0] -> title; ?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
@@ -190,7 +189,7 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href=""><?php echo $second_tital[0] -> title; ?></a>
+					<a href="<?php echo base_url().'home/lists/'.$second_tital[0]->id;?>"><?php echo $second_tital[0] -> title; ?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
@@ -229,7 +228,7 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href=""><?php echo $third_tital[0] -> title; ?></a>
+					<a href="<?php echo base_url().'home/lists/'.$third_tital[0]->id;?>"><?php echo $third_tital[0] -> title; ?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
@@ -272,6 +271,13 @@
 </div>
 </div>
 </body>
- 
+
+<script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery-1.9.1.min.js" ></script>
+<script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery.zweatherfeed.js" ></script>
+<script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery.zweatherfeed.min.js" ></script>
+ <script>
+ $(document).ready(function () {
+	$('#weatherfeed').weatherfeed(['26160']);
+});</script>
 
 </html>

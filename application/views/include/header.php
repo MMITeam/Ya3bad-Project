@@ -4,8 +4,7 @@
 	<header>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 			<link rel="stylesheet" media="screen" href="<?php echo  HTTP_CSS_PATH;  ?>app.css">
-
-
+			<link rel="stylesheet" media="screen" href="<?php echo  HTTP_CSS_PATH;  ?>extra-style.css">
 		<title>ya3bad</title>
 	</header>
 	<body>
