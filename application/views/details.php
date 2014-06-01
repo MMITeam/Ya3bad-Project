@@ -110,10 +110,16 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="">فلسطيني</a>
+					<a href=""><?php echo $title[0]->title;?></a>
 				</div><span></span>
 			</div>
-			<div class="bc"></div>
+			<div class="bc">
+				
+				<div class="main_cat_news_words">
+				    <h1><?php echo $news[0]->shortDesc;?></h1>
+				    <p><?php echo $news[0]->fullDesc;?></p>
+				</div>
+			</div>
 		</div>
 
 	</div>
