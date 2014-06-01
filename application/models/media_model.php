@@ -8,4 +8,5 @@ class Media_model extends MY_ModelHOME {
 	{
 	  parent::__construct();
 	}
+	
 }

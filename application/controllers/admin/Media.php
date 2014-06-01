@@ -14,7 +14,8 @@ class Media extends MY_Controller {
 	}
 
 	public function save() {
-		$fields = array("title", "image");
+		
+		$fields = array("news_id", "path","type");
 		parent::save($fields);
 
 	}
