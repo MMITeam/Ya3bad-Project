@@ -27,25 +27,27 @@ class Home extends MY_ControllerMain {
 		$this -> load -> templatemain("main.php", $data);
 	}
 
-	public function details() {
+	public function details($id, $cat_id) {
 
 		$data['menu'] = $this -> menu_model -> get();
+		$data['title'] = $this->category_model->get_by(array('id'=>$cat_id));
+		$data['news'] = $this -> news_model -> get_by(array('id'=>$id));
 
 		$this -> load -> templatemain("details.php", $data);
 	}
 
-	public function lists($start = "") {
+	public function lists($id, $start = "") {
 
 		$data['menu'] = $this -> menu_model -> get();
 		$where = array('cat_id' => 1);
 		$data['news'] = $this -> news_model -> get_by_pagination($where, FALSE, 10, $start);
 		//
 		$this -> load -> library('pagination');
-		$config['base_url'] = base_url() . "Home/lists";
-		$config['total_rows'] = $this -> news_model -> get_count();
+		$config['base_url'] = base_url() . "Home/lists/" . $id;
+		$config['total_rows'] = $this -> news_model -> get_count($id);
 		$config['per_page'] = 10;
 		$config['num_links'] = 5;
-		$config['uri_segment'] = 4;
+		$config['uri_segment'] = 5;
 
 		$config['full_tag_open'] = '<div id="pagination">';
 		$config['full_tag_close'] = '</div>';
@@ -57,19 +59,6 @@ class Home extends MY_ControllerMain {
 		$data['pages'] = $this -> pagination -> create_links();
 		//
 		$this -> load -> templatemain("List.php", $data);
-	}
-
-	public function getWeather() {
-		//Fetch the feed
-		$feed = file_get_contents("http://rss.weather.com.au/sa/adelaide");
-		//Load it into simplexml
-		$weather = simplexml_load_string($feed);
-		//Get namespace descendants using the w namespace defined in the feed
-		$channelelements = $weather -> channel -> item -> children("http://rss.weather.com.au/w.dtd");
-		//Looping through each of the attributes and echoing them, you can do what you want with them at this point
-		foreach ($channelelements->attributes() as $k => $attr) {
-			echo $k . ' = ' . $attr . '<br />';
-		}
 	}
 
 }
