@@ -4,12 +4,30 @@ class MY_Controller extends CI_Controller {
 	protected $_userId = '';
 	function __construct() {
 		parent::__construct();
+		if($this->session->userdata('logged_in'))
+   {
+     $session_data = $this->session->userdata('logged_in');
+     $data['username'] = $session_data['username'];
+	 
+	 
+	 
 		$c = $this -> uri -> rsegment(1) . "_model";
 		$this -> _userId = $this -> session -> userdata('userId');
 		$this -> load -> model('admin/' . $c);
+	 
+	
+   }
+   else
+   {
+     //If no session, redirect to login page
+     redirect(base_url()."login", 'refresh');
+   }
 	}
 	public function index() {
-		$c  = $this -> uri -> rsegment(1) ;
+		
+   
+   
+   	$c  = $this -> uri -> rsegment(1) ;
 		$f  = $this -> uri -> rsegment(2) ;
 		$cm = $c."_model";
 		$cv  =  $c."_".$f;
