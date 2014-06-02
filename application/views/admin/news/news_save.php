@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+     <?php $c  = $this -> uri -> rsegment(1) ;  ?>
 <meta charset="utf-8">
 	<script src="<?php  echo  HTTP_JS_PATH; ?>ckeditor.js"></script>
 
 
 
-</head>
-<body>
-	
-
   
+ <a href=   "<?php echo base_url(); ?>admin/news/red" > redirect </a>
 
-
-<form class="form-horizontal" method  = "post"  action  =   "<?php echo  base_url();  ?>admin/news/save">
+<form class="form-horizontal" method  = "post" enctype='multipart/form-data'  action  =   "<?php echo  base_url();  ?>admin/news/save<?php  $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->id : ""  ;echo "/".$val; ?>">
 <fieldset>
 <input type   =  "hidden" name  = "submit"  value  =  "1"  > 
 <!-- Form Name -->
@@ -23,7 +17,14 @@
 <div class="form-group">
   <label class="col-md-3 control-label" for="shortDesc">عنوان الخبر</label>  
   <div class="col-md-8">
-  <input id="shortDesc" name="shortDesc" type="text" placeholder="عنوان الخبر" class="form-control input-md" required="">
+  <input id="shortDesc" name="shortDesc" type="text" placeholder="عنوان الخبر" class="form-control input-md" required=""   value  =  "<?php $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->shortDesc : ""  ; echo $val;?>"  >
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-3 control-label" for="shortDesc">الصورة الرئيسية  اللخبر</label>  
+  <div class="col-md-8">
+  <input id="mainphoto" name="mainphoto" type="file" class="form-control input-md" required=""    >
     
   </div>
 </div>
@@ -33,14 +34,19 @@
   <label class="col-md-3 control-label" for="cat_id">الفئة</label>
   <div class="col-md-5">
     <select id="cat_id" name="cat_id" class="form-control">
-      <option value="1">Option one</option>
-      <option value="2">Option two</option>
+    	<?php foreach($category as $cat ){ 
+    	?>
+      <option value="<?php echo $cat->id;   ?>" <?php   $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->cat_id : ""  ; if($val == $cat->id) echo "selected";    ?>   ><?php  echo  $cat->title; ?></option>
+<?php   } ?>
     </select>
   </div>
 </div>
 
-<textarea  class="ckeditor" id = "editor1" name  =  "fullDesc" ></textarea>
-
+<textarea  class="ckeditor" id = "editor1" name  =  "fullDesc" >
+<?php $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->fullDesc : ""  ;echo $val; ?>
+	
+</textarea>
+<br>
 <center>
     <button id="singlebutton" name="singlebutton" class="btn btn-primary">التالي</button>
     
@@ -53,8 +59,4 @@
       
    
 
-
-
-
-</body>
 

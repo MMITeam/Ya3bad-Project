@@ -120,6 +120,10 @@ $("#submitbtn").removeAttr('disabled') ;
 						<li <?php echo  $pg =='news' ? 'class="active"' : '' ?>>
 							<a href="<?php echo base_url(); ?>admin/news">الاخبار</a>
 						</li>
+						
+							<li >
+							<a href="<?php echo base_url(); ?>admin/news/logout">تسجيل خروج</a>
+						</li>
 
 					</ul>
 				</div>

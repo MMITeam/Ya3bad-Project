@@ -15,16 +15,47 @@ class News extends MY_Controller {
 
 	
 
-	public function save() {
+	public function save($id=null) {
+     	if ($this -> input -> post("submit")) {
 
-		$fields = array("shortDesc", "fullDesc", "cat_id");
-		parent::save($fields);
+		
+		$config['upload_path'] = "./assets/images/";
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['file_name'] = 'allllli';
+		
+		$config['max_size']	= '10000';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '768';
+       $mainphoto =  $this->input->post("mainphoto");
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload(  'mainphoto' ))
+		{
+			$error = array('error' => $this->upload->display_errors());
+            echo $error['error'];
+			//$this->load->view('admin/news/news_save', $error);
+		}
+		else
+		{
+			$data = array('upload_data' => $this->upload->data());
+
+			$data['mainphoto'] =  $data['upload_data']['file_name'];
+		}
+		}
+		$fields = array("shortDesc", "fullDesc", "cat_id"  );
+		$this->load->model('category_model');
+		$data['category'] =  $this->category_model->get();
+		parent::save($fields,$id,$data);
+
 		if ($this -> input -> post("submit")) {
-			redirect(base_url() . "admin/news/upload/" . $this -> db -> insert_id() );
+		redirect(base_url() . "admin/news/upload/" . $this -> db -> insert_id() );
 
 		}
+		
 
 	}
+		
+	
    public  function  uploadhandler($id)
    {
    

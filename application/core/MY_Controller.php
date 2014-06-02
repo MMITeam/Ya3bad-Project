@@ -4,25 +4,22 @@ class MY_Controller extends CI_Controller {
 	protected $_userId = '';
 	function __construct() {
 		parent::__construct();
-		if($this->session->userdata('logged_in'))
-   {
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-	 
-	 
-	 
+           $this->check_isvalidated();
+   
 		$c = $this -> uri -> rsegment(1) . "_model";
-		$this -> _userId = $this -> session -> userdata('userId');
+		$this -> _userId = $this -> session -> userdata('id');
 		$this -> load -> model('admin/' . $c);
-	 
-	
-   }
-   else
-   {
-     //If no session, redirect to login page
-     redirect(base_url()."login", 'refresh');
-   }
+ 
 	}
+	 private function check_isvalidated(){
+        if(! $this->session->userdata('validated')){
+            redirect('login');
+        }
+	 }
+	  public function logout(){
+        $this->session->sess_destroy();
+        redirect($this->config->base_url().'login');
+    }
 	public function index() {
 		
    
@@ -63,20 +60,26 @@ class MY_Controller extends CI_Controller {
 		
 		
 	 }
-	public function save($fields,$id  = NULL) {
+	public function save($fields,$id  = NULL,$datar=null) {
 
 		$c = $this -> uri -> rsegment(1);
 		$f = $this -> uri -> rsegment(2);
 		$cm = $c . "_model";
 		$cv = $c . "_" . $f;
-
+   
 		if ($this -> input -> post('submit')) {
 			$data = $this -> $cm -> array_from_post($fields);
+			   if(isset($datar['mainphoto']))
+	  {
+	  	$data['mainphoto'] = $datar['mainphoto'];
+		
+	  }
 			$data['user'] = $this -> _userId;
 			  if($id != NULL){
 			$this -> $cm -> save($data,$id);
 				  
 			  }else{
+	
 			  	$this -> $cm -> save($data);
 			  }
 
@@ -87,10 +90,10 @@ class MY_Controller extends CI_Controller {
 		  {
 		  	$where =  array("id"=>$id);
 			
-		  	$data[$c] = $this-> $cm  -> get_by($where,True);
+		  	$datar[$c] = $this-> $cm  -> get_by($where,True);
 			
 		  }
-			$this -> load -> template("admin/" . $c . "/" . $cv,$data);
+			$this -> load -> template("admin/" . $c . "/" . $cv,$datar);
 		
 
 	}
