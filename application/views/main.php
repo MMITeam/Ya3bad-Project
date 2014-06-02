@@ -150,7 +150,7 @@
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
-					<a href="<?php  echo base_url() . "home/details/" . $pal_news[0] -> id.'/'.$first_tital[0] -> id; ?>">
+					<a href="<?php  echo base_url() . "home/details/" . $pal_news[0] -> id; ?>">
 					<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php echo $pal_news[0] -> shortDesc; ?></h1>
@@ -162,7 +162,7 @@
 				</div>
 				<div class="block_41_container blocklist_img_title">
 					<?php if (count($pal_news)) : for($i= 1;$i<count($pal_news);$i++): ?>
-					<a href="<?php  echo base_url() . "home/details/" . $pal_news[$i] -> id.'/'.$first_tital[0] -> id; ?>"> 
+					<a href="<?php  echo base_url() . "home/details/" . $pal_news[$i] -> id; ?>"> 
 						<span class="bit_frame block_41_bit">
 							 <span class="t">
 							 	<span class="m">
@@ -194,7 +194,7 @@
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
-					<a href="<?php  echo base_url() . "home/details/" . $int_news[0] -> id.'/'.$second_tital[0] -> id; ?>">
+					<a href="<?php  echo base_url() . "home/details/" . $int_news[0] -> id; ?>">
 					<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php echo $int_news[0] -> shortDesc; ?></h1>
@@ -206,7 +206,7 @@
 				</div>
 				<div class="block_41_container blocklist_img_title">
 					<?php if (count($int_news)) : for($i= 1;$i<count($int_news);$i++): ?>
-					<a href="<?php  echo base_url() . "home/details/" . $int_news[$i] -> id.'/'.$second_tital[0] -> id; ?>">  
+					<a href="<?php  echo base_url() . "home/details/" . $int_news[$i] -> id; ?>">  
 						<span class="bit_frame block_41_bit">
 							 <span class="t">
 							 	<span class="m">
@@ -233,7 +233,7 @@
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
-					<a href="<?php  echo base_url() . "home/details/" . $spo_news[0] -> id.'/'.$third_tital[0] -> id; ?>">
+					<a href="<?php  echo base_url() . "home/details/" . $spo_news[0] -> id; ?>">
 					<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php echo $spo_news[0] -> shortDesc; ?></h1>
@@ -245,7 +245,7 @@
 				</div>
 				<div class="block_41_container blocklist_img_title">
 					<?php if (count($spo_news)) : for($i= 1;$i<count($spo_news);$i++): ?>
-					<a href="<?php  echo base_url() . "home/details/" . $spo_news[$i] -> id.'/'.$third_tital[0] -> id; ?>">
+					<a href="<?php  echo base_url() . "home/details/" . $spo_news[$i] -> id; ?>">
 						<span class="bit_frame block_41_bit">
 							 <span class="t">
 							 	<span class="m">

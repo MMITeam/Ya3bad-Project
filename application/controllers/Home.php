@@ -27,11 +27,12 @@ class Home extends MY_ControllerMain {
 		$this -> load -> templatemain("main.php", $data);
 	}
 
-	public function details($id, $cat_id) {
+	public function details($id) {
 
 		$data['menu'] = $this -> menu_model -> get();
-		$data['title'] = $this->category_model->get_by(array('id'=>$cat_id));
-		$data['news'] = $this -> news_model -> get_by(array('id'=>$id));
+		$news = $this -> news_model -> get_by(array('id' => $id));
+		$data['title'] = $this -> category_model -> get_by(array('id' => $news[0]->cat_id));
+		$data['news'] = $news;
 
 		$this -> load -> templatemain("details.php", $data);
 	}
