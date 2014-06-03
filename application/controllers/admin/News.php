@@ -23,9 +23,9 @@ class News extends MY_Controller {
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['file_name'] = 'allllli';
 		
-		$config['max_size']	= '10000';
-		$config['max_width']  = '1024';
-		$config['max_height']  = '768';
+		$config['max_size']	= '1000000';
+		$config['max_width']  = '10000';
+		$config['max_height']  = '7680';
        $mainphoto =  $this->input->post("mainphoto");
 		$this->load->library('upload', $config);
 

@@ -14,7 +14,7 @@ class Category extends MY_Controller {
 	}
 
 	public function save($id = null) {
-		$fields = array("title", "image");
+		$fields = array("title");
 		parent::save($fields,$id);
 
 	}
