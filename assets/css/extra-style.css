@@ -3,13 +3,11 @@
 	direction: rtl;
 }
 #menu {
-	
 	max-width: 1200px;
 	text-align: center;
-    margin: auto;
+    margin-top: 20px;
 }
 #menu img {
-	
 	width: 100px;
 	height: 100px;
 }
