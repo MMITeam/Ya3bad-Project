@@ -24,7 +24,7 @@
 						$date = new DateTime($news->created);
 						?>
 						
-					<a href="<?php  echo base_url() . "home/details/" . $news -> id.'/'.$news->cat_id; ?>"> <span class="bit_frame block_2_bit">
+					<a href="<?php  echo base_url() . "home/details/" . $news -> id; ?>"> <span class="bit_frame block_2_bit">
 						 <span class="btitle"><span class="d"><strong><?php echo $date -> format(' h') . ":" . $date -> format('i'); ?>
 						 </strong><?php echo $date -> format('d') . " - " . $date -> format(' m'), " - " . $date -> format('y'); ?></span>
 						 <span class="t"></span><?php echo $news->shortDesc?></span> <span class="clear"></span> </span> 
