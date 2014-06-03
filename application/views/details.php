@@ -110,7 +110,7 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href=""><?php echo $title[0] -> title; ?></a>
+					<a href=""><?php if(count($title)): echo $title[0] -> title; endif; ?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
@@ -148,8 +148,8 @@
 
 					</div>
 				    
-				    <h1><?php echo $news[0] -> shortDesc; ?></h1>
-					<p><?php echo $news[0] -> fullDesc; ?></p>
+				    <h1><?php if(count($news)): echo $news[0] -> shortDesc; endif; ?></h1>
+					<p><?php if(count($news)): echo $news[0] -> fullDesc; endif; ?></p>
 				</div>
 			</div>
 		</div>

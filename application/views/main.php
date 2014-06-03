@@ -24,7 +24,7 @@
 						$date = new DateTime($news->created);
 						?>
 						
-					<a href="<?php  echo base_url() . "home/details/" . $news -> id.'/'.$news->cat_id; ?>"> <span class="bit_frame block_2_bit">
+					<a href="<?php  echo base_url() . "home/details/" . $news -> id; ?>"> <span class="bit_frame block_2_bit">
 						 <span class="btitle"><span class="d"><strong><?php echo $date -> format(' h') . ":" . $date -> format('i'); ?>
 						 </strong><?php echo $date -> format('d') . " - " . $date -> format(' m'), " - " . $date -> format('y'); ?></span>
 						 <span class="t"></span><?php echo $news->shortDesc?></span> <span class="clear"></span> </span> 
@@ -145,17 +145,17 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="<?php echo base_url().'home/lists/'.$first_tital[0]->id;?>"><?php echo $first_tital[0] -> title; ?></a>
+					<a href="<?php if (count($first_tital)): echo base_url().'home/lists/'.$first_tital[0]->id;?>"><?php echo $first_tital[0] -> title; endif;?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
-					<a href="<?php  echo base_url() . "home/details/" . $pal_news[0] -> id; ?>">
+					<a href="<?php  if (count($pal_news)): echo base_url() . "home/details/" . $pal_news[0] -> id; endif; ?>">
 					<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg" width="173" height="173"/>
 					<div class="main_cat_news_words">
-						<h1><?php echo $pal_news[0] -> shortDesc; ?></h1>
+						<h1><?php if (count($pal_news)): echo $pal_news[0] -> shortDesc; endif; ?></h1>
 						<p>
-							<?php echo $pal_news[0] -> fullDesc; ?>
+							<?php if (count($pal_news)): echo $pal_news[0] -> fullDesc; endif; ?>
 						</p>
 					</div>
 					</a>
@@ -189,7 +189,7 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="<?php echo base_url().'home/lists/'.$second_tital[0]->id;?>"><?php echo $second_tital[0] -> title; ?></a>
+					<a href="<?php if (count($second_tital)): echo base_url().'home/lists/'.$second_tital[0]->id;?>"><?php echo $second_tital[0] -> title; endif; ?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
@@ -197,9 +197,9 @@
 					<a href="<?php  echo base_url() . "home/details/" . $int_news[0] -> id; ?>">
 					<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg" width="173" height="173"/>
 					<div class="main_cat_news_words">
-						<h1><?php echo $int_news[0] -> shortDesc; ?></h1>
+						<h1><?php if(count($int_news)): echo $int_news[0] -> shortDesc; endif; ?></h1>
 						<p>
-							<?php echo $int_news[0] -> fullDesc; ?>
+							<?php if(count($int_news)): echo $int_news[0] -> fullDesc; endif; ?>
 						</p>
 					</div>
 					</a>
@@ -228,17 +228,17 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="<?php echo base_url().'home/lists/'.$third_tital[0]->id;?>"><?php echo $third_tital[0] -> title; ?></a>
+					<a href="<?php if(count($third_tital)): echo base_url().'home/lists/'.$third_tital[0]->id;?>"><?php echo $third_tital[0] -> title; endif; ?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
-					<a href="<?php  echo base_url() . "home/details/" . $spo_news[0] -> id; ?>">
+					<a href="<?php  if(count($spo_news)): echo base_url() . "home/details/" . $spo_news[0] -> id; endif; ?>">
 					<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg" width="173" height="173"/>
 					<div class="main_cat_news_words">
-						<h1><?php echo $spo_news[0] -> shortDesc; ?></h1>
+						<h1><?php if(count($spo_news)): echo $spo_news[0] -> shortDesc; endif; ?></h1>
 						<p>
-							<?php echo $spo_news[0] -> fullDesc; ?>
+							<?php if(count($spo_news)): echo $spo_news[0] -> fullDesc; endif; ?>
 						</p>
 					</div>
 					</a>
