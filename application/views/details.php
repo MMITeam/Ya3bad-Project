@@ -153,36 +153,21 @@
 					
 					<div id="menu">
 						<a class="fancybox" rel="gallery1" href="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_b.jpg" title="Westfield Waterfalls - Middletown CT Lower (Graham_CS)">
-	<img src="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_m.jpg" alt="" />
-</a>
-<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3824/9041440555_2175b32078_b.jpg" title="Calm Before The Storm (One Shoe Photography Ltd.)">
-	<img src="http://farm4.staticflickr.com/3824/9041440555_2175b32078_m.jpg" alt="" />
-</a>
-<a class="fancybox" rel="gallery1" href="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_b.jpg" title="Lambs Valley (JMImagesonline.com)">
-	<img src="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_m.jpg" alt="" />
-</a>
-<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_b.jpg" title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))">
-	<img src="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_m.jpg" alt="" />
-</a>
+							<img src="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_m.jpg" alt="" />
+						</a>
+						<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3824/9041440555_2175b32078_b.jpg" title="Calm Before The Storm (One Shoe Photography Ltd.)">
+							<img src="http://farm4.staticflickr.com/3824/9041440555_2175b32078_m.jpg" alt="" />
+						</a>
+						<a class="fancybox" rel="gallery1" href="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_b.jpg" title="Lambs Valley (JMImagesonline.com)">
+							<img src="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_m.jpg" alt="" />
+						</a>
+						<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_b.jpg" title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))">
+							<img src="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_m.jpg" alt="" />
+						</a>
 					</div>
-<style>
-#menu {
-	
-	max-width: 1200px;
-	text-align: center;
-    margin: auto;
-}
-#menu img {
-	
-	width: 100px;
-	height: 100px;
-}
-
-</style>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
 </div>
@@ -190,14 +175,30 @@
 
 <script type="text/javascript" src="<?php echo HTTP_JS_PATH;?>jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="<?php echo HTTP_JS_PATH.'jquery.fancybox.js?v=2.1.5';?>"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo HTTP_CSS_PATH.'jquery.fancybox.css?v=2.1.5';?>"  media="screen" />
+<link rel="stylesheet" type="text/css" href="<?php echo HTTP_CSS_PATH.'jquery.fancybox.css?v=2.1.5';?>"  media="screen" /> 
+<link rel="stylesheet" type="text/css" href="<?php echo HTTP_CSS_PATH.'jquery.fancybox-buttons.css?v=1.0.5';?>" />
+<script type="text/javascript" src="<?php echo HTTP_JS_PATH.'jquery.fancybox-buttons.js?v=1.0.5';?>"></script>
 <script>
-	$(document).ready(function() {
-	$(".fancybox").fancybox({
-		openEffect	: 'none',
-		closeEffect	: 'none'
-	});
-});
+	$('.fancybox').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
 </script>
 
 </html>
