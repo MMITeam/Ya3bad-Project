@@ -382,6 +382,7 @@ a {
 	background: #fff;
 	border: 0px solid #E6E6E6;
 	border-top: none;
+	overflow: hidden;
 }
 
 .cat_block .bh a {
@@ -440,7 +441,14 @@ a {
 	display: block;
 	clear: both;
 }
+.cat_block .sub_cat_news {
+	float: right;
+	width: 310px;
+}
 
 
-
+.cat_block .sub_cat_news img {
+	float: right;
+	margin: 8px 20px 10px 10px;
+}
 
