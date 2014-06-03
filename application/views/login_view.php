@@ -1,21 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
- <head>
-   <title>تسجيل الدخول لموقع يعبد</title>
- </head>
- <body>
-   <h1>تسجيل الدخول لموقع يعبد</h1>
-   <?php echo validation_errors(); ?>
-   
-    <form name   = "verify" action  = "http://127.0.0.1/yabod/verifylogin" method  = "post"    > 
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 
+  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
 
-     <label for="username">Username:</label>
-     <input type="text" size="20" id="username" name="username"/>
-     <br/>
-     <label for="password">Password:</label>
-     <input type="password" size="20" id="passowrd" name="password"/>
-     <br/>
-     <input type="submit" value="Login"/>
-   </form>
- </body>
+<head>    
+    <title>Jotorres Login Screen | Welcome </title>
+</head>
+<body>
+	<?php if(! is_null($msg)) echo $msg;?>
+    <div id='login_form'>
+        <form action='<?php echo base_url();?>login/process' method='post' name='process'>
+            <h2>User Login</h2>
+            <br />            
+            <label for='username'>Username</label>
+            <input type='text' name='username' id='username' size='25' /><br />
+        
+            <label for='password'>Password</label>
+            <input type='password' name='password' id='password' size='25' /><br />                            
+        
+            <input type='Submit' value='Login' />            
+        </form>
+    </div>
+</body>
 </html>
