@@ -8,6 +8,7 @@ class Home extends MY_ControllerMain {
 		parent::__construct();
 		$this -> load -> model("menu_model");
 		$this -> load -> model('news_model');
+		$this -> load -> model('media_model');
 		$this -> load -> model('category_model');
 	}
 
@@ -31,9 +32,9 @@ class Home extends MY_ControllerMain {
 
 		$data['menu'] = $this -> menu_model -> get();
 		$news = $this -> news_model -> get_by(array('id' => $id));
-		$data['title'] = $this -> category_model -> get_by(array('id' => $news[0]->cat_id));
+		$data['title'] = $this -> category_model -> get_by(array('id' => $news[0] -> cat_id));
+		$data['imgs'] = $this -> media_model -> get_by(array('news_id' => $id));
 		$data['news'] = $news;
-
 		$this -> load -> templatemain("details.php", $data);
 	}
 
