@@ -118,8 +118,8 @@
 				<div class="main_cat_news_words">
 				    <div class="image_container">
 				    	<div class="item_page_gallery_out"> 
-				    		<a href="http://data3.wattan.tv/image/full/09141342681226099223337361002013.jpg" rel="lightbox" title="test">
-				    			<img src="http://data3.wattan.tv/image/300x250/09141342681226099223337361002013.jpg" title="test" alt="test" style="border-width:0; margin:0; padding:0;">
+				    		<a href="<?php echo HTTP_IMG_PATH.$news[0]->mainphoto;?>" rel="lightbox" title="test">
+				    			<img src="<?php echo HTTP_IMG_PATH.$news[0]->mainphoto;?>" title="test" alt="test" width="300" height="200" style="border-width:0; margin:0; padding:0;">
 				    			
 				    		</a>
 				    	</div>
@@ -130,7 +130,7 @@
 				    <div class="more_block cat_block" >
 						<div class="bh">
 							<div>
-								<a href="">فلسطيني</a>
+								<a href=""><?php if(count($title)): echo $title[0] -> title; endif; ?></a>
 							</div><span></span>
 						</div>
 						<div class="bc">
@@ -150,6 +150,35 @@
 				    
 				    <h1><?php if(count($news)): echo $news[0] -> shortDesc; endif; ?></h1>
 					<p><?php if(count($news)): echo $news[0] -> fullDesc; endif; ?></p>
+					
+					<div id="menu">
+						<a class="fancybox" rel="gallery1" href="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_b.jpg" title="Westfield Waterfalls - Middletown CT Lower (Graham_CS)">
+	<img src="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_m.jpg" alt="" />
+</a>
+<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3824/9041440555_2175b32078_b.jpg" title="Calm Before The Storm (One Shoe Photography Ltd.)">
+	<img src="http://farm4.staticflickr.com/3824/9041440555_2175b32078_m.jpg" alt="" />
+</a>
+<a class="fancybox" rel="gallery1" href="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_b.jpg" title="Lambs Valley (JMImagesonline.com)">
+	<img src="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_m.jpg" alt="" />
+</a>
+<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_b.jpg" title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))">
+	<img src="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_m.jpg" alt="" />
+</a>
+					</div>
+<style>
+#menu {
+	
+	max-width: 1200px;
+	text-align: center;
+    margin: auto;
+}
+#menu img {
+	
+	width: 100px;
+	height: 100px;
+}
+
+</style>
 				</div>
 			</div>
 		</div>
@@ -158,5 +187,17 @@
 </div>
 </div>
 </body>
+
+<script type="text/javascript" src="<?php echo HTTP_JS_PATH;?>jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="<?php echo HTTP_JS_PATH.'jquery.fancybox.js?v=2.1.5';?>"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo HTTP_CSS_PATH.'jquery.fancybox.css?v=2.1.5';?>"  media="screen" />
+<script>
+	$(document).ready(function() {
+	$(".fancybox").fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+});
+</script>
 
 </html>
