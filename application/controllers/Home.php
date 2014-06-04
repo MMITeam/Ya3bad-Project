@@ -41,7 +41,7 @@ class Home extends MY_ControllerMain {
 	public function lists($id, $start =0) {
 
 		$data['menu'] = $this -> menu_model -> get();
-		$where = array('cat_id' => 1);
+		$where = array('cat_id' => $id);
 		$data['title'] = $this -> category_model -> get_by(array('id' =>$id));
 		$data['news'] = $this -> news_model -> get_by_pagination($where, FALSE, 10, $start);
 		//   pagination
@@ -53,10 +53,10 @@ class Home extends MY_ControllerMain {
 		$config['uri_segment'] = 5;
 		$config['use_page_numbers'] = TRUE;//to show page number insted of row number
  
-		$config['full_tag_open'] = '<div class="pagination">';
-		$config['full_tag_close'] = '</div>';
+		$config['full_tag_open'] = '<div><ul class="pagination"><li>';
+		$config['full_tag_close'] = '</li></ul></div>';
 
-		$config['cur_tag_open'] = '&nbsp;<a href="'. base_url()."Home/lists/" . $id."/1".'" class="page">';
+		$config['cur_tag_open'] = '&nbsp;<a href="'. base_url()."Home/lists/" . $id."/1".'" >';
 		$config['cur_tag_close'] = '</a>'; 
 		
 		$this -> pagination -> initialize($config);
