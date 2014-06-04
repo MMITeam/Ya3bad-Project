@@ -136,11 +136,17 @@
 						<div class="bc">
 							
 							<div class="block_41_container blocklist_img_title">
-								<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://dattan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-								<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data1tan.tv/image/70X40/04092322602070070200185066638213.jpg" title="الفرز الحاد - بقلم: حمدي فراج" alt="الفرز الحاد - بقلم: حمدي فراج" width="70" height="40"></span>الفرز الحاد - بقلم: حمدي فراج</span> <span class="clear"></span> </span> </a>
-								<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://dattan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-								<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://datan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-
+									<?php if(count($last_news)): for ($i=0; $i <count($last_news) ; $i++): ?>
+								<a href="<?php echo base_url() . "home/details/" . $last_news[$i] -> id;?>"> <span class="bit_frame block_41_bit">
+									 <span class="t">
+									 	<span class="m">
+									 		<img src="<?php echo HTTP_IMG_PATH.$last_news[$i]->mainphoto;?>"
+									 		title="" alt="" width="70" height="40">
+									 </span><?php echo $last_news[$i]->shortDesc;?></span> 
+									 <span class="clear"></span>
+									  </span> 
+									 </a>
+								 <?php endfor; endif; ?>
 							</div>
 							<div class="clear"></div>
 

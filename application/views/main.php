@@ -151,7 +151,7 @@
 			<div class="bc">
 				<div class="main_cat_news">
 					<a href="<?php  if (count($pal_news)): echo base_url() . "home/details/" . $pal_news[0] -> id; endif; ?>">
-					<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg" width="173" height="173"/>
+					<img src="<?php  if(count($pal_news)): echo HTTP_IMG_PATH.$pal_news[0]->mainphoto; endif;?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php if (count($pal_news)): echo $pal_news[0] -> shortDesc; endif; ?></h1>
 						<p>
@@ -166,7 +166,7 @@
 						<span class="bit_frame block_41_bit">
 							 <span class="t">
 							 	<span class="m">
-							 		<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg"
+							 		<img src="<?php  echo HTTP_IMG_PATH.$pal_news[$i] ->mainphoto; ?>"
 							 	 	title="" alt="" width="70" height="40">
 								 </span><?php echo $pal_news[$i] -> shortDesc; ?></span> 
 							 <span class="clear"> 	
@@ -195,7 +195,7 @@
 			<div class="bc">
 				<div class="main_cat_news">
 					<a href="<?php  echo base_url() . "home/details/" . $int_news[0] -> id; ?>">
-					<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg" width="173" height="173"/>
+					<img src="<?php  if (count($int_news)): echo HTTP_IMG_PATH.$int_news[0]->mainphoto; endif; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php if(count($int_news)): echo $int_news[0] -> shortDesc; endif; ?></h1>
 						<p>
@@ -210,7 +210,7 @@
 						<span class="bit_frame block_41_bit">
 							 <span class="t">
 							 	<span class="m">
-							 		<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg"
+							 		<img src="<?php  echo HTTP_IMG_PATH.$int_news[$i]->mainphoto; ?>"
 							 	 	title="" alt="" width="70" height="40">
 								 </span><?php echo $int_news[$i] -> shortDesc; ?></span> 
 							 <span class="clear"> 	
@@ -234,7 +234,7 @@
 			<div class="bc">
 				<div class="main_cat_news">
 					<a href="<?php  if(count($spo_news)): echo base_url() . "home/details/" . $spo_news[0] -> id; endif; ?>">
-					<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg" width="173" height="173"/>
+					<img src="<?php  if(count($spo_news)): echo HTTP_IMG_PATH.$spo_news[0]->mainphoto; endif; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php if(count($spo_news)): echo $spo_news[0] -> shortDesc; endif; ?></h1>
 						<p>
@@ -249,7 +249,7 @@
 						<span class="bit_frame block_41_bit">
 							 <span class="t">
 							 	<span class="m">
-							 		<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg"
+							 		<img src="<?php  echo HTTP_IMG_PATH.$spo_news[$i]->mainphoto; ?> "
 							 	 	title="" alt="" width="70" height="40">
 								 </span><?php echo $spo_news[$i] -> shortDesc; ?></span> 
 							 <span class="clear"> 	
