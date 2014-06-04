@@ -1,4 +1,3 @@
-
 <div id="top_area">
 	<div id="sub_main_news_container">
 		<div class="sub_main_news">
