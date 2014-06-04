@@ -110,76 +110,28 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="">test</a>
+					<a href=""><?php if(count($title)): echo $title[0]->title; endif;?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
+				<?php if(count($news)): foreach ($news as $new): ?>
 				<div class="sub_cat_news">
-					<img src="./img/sample.jpg" width="143" height="143"/>
+					<a href="<?php  echo base_url() . "home/details/" . $new -> id; ?>">
+					<img src="<?php echo HTTP_IMG_PATH.$new->mainphoto;?>" width="143" height="143"/>
 					<div class="main_cat_news_words">
-						<h1>أوباما يفرض عقوبات ويعرض حلا على روسيا</h1>
+						<h1><?php echo $new->shortDesc; ?></php></h1>
 						<p>
-						 وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغيير
+						  <?php echo $new->fullDesc; ?>
 						</p>
 					</div>
+					</a>
 				</div>
-				<div class="sub_cat_news">
-					<img src="./img/sample.jpg" width="143" height="143"/>
-					<div class="main_cat_news_words">
-						<h1>أوباما يفرض عقوبات ويعرض حلا على روسيا</h1>
-						<p>
-							ال المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغيير
-						</p>
-					</div>
-				</div>
-				<div class="sub_cat_news">
-					<img src="./img/sample.jpg" width="143" height="143"/>
-					<div class="main_cat_news_words">
-						<h1>أوباما يفرض عقوبات ويعرض حلا على روسيا</h1>
-						<p>
-							ال المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغيير
-						</p>
-					</div>
-				</div>
-				<div class="sub_cat_news">
-					<img src="./img/sample.jpg" width="143" height="143"/>
-					<div class="main_cat_news_words">
-						<h1>أوباما يفرض عقوبات ويعرض حلا على روسيا</h1>
-						<p>
-							ال المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغيير
-						</p>
-					</div>
-				</div>
-				<div class="sub_cat_news">
-					<img src="./img/sample.jpg" width="143" height="143"/>
-					<div class="main_cat_news_words">
-						<h1>أوباما يفرض عقوبات ويعرض حلا على روسيا</h1>
-						<p>
-							ال المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغيير
-						</p>
-					</div>
-				</div>
-				<div class="sub_cat_news">
-					<img src="./img/sample.jpg" width="143" height="143"/>
-					<div class="main_cat_news_words">
-						<h1>أوباما يفرض عقوبات ويعرض حلا على روسيا</h1>
-						<p>
-							ال المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغيير
-						</p>
-					</div>
-				</div>
-				<div class="sub_cat_news">
-					<img src="./img/sample.jpg" width="143" height="143"/>
-					<div class="main_cat_news_words">
-						<h1>أوباما يفرض عقوبات ويعرض حلا على روسيا</h1>
-						<p>
-							ال المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغييرالرئيس ... وقتل المرأة .... وأدوات التغيير
-						</p>
-					</div>
-				</div>
-			</div>
+				<?php endforeach; endif; ?>
+				
+				</div>  
+		 		<?php echo $pages; ?>  
 		</div>
-
+	
 	</div>
 </div>
 </div>
