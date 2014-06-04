@@ -53,10 +53,10 @@ class Home extends MY_ControllerMain {
 		$config['uri_segment'] = 5;
 		$config['use_page_numbers'] = TRUE;//to show page number insted of row number
  
-		$config['full_tag_open'] = '<div class="pagination">';
-		$config['full_tag_close'] = '</div>';
+		$config['full_tag_open'] = '<div><ul class="pagination"><li>';
+		$config['full_tag_close'] = '</li></ul></div>';
 
-		$config['cur_tag_open'] = '&nbsp;<a href="'. base_url()."Home/lists/" . $id."/1".'" class="page">';
+		$config['cur_tag_open'] = '&nbsp;<a href="'. base_url()."Home/lists/" . $id."/1".'" >';
 		$config['cur_tag_close'] = '</a>'; 
 		
 		$this -> pagination -> initialize($config);

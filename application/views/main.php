@@ -194,7 +194,7 @@
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
-					<a href="<?php  if(count($int_news)): echo base_url() . "home/details/" . $int_news[0] -> id; endif; ?>">
+					<a href="<?php  echo base_url() . "home/details/" . $int_news[0] -> id; ?>">
 					<img src="<?php  echo HTTP_IMG_PATH; ?>/sample.jpg" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php if(count($int_news)): echo $int_news[0] -> shortDesc; endif; ?></h1>

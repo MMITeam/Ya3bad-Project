@@ -11,3 +11,8 @@
 	width: 100px;
 	height: 100px;
 }
+.pagination li{
+	display: inline-block;
+	margin-right: 5px; 
+	list-style-type: none;
+}
