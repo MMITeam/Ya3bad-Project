@@ -41,7 +41,7 @@ class Home extends MY_ControllerMain {
 	public function lists($id, $start =0) {
 
 		$data['menu'] = $this -> menu_model -> get();
-		$where = array('cat_id' => 1);
+		$where = array('cat_id' => $id);
 		$data['title'] = $this -> category_model -> get_by(array('id' =>$id));
 		$data['news'] = $this -> news_model -> get_by_pagination($where, FALSE, 10, $start);
 		//   pagination
