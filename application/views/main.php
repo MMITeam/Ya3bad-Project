@@ -35,8 +35,26 @@
 		</dev>
 	</div>
 	<div id="slider_container">
- 								 
-      
+ 		 <div id="sliderFrame">
+	        <div id="slider">
+	            <a href="#" >
+	                <img src="<?php echo HTTP_IMG_PATH?>5.jpg" alt="Test Img slider" />
+	            </a>
+	            <a href="#" >
+	            	<img src="<?php echo HTTP_IMG_PATH; ?>1.jpg" alt="Test Img slider"/>
+	            </a>
+	            <a href="#" >
+	            	<img src="<?php echo HTTP_IMG_PATH; ?>2.jpg" alt="Test Img slider" />
+	            </a>
+	            <a href="#" >
+	            	<img src="<?php echo HTTP_IMG_PATH; ?>3.jpg" alt="Test Img slider" />
+	            </a>
+	            <a href="#" >
+	            	<img src="<?php echo HTTP_IMG_PATH; ?>4.jpg"  alt="Test Img slider"/>
+				</a>	       
+	        </div>
+	        
+    	</div>
 	</div>
 </div>
 
@@ -270,6 +288,11 @@
 </div>
 </div>
 </body>
+
+
+<link href="<?php echo HTTP_CSS_PATH; ?>js-image-slider.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo HTTP_JS_PATH; ?>js-image-slider.js" type="text/javascript"></script> 
+    
 <script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery-1.9.1.min.js" ></script>
 <script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery.zweatherfeed.js" ></script>
 <script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery.zweatherfeed.min.js" ></script>
