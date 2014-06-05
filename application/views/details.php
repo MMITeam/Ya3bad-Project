@@ -77,8 +77,7 @@
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
-					//we
-
+					<div class="weather" id="weatherfeed" > </div>
 				</div>
 				<div class="clear"></div>
 
@@ -191,7 +190,7 @@
 </div>
 </body>
 
-<script type="text/javascript" src="<?php echo HTTP_JS_PATH;?>jquery-1.10.1.min.js"></script>
+
 <script type="text/javascript" src="<?php echo HTTP_JS_PATH.'jquery.fancybox.js?v=2.1.5';?>"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo HTTP_CSS_PATH.'jquery.fancybox.css?v=2.1.5';?>"  media="screen" /> 
 <link rel="stylesheet" type="text/css" href="<?php echo HTTP_CSS_PATH.'jquery.fancybox-buttons.css?v=1.0.5';?>" />
@@ -217,6 +216,11 @@
 					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
 				}
 			});
+</script>
+<script>
+ $(document).ready(function () {
+	$('#weatherfeed').weatherfeed(['26160']);
+});
 </script>
 
 </html>

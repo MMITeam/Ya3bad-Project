@@ -5,6 +5,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 			<link rel="stylesheet" media="screen" href="<?php echo  HTTP_CSS_PATH;  ?>app.css">
 			<link rel="stylesheet" media="screen" href="<?php echo  HTTP_CSS_PATH;  ?>extra-style.css"> 
+			<script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery-1.9.1.min.js" ></script>
+			<script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery.zweatherfeed.js" ></script>
+			<script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery.zweatherfeed.min.js" ></script>
 		<title>ya3bad</title>
 	</header>
 	<body>

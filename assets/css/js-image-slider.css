@@ -105,6 +105,7 @@
 
 #slider img, #slider>b, #slider a>b {
 	position:absolute; border:none; display:none;
+	
 }
 
 #slider div.sliderInner {

@@ -127,8 +127,8 @@
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
-					 <div class="weather" id="weatherfeed" > </div>
-				</div>
+					<div class="weather" id="weatherfeed" > </div>
+					</div>
 				<div class="clear"></div>
 
 			</div>
@@ -293,9 +293,7 @@
 <link href="<?php echo HTTP_CSS_PATH; ?>js-image-slider.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo HTTP_JS_PATH; ?>js-image-slider.js" type="text/javascript"></script> 
     
-<script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery-1.9.1.min.js" ></script>
-<script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery.zweatherfeed.js" ></script>
-<script  src  =  "<?php echo HTTP_JS_PATH; ?>jquery.zweatherfeed.min.js" ></script>
+
  <script>
  $(document).ready(function () {
 	$('#weatherfeed').weatherfeed(['26160']);
