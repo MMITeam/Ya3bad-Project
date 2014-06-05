@@ -77,8 +77,7 @@
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
-					//we
-
+				 <div class="weather" id="weatherfeed" > </div>
 				</div>
 				<div class="clear"></div>
 
@@ -136,5 +135,9 @@
 </div>
 </div>
 </body>
+ <script>
+ $(document).ready(function () {
+	$('#weatherfeed').weatherfeed(['26160']);
+});</script>
 
 </html>
