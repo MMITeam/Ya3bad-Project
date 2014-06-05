@@ -59,7 +59,7 @@ class News extends MY_Controller {
    public  function  uploadhandler($id)
    {
    
-   	define("_UPLOADS", "http://127.0.0.1/yabod/assets/");
+   	define("_UPLOADS", "./assets/images/");
 define("_THUMBNAIL", "<?php echo  base_url();  ?>assets/uploads/");
 
 
