@@ -25,6 +25,18 @@ class Home extends MY_ControllerMain {
 		$where = array('cat_id' => 3);
 		$data['spo_news'] = $this -> news_model -> last(6, $where);
 		$data['third_tital'] = $this -> category_model -> get_by(array("id" => 3));
+		$where = array('cat_id' => 9);
+		$data['fourth_tital'] = $this -> category_model -> get_by(array("id" => 9));
+		$data['opi_news'] = $this->news_model->last(3,$where);
+		$where = array('cat_id' => 10);
+		$data['fifth_tital'] = $this -> category_model -> get_by(array("id" => 10));
+		$data['yabad_news'] = $this->news_model->last(3,$where);
+		$where = array('cat_id' => 11);
+		$data['sixth_tital'] = $this -> category_model -> get_by(array("id" => 11));
+		$data['heb_news'] = $this->news_model->last(3,$where);
+		$where = array('cat_id' => 12);
+		$data['seventh_tital'] = $this -> category_model -> get_by(array("id" => 12));
+		$data['most_news'] = $this->news_model->last(3,$where);
 		$this -> load -> templatemain("main.php", $data);
 	}
 
@@ -36,6 +48,18 @@ class Home extends MY_ControllerMain {
 		$data['last_news']= $this->news_model->last(4,array('cat_id'=>$news[0] -> cat_id));
 		$data['imgs'] = $this -> media_model -> get_by(array('news_id' => $id));
 		$data['news'] = $news;
+		$where = array('cat_id' => 9);
+		$data['fourth_tital'] = $this -> category_model -> get_by(array("id" => 9));
+		$data['opi_news'] = $this->news_model->last(3,$where);
+		$where = array('cat_id' => 10);
+		$data['fifth_tital'] = $this -> category_model -> get_by(array("id" => 10));
+		$data['yabad_news'] = $this->news_model->last(3,$where);
+		$where = array('cat_id' => 11);
+		$data['sixth_tital'] = $this -> category_model -> get_by(array("id" => 11));
+		$data['heb_news'] = $this->news_model->last(3,$where);
+		$where = array('cat_id' => 12);
+		$data['seventh_tital'] = $this -> category_model -> get_by(array("id" => 12));
+		$data['most_news'] = $this->news_model->last(3,$where);
 		$this -> load -> templatemain("details.php", $data);
 	}
 
@@ -45,6 +69,18 @@ class Home extends MY_ControllerMain {
 		$where = array('cat_id' => $id);
 		$data['title'] = $this -> category_model -> get_by(array('id' =>$id));
 		$data['news'] = $this -> news_model -> get_by_pagination($where, FALSE, 10, $start);
+		$where = array('cat_id' => 9);
+		$data['fourth_tital'] = $this -> category_model -> get_by(array("id" => 9));
+		$data['opi_news'] = $this->news_model->last(3,$where);
+		$where = array('cat_id' => 10);
+		$data['fifth_tital'] = $this -> category_model -> get_by(array("id" => 10));
+		$data['yabad_news'] = $this->news_model->last(3,$where);
+		$where = array('cat_id' => 11);
+		$data['sixth_tital'] = $this -> category_model -> get_by(array("id" => 11));
+		$data['heb_news'] = $this->news_model->last(3,$where);
+		$where = array('cat_id' => 12);
+		$data['seventh_tital'] = $this -> category_model -> get_by(array("id" => 12));
+		$data['most_news'] = $this->news_model->last(3,$where);
 		//   pagination
 		$this -> load -> library('pagination');
 		$config['base_url'] = base_url() . "Home/lists/" . $id;
