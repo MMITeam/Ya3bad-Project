@@ -157,30 +157,12 @@
 					<p><?php if(count($news)): echo $news[0] -> fullDesc; endif; ?></p>
 					
 					<div id="menu">
-						<a class="fancybox" rel="gallery1" href="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_b.jpg" title="Westfield Waterfalls - Middletown CT Lower (Graham_CS)">
-							<img src="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_m.jpg" alt="" />
+						<?php if(count($imgs)): for($i=0;$i<count($imgs);$i++): if($imgs[$i]->type==1):?>
+						<a class="fancybox" rel="gallery1" href="<?php echo HTTP_IMG_PATH.$imgs[$i]->path;?>" 
+							title="<?php echo $news[0] -> shortDesc; ?>">
+							<img src="<?php echo HTTP_IMG_PATH.$imgs[$i]->path;?>" alt="" />
 						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3824/9041440555_2175b32078_b.jpg" title="Calm Before The Storm (One Shoe Photography Ltd.)">
-							<img src="http://farm4.staticflickr.com/3824/9041440555_2175b32078_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_b.jpg" title="Lambs Valley (JMImagesonline.com)">
-							<img src="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_b.jpg" title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))">
-							<img src="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_b.jpg" title="Westfield Waterfalls - Middletown CT Lower (Graham_CS)">
-							<img src="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3824/9041440555_2175b32078_b.jpg" title="Calm Before The Storm (One Shoe Photography Ltd.)">
-							<img src="http://farm4.staticflickr.com/3824/9041440555_2175b32078_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_b.jpg" title="Lambs Valley (JMImagesonline.com)">
-							<img src="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_b.jpg" title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))">
-							<img src="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_m.jpg" alt="" />
-						</a>
+						<?php endif;endfor; endif; ?>
 					</div>
 				</div>
 			</div>
