@@ -71,9 +71,10 @@ $name = $_SERVER['HTTP_UPLOADER_NAME'];
 $isThumb = $_SERVER['HTTP_UPLOADER_THUMB'];
 $data = base64_decode($img);
 $file = _UPLOADS.$t.$name;
+$imgname =  $t.$name;
 	$link = mysql_connect('localhost', 'root', '');
 	mysql_select_db("yabad");
-	mysql_query("insert into  media(news_id,path,type) values('$id','$t.$name','1')");
+	mysql_query("insert into  media(news_id,path,type) values('$id','$imgname','1')");
 	
 $success = file_put_contents($file, $data);
 
