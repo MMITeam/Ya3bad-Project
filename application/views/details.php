@@ -15,15 +15,22 @@
 		<div class="simple_wattan_block block_num_13" >
 			<div class="bh">
 				<div>
-					<a href="http://www.wattan.tv/ar/news/blog"> أقلام وآراء </a>
+					<a href="<?php if(count($fourth_tital)): echo base_url().'home/lists/'.$fourth_tital[0]->id; endif;?>"> <?php if(count($fourth_tital)): echo $fourth_tital[0]->title; endif;?> </a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data3.wattan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data1.wattan.tv/image/70X40/04092322602070070200185066638213.jpg" title="الفرز الحاد - بقلم: حمدي فراج" alt="الفرز الحاد - بقلم: حمدي فراج" width="70" height="40"></span>الفرز الحاد - بقلم: حمدي فراج</span> <span class="clear"></span> </span> </a>
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data3.wattan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-
+					<?php if(count($opi_news)): for($i=0;$i<count($opi_news);$i++):?>
+					<a href="<?php echo base_url().'home/details/'.$opi_news[$i]->id;?>">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="<?php echo HTTP_IMG_PATH.$opi_news[$i]->mainphoto; ?>" title="" alt="" width="70" height="40">
+						 	 		</span><?php echo $opi_news[$i]->shortDesc;?></span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+		 	 		<?php endfor; endif;?>
 				</div>
 				<div class="clear"></div>
 
@@ -34,15 +41,22 @@
 		<div class="simple_wattan_block block_num_13">
 			<div class="bh">
 				<div>
-					<a href="http://www.wattan.tv/ar/news/blog">عين على يعبد </a>
+			<a href="<?php if(count($fifth_tital)): echo base_url().'home/lists/'.$fifth_tital[0]->id; endif;?>"> <?php if(count($fifth_tital)): echo $fifth_tital[0]->title; endif;?> </a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data3.wattan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data1.wattan.tv/image/70X40/04092322602070070200185066638213.jpg" title="الفرز الحاد - بقلم: حمدي فراج" alt="الفرز الحاد - بقلم: حمدي فراج" width="70" height="40"></span>الفرز الحاد - بقلم: حمدي فراج</span> <span class="clear"></span> </span> </a>
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data3.wattan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-
+					<?php if(count($yabad_news)): for($i=0;$i<count($yabad_news);$i++):?>
+					<a href="<?php echo base_url().'home/details/'.$yabad_news[$i]->id;?>">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="<?php echo HTTP_IMG_PATH.$yabad_news[$i]->mainphoto; ?>" title="" alt="" width="70" height="40">
+						 	 		</span><?php echo $yabad_news[$i]->shortDesc;?></span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+		 	 		<?php endfor; endif;?>
 				</div>
 				<div class="clear"></div>
 
@@ -53,15 +67,22 @@
 		<div class="simple_wattan_block block_num_13">
 			<div class="bh">
 				<div>
-					<a href="http://www.wattan.tv/ar/news/blog">الصحافة العبرية</a>
+					<a href="<?php if(count($sixth_tital)): echo base_url().'home/lists/'.$sixth_tital[0]->id; endif;?>"> <?php if(count($sixth_tital)): echo $sixth_tital[0]->title; endif;?> </a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data3.wattan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data1.wattan.tv/image/70X40/04092322602070070200185066638213.jpg" title="الفرز الحاد - بقلم: حمدي فراج" alt="الفرز الحاد - بقلم: حمدي فراج" width="70" height="40"></span>الفرز الحاد - بقلم: حمدي فراج</span> <span class="clear"></span> </span> </a>
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data3.wattan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-
+					<?php if(count($heb_news)): for($i=0;$i<count($heb_news);$i++):?>
+					<a href="<?php echo base_url().'home/details/'.$heb_news[$i]->id;?>">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="<?php echo HTTP_IMG_PATH.$heb_news[$i]->mainphoto; ?>" title="" alt="" width="70" height="40">
+						 	 		</span><?php echo $heb_news[$i]->shortDesc;?></span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+		 	 		<?php endfor; endif;?>
 				</div>
 				<div class="clear"></div>
 
@@ -72,13 +93,13 @@
 		<div class="simple_wattan_block block_num_13">
 			<div class="bh">
 				<div>
-					<a href="http://www.wattan.tv/ar/news/blog">الطقس</a>
+					<a href="#">الطقس</a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
 					<div class="weather" id="weatherfeed" > </div>
-				</div>
+					</div>
 				<div class="clear"></div>
 
 			</div>
@@ -87,19 +108,27 @@
 		<div class="simple_wattan_block block_num_13">
 			<div class="bh">
 				<div>
-					<a href="http://www.wattan.tv/ar/news/blog">الأكثر قرائة</a>
+					<a href="<?php if(count($seventh_tital)): echo base_url().'home/lists/'.$seventh_tital[0]->id; endif;?>"> <?php if(count($seventh_tital)): echo $seventh_tital[0]->title; endif;?> </a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data3.wattan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data1.wattan.tv/image/70X40/04092322602070070200185066638213.jpg" title="الفرز الحاد - بقلم: حمدي فراج" alt="الفرز الحاد - بقلم: حمدي فراج" width="70" height="40"></span>الفرز الحاد - بقلم: حمدي فراج</span> <span class="clear"></span> </span> </a>
-					<a href="#"> <span class="bit_frame block_41_bit"> <span class="t"><span class="m"><img src="http://data3.wattan.tv/image/70X40/00056020381230484415821186567011.jpg" title="الرئيس ... وقتل المرأة .... وأدوات التغيير" alt="الرئيس ... وقتل المرأة .... وأدوات التغيير" width="70" height="40"></span>الرئيس ... وقتل المرأة .... وأدوات التغيير</span> <span class="clear"></span> </span> </a>
-
+					<?php if(count($most_news)): for($i=0;$i<count($most_news);$i++):?>
+					<a href="<?php echo base_url().'home/details/'.$most_news[$i]->id;?>">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="<?php echo HTTP_IMG_PATH.$most_news[$i]->mainphoto; ?>" title="" alt="" width="70" height="40">
+						 	 		</span><?php echo $most_news[$i]->shortDesc;?></span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+		 	 		<?php endfor; endif;?>
 				</div>
 				<div class="clear"></div>
 
 			</div>
+
 
 		</div>
 
@@ -157,30 +186,12 @@
 					<p><?php if(count($news)): echo $news[0] -> fullDesc; endif; ?></p>
 					
 					<div id="menu">
-						<a class="fancybox" rel="gallery1" href="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_b.jpg" title="Westfield Waterfalls - Middletown CT Lower (Graham_CS)">
-							<img src="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_m.jpg" alt="" />
+						<?php if(count($imgs)): for($i=0;$i<count($imgs);$i++): if($imgs[$i]->type==1):?>
+						<a class="fancybox" rel="gallery1" href="<?php echo HTTP_IMG_PATH.$imgs[$i]->path;?>" 
+							title="<?php echo $news[0] -> shortDesc; ?>">
+							<img src="<?php echo HTTP_IMG_PATH.$imgs[$i]->path;?>" alt="" />
 						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3824/9041440555_2175b32078_b.jpg" title="Calm Before The Storm (One Shoe Photography Ltd.)">
-							<img src="http://farm4.staticflickr.com/3824/9041440555_2175b32078_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_b.jpg" title="Lambs Valley (JMImagesonline.com)">
-							<img src="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_b.jpg" title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))">
-							<img src="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_b.jpg" title="Westfield Waterfalls - Middletown CT Lower (Graham_CS)">
-							<img src="http://farm6.staticflickr.com/5471/9036958611_fa1bb7f827_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3824/9041440555_2175b32078_b.jpg" title="Calm Before The Storm (One Shoe Photography Ltd.)">
-							<img src="http://farm4.staticflickr.com/3824/9041440555_2175b32078_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_b.jpg" title="Lambs Valley (JMImagesonline.com)">
-							<img src="http://farm3.staticflickr.com/2870/8985207189_01ea27882d_m.jpg" alt="" />
-						</a>
-						<a class="fancybox" rel="gallery1" href="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_b.jpg" title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))">
-							<img src="http://farm4.staticflickr.com/3677/8962691008_7f489395c9_m.jpg" alt="" />
-						</a>
+						<?php endif;endfor; endif; ?>
 					</div>
 				</div>
 			</div>
