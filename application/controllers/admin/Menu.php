@@ -13,9 +13,9 @@ class Menu extends MY_Controller {
 		parent::index();
 	}
 
-	public function save() {
-		$fields = array("title", "image");
-		parent::save($fields);
+	public function save($id = null) {
+		$fields = array("text", "link");
+		parent::save($fields,$id);
 
 	}
 
@@ -32,12 +32,12 @@ class Menu extends MY_Controller {
 
 	public function search_by() {
 
-		$fields = array("title");
+		$fields = array("text");
 		parent::get_by($fields);
 	}
 
 	public function get_by_pagination() {
-		$fields = array("title");
+		$fields = array("text");
 		parent::get_by($fields);
 
 	}

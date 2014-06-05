@@ -116,6 +116,10 @@ $("#submitbtn").removeAttr('disabled') ;
 						<li <?php echo  $pg =='category' ? 'class="active"' : '' ?>>
 							<a href="<?php echo base_url(); ?>admin/category">الفئات</a>
 						</li>
+						
+							<li <?php echo  $pg =='menu' ? 'class="active"' : '' ?>>
+							<a href="<?php echo base_url(); ?>admin/menu">القوائم</a>
+						</li>
 
 						<li <?php echo  $pg =='news' ? 'class="active"' : '' ?>>
 							<a href="<?php echo base_url(); ?>admin/news">الاخبار</a>
