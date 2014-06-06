@@ -40,7 +40,7 @@
 						{
 							?>
 							<li>
-							<a href  = "<?php   echo  $menuItem->link;  ?>"  ><?php   echo  $menuItem->text;  ?></a>
+							<a href  = "<?php   echo  base_url().$menuItem->link;  ?>"  ><?php   echo  $menuItem->text;  ?></a>
 							
 						     </li>
 							
