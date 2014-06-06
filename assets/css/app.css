@@ -80,7 +80,9 @@ a {
 	padding: 11px;
 	float: left;
 }
-
+#share_icons img:hover{
+	cursor: pointer;
+}
 #ad1 {
 	background-color: #000;
 	width: 728px;
@@ -89,12 +91,22 @@ a {
 }
 #header_menu {
 	padding: 11px;
-	display: inline-block;
 	color: #4c0e5f;
 	font-family: GE SS Unique Bold;
 	font-weight: 700;
 	word-spacing: 10px;
 	font-size: 14px;
+}
+#header_menu  li {
+	display: inline;
+	list-style-type: none;
+	padding: 2px;
+}
+#header_menu  ul {
+	padding: 0;
+}
+#header_menu  li:hover{
+	cursor: pointer;
 }
 #main_menu {
 	background-color: #531262;
@@ -119,7 +131,6 @@ a {
 }
 
 #main_menu  ul {
-	margin: 0px;
 	text-align: center;
 	padding: 14px;
 	margin: 0px;

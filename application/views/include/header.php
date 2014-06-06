@@ -13,29 +13,29 @@
 			$(document).ready(function() {
 				$('#fb_share_icons').hover(function() {
 					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_f_active.png');
-				}, function() {
+					}, function() {
 					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_f.png');
 				});
-				
+
 				$('#tw_share_icons').hover(function() {
 					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_t_active.png');
-				}, function() {
+					}, function() {
 					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_t.png');
 				});
-
+			
 				$('#yt_share_icons').hover(function() {
 					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_y_active.png');
-				}, function() {
+					}, function() {
 					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_y.png');
 				});
-
+			
 				$('#rss_share_icons').hover(function() {
 					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_rss_active.png');
-				}, function() {
+					}, function() {
 					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_rss.png');
 				});
 
-			});
+	});
 		</script>
 	</header>
 	<body>
@@ -52,7 +52,14 @@
 					<img id="rss_share_icons" src="<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_rss.png" />
 				</div>
 				<div id="header_menu">
-					رؤيتنا   |   سياستنا   |   تواصل   |   فريقنا   |   للاعلان   |   الخريطة
+					<ul>
+		<li>		رؤيتنا   </li>|
+		<li>   	   سياستنا  </li> |
+		<li>	      تواصل  </li> |
+		<li>         فريقنا  </li> |
+		<li>          للاعلان  </li> |
+		<li>              الخريطة</li>
+					<ul>
 				</div>
 				<div id="ad1">
 <object id="obj152" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="728" height="90">
