@@ -198,9 +198,9 @@
 					<img src="<?php  if(count($pal_news)): echo HTTP_IMG_PATH.$pal_news[0]->mainphoto; endif;?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php if (count($pal_news)): echo $pal_news[0] -> shortDesc; endif; ?></h1>
-						<p>
+						<div class="main_cat_news_body" >
 							<?php if (count($pal_news)): echo $pal_news[0] -> fullDesc; endif; ?>
-						</p>
+						</div>
 					</div>
 					</a>
 				</div>
@@ -242,9 +242,9 @@
 					<img src="<?php  if (count($int_news)): echo HTTP_IMG_PATH.$int_news[0]->mainphoto; endif; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php if(count($int_news)): echo $int_news[0] -> shortDesc; endif; ?></h1>
-						<p>
+						<div class="main_cat_news_body" >
 							<?php if(count($int_news)): echo $int_news[0] -> fullDesc; endif; ?>
-						</p>
+						</div>
 					</div>
 					</a>
 				</div>
@@ -281,9 +281,9 @@
 					<img src="<?php  if(count($spo_news)): echo HTTP_IMG_PATH.$spo_news[0]->mainphoto; endif; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php if(count($spo_news)): echo $spo_news[0] -> shortDesc; endif; ?></h1>
-						<p>
+						<div class="main_cat_news_body" >
 							<?php if(count($spo_news)): echo $spo_news[0] -> fullDesc; endif; ?>
-						</p>
+						</div>
 					</div>
 					</a>
 				</div>

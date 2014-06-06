@@ -453,3 +453,11 @@ a {
 	margin: 8px 20px 10px 10px;
 }
 
+.main_cat_news_body {
+	height: 173px;
+	overflow: hidden;
+}
+
+.main_cat_news_body p{
+	text-overflow: ellipsis;
+}
