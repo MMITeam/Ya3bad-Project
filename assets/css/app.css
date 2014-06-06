@@ -12,7 +12,7 @@ body {
 
 @font-face {
 	font-family: "GE SS Unique Bold";
-	src: url(http://localhost/yabod/assets/fonts/GE_SS_Unique_Bold.eot) format("eot"), url(http://localhost/yabod/assets/fonts//GE_SS_Unique_Bold.woff) format("woff"), url(http://localhost/yabod/assets/fonts/GE_SS_Unique_Bold.ttf) format("truetype"), url("GE_SS_Unique_Bold.svg#GESSUniqueBold-Bold") format("svg");
+	src: url(../fonts/GE_SS_Unique_Bold.eot) format("eot"), url(../fonts/GE_SS_Unique_Bold.woff) format("woff"), url(../fonts/GE_SS_Unique_Bold.ttf) format("truetype"), url("GE_SS_Unique_Bold.svg#GESSUniqueBold-Bold") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
