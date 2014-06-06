@@ -323,7 +323,7 @@
 	</div>
 </div>
 <div id="bottom_area">
-	test
+	&nbsp;
 </div>
 </div>
 </body>
