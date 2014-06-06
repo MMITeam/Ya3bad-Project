@@ -55,7 +55,10 @@
 					رؤيتنا   |   سياستنا   |   تواصل   |   فريقنا   |   للاعلان   |   الخريطة
 				</div>
 				<div id="ad1">
-
+<object id="obj152" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="728" height="90">
+	<param name="movie" value="http://www.wattan.tv/data/banners/be_152.swf?clickTAG=https://www.youtube.com/watch?v=eFC8EpUDPQI">
+	<param name="quality" value="High">
+	<embed src="http://www.wattan.tv/data/banners/be_152.swf?clickTAG=https://www.youtube.com/watch?v=eFC8EpUDPQI" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj152" width="728" height="90"></object>
 				</div>
 
 				<div id="main_menu" >

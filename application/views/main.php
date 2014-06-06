@@ -1,14 +1,23 @@
 <div id="top_area">
 	<div id="sub_main_news_container">
 		<div class="sub_main_news">
-			test
+			<object id="obj178" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="300" height="90">
+	<param name="movie" value="http://www.wattan.tv/data/banners/be_178.swf?clickTAG=http://">
+	<param name="quality" value="High">
+	<embed src="http://www.wattan.tv/data/banners/be_178.swf?clickTAG=http://" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj178" width="300" height="90"></object>
 		</div>
 		<div class="sub_main_news">
-			test
+		<object id="obj154" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="300" height="90">
+	<param name="movie" value="http://www.wattan.tv/data/banners/be_154.swf?clickTAG=http://">
+	<param name="quality" value="High">
+	<embed src="http://www.wattan.tv/data/banners/be_154.swf?clickTAG=http://" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj154" width="300" height="90"></object>
 		</div>
 		<div class="sub_main_news">
-			test
-		</div>
+		<object id="obj176" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="300" height="90">
+	<param name="movie" value="http://www.wattan.tv/data/banners/be_176.swf?clickTAG=http://">
+	<param name="quality" value="High">
+	<embed src="http://www.wattan.tv/data/banners/be_176.swf?clickTAG=http://" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj176" width="300" height="90"></object>
+	</div>
 	</div>
 	<div id="lastest_news_container">
 		<div class="simple_block block_num_3" id="block-2">
@@ -183,7 +192,10 @@
 	</div>
 	<div id="main-container">
 		<div class="empty_container main_block">
-
+<object id="obj151" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="645" height="90">
+	<param name="movie" value="http://www.wattan.tv/data/banners/be_151.swf?clickTAG=http://">
+	<param name="quality" value="High">
+	<embed src="http://www.wattan.tv/data/banners/be_151.swf?clickTAG=http://" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj151" width="645" height="90"></object>
 		</div>
 
 		<div class="main_block cat_block" >
@@ -227,7 +239,7 @@
 		</div>
 
 		<div class="empty_container main_block">
-
+             <img src="http://www.wattan.tv/data/banners/be_179.jpg" border="0" target="_blank" alt="" title="" width="645" height="90">
 		</div>
 
 		<div class="main_block cat_block" >
