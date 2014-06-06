@@ -102,4 +102,14 @@ class Home extends MY_ControllerMain {
 		$this -> load -> templatemain("List.php", $data);
 	}
 
+    function  video()
+	{
+			$data['menu'] = $this -> menu_model -> get();
+		
+		
+				$this -> load -> templatemain("video.php",$data);
+		
+		
+	}
+
 }
