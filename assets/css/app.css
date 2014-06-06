@@ -79,6 +79,7 @@ a {
 	padding: 11px;
 	float: left;
 }
+
 #ad1 {
 	background-color: #000;
 	width: 728px;
@@ -119,7 +120,7 @@ a {
 #main_menu  ul {
 	margin: 0px;
 	text-align: center;
-	padding: 10px;
+	padding: 12px;
 	margin: 0px;
 }
 
@@ -453,3 +454,11 @@ a {
 	margin: 8px 20px 10px 10px;
 }
 
+.main_cat_news_body {
+	height: 173px;
+	overflow: hidden;
+}
+
+.main_cat_news_body p{
+	text-overflow: ellipsis;
+}
