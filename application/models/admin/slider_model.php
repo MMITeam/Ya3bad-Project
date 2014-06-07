@@ -26,4 +26,11 @@ class Slider_model extends MY_Model {
 		}
 	}
 	
-}
+	
+		function checkSlider($id) {
+			$this -> db -> where("news_id",$id);
+		$this -> db -> from($this -> _table_name);
+		$c = $this -> db -> count_all_results();
+
+		return $c;
+	}
