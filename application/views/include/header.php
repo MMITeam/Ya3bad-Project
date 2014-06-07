@@ -78,7 +78,11 @@
 						{
 							?>
 							<li>
+<<<<<<< HEAD
+							<a href  = "<?php   echo  base_url().$menuItem->link;  ?>"  ><?php   echo  $menuItem->text;  ?></a>
+=======
 							<a href  = "<?php   echo $menuItem -> link; ?>"  ><?php   echo $menuItem -> text; ?></a>
+>>>>>>> 33f2e8de0178a9ded5d8937c312c6f6283eff0be
 							
 						     </li>
 							
