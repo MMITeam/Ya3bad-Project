@@ -53,13 +53,17 @@
 <div class="form-group">
   <label class="col-md-3 control-label" for="cat_id">خبر في السلايدر</label>
   <div class="col-md-5">
-   <select name  = "pro" > 
-   	  <option  value  =  "1"   >1</option>
-   	  	  <option  value  =  "2"   >2</option>
-   	  	  	  <option  value  =  "3"   >3</option>
-   	  	  	  	  <option  value  =  "4"   >4</option>
-   	  	  	  	  	  <option  value  =  "5"   selected>5</option>
-   	
+ <select name  =  "pro" > 
+   <?php 
+   
+   for($i =  1  ; $i<=5  ; $i++){
+   	?>
+	<option  value  = "<?php  echo  $i;  ?>" <?php  $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->pro : ""  ; if($val == $i) echo  "selected" ?>  >  <?php  echo  $i;  ?></option>
+	<?php  
+   }
+   
+   
+   ?>
    	</select>
   </div>
 </div>
