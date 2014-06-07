@@ -42,13 +42,41 @@ class News extends MY_Controller {
 			$data['mainphoto'] =  $data['upload_data']['file_name'];
 		}
 		}
-		$fields = array("shortDesc", "fullDesc", "cat_id"  );
+		$fields = array("shortDesc", "fullDesc", "cat_id" , "pro");
 		$this->load->model('category_model');
 		$data['category'] =  $this->category_model->get();
+		
 		parent::save($fields,$id,$data);
-
+		$news_id =  $this -> db -> insert_id();
+		$fields = $this->news_model->array_from_post(array("slider") );
+      
 		if ($this -> input -> post("submit")) {
-		redirect(base_url() . "admin/news/upload/" . $this -> db -> insert_id() );
+			  if($id!=null)
+		{
+			if(isset($fields['slider']) && $fields['slider'] == 1)
+			{
+				$this->load->model("admin/slider_model");
+				$dataa['news_id']  =  $id;
+				$this->slider_model->save($dataa);
+				
+			}else {
+					$this->load->model("admin/slider_model");
+				
+				$this->slider_model->delete($id);
+				
+			}
+		}else
+			{
+				if(isset($fields['slider']) && $fields['slider'] == 1)
+			{
+				$this->load->model("admin/slider_model");
+				$dataa['news_id']  =  $news_id;
+				$this->slider_model->save($dataa);
+			}
+				
+			}
+			
+	redirect(base_url() . "admin/news/upload/" . $news_id );
 
 		}
 		

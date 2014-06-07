@@ -15,4 +15,11 @@ class News_model extends MY_ModelHOME {
 		$this->db->from('news');
 		return $this->db->count_all_results();
 	}
+		public function visits($id) {
+		$this->db->where('id', $id);
+$this->db->set('visits', 'visits+1', FALSE);
+$this->db->update('news');
+	
+	}
+	
 }

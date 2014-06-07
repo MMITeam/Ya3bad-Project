@@ -21,6 +21,7 @@ Downloaded from http://devzone.co.in
               <th>#</th>
               <th>عنوان الخبر</th>
                <th>  الحالة </th>
+                 <th>  عملية </th>
               <th></th>
             </tr>
           </thead>
