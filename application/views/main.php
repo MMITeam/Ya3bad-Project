@@ -202,7 +202,7 @@
 					<div class="main_cat_news_words">
 						<h1><?php  echo $pal_news[0] -> shortDesc; ?></h1>
 						<div class="main_cat_news_body" >
-							<?php  echo $pal_news[0] -> fullDesc; ?>
+							<?php  echo substr($pal_news[0] -> fullDesc,0,200); ?>
 						</div>
 					</div>
 					</a>
@@ -248,7 +248,7 @@
 					<div class="main_cat_news_words">
 						<h1><?php  echo $int_news[0] -> shortDesc;  ?></h1>
 						<div class="main_cat_news_body" >
-							<?php  echo $int_news[0] -> fullDesc; ?>
+							<?php  echo substr($int_news[0] -> fullDesc,0,200); ?>
 						</div>
 					</div>
 					</a>
@@ -289,7 +289,7 @@
 					<div class="main_cat_news_words">
 						<h1><?php  echo $spo_news[0] -> shortDesc;  ?></h1>
 						<div class="main_cat_news_body" >
-							<?php echo $spo_news[0] -> fullDesc;  ?>
+							<?php echo substr($spo_news[0] -> fullDesc,0,200);  ?>
 						</div>
 					</div>
 					</a>
