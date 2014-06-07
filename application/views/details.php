@@ -229,6 +229,15 @@
 						</a>
 						<?php endif;endfor; endif; ?>
 					</div>
+					</div id="video">
+					<?php if(count($imgs)): for($i=0;$i<count($imgs);$i++): if($imgs[$i]->type==2):?>
+					<embed
+							width="420" height="345"
+							src="<?php echo $imgs[$i] -> path;?>"
+							type="application/x-shockwave-flash">
+					</embed>
+					<?php endif;endfor; endif; ?>
+					</div>
 				</div>
 			</div>
 		</div>

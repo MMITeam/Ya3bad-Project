@@ -95,6 +95,7 @@ class MY_ModelHOME extends CI_Model {
 		$this -> db -> order_by("id", "desc");
 		$this -> db -> limit($number);
 		if ($where != null) {
+			$where['status']='approved';
 			$this -> db -> where($where);
 		}
 
