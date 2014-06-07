@@ -37,7 +37,8 @@ class News extends MY_Controller {
 			}
 		}
 		$fields = array("shortDesc", "fullDesc", "cat_id", "pro");
-		$this -> load -> model('category_model');
+		$this -> load -> model('admin/category_model');
+			$this -> load -> model('admin/slider_model');
 		$data['category'] = $this -> category_model -> get();
 		$data['isSlider'] = $this -> slider_model -> checkSlider($id);
 		parent::save($fields, $id, $data);

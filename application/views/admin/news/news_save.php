@@ -46,7 +46,7 @@
 <div class="form-group">
   <label class="col-md-3 control-label" for="cat_id">خبر في السلايدر</label>
   <div class="col-md-5">
-    <input type  = "checkbox"   name =  "slider"  value  = "1"  checked="" > اضافة للسلايدر
+    <input type  = "checkbox"   name =  "slider"  value  = "1"  <?php if(isset($isSlider) and $isSlider > 0 ) echo  "checked='checked'";  ?> > اضافة للسلايدر
   </div>
 </div>
 
