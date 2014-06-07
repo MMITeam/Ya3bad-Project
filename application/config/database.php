@@ -51,8 +51,8 @@ $active_record = TRUE;
 $db['default']['hostname'] = 'yabod.db.11589867.hostedresource.com';
 $db['default']['username'] = 'yabod';
 $db['default']['password'] = 'a0595102001A@';
-$db['default']['database'] = 'yabod'; */
-
+$db['default']['database'] = 'yabod';
+*/
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = ''; 

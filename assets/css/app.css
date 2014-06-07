@@ -12,7 +12,7 @@ body {
 
 @font-face {
 	font-family: "GE SS Unique Bold";
-	src: url(http://localhost/yabod/assets/fonts/GE_SS_Unique_Bold.eot) format("eot"), url(http://localhost/yabod/assets/fonts//GE_SS_Unique_Bold.woff) format("woff"), url(http://localhost/yabod/assets/fonts/GE_SS_Unique_Bold.ttf) format("truetype"), url("GE_SS_Unique_Bold.svg#GESSUniqueBold-Bold") format("svg");
+	src: url(../fonts/GE_SS_Unique_Bold.eot) format("eot"), url(../fonts/GE_SS_Unique_Bold.woff) format("woff"), url(../fonts/GE_SS_Unique_Bold.ttf) format("truetype"), url("GE_SS_Unique_Bold.svg#GESSUniqueBold-Bold") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -47,12 +47,13 @@ body {
 	width: 300px;
 }
 #main_area {
-	height: 1100px;
+	overflow: hidden;
 	margin-top: 25px;
 }
 #bottom_area {
-	height: 180px;
+	height: 40px;
 	background-color: #f1f1f1;
+	margin-bottom: 10px;
 }
 
 /*
@@ -68,7 +69,7 @@ a {
  * header elements
  */
 #logo {
-	background: url(../img/logo.png) no-repeat;
+	background: url(../images/logo.png) no-repeat;
 	min-height: 136px;
 	min-width: 136px;
 	float: right;
@@ -79,6 +80,9 @@ a {
 	padding: 11px;
 	float: left;
 }
+#share_icons img:hover{
+	cursor: pointer;
+}
 #ad1 {
 	background-color: #000;
 	width: 728px;
@@ -87,12 +91,22 @@ a {
 }
 #header_menu {
 	padding: 11px;
-	display: inline-block;
 	color: #4c0e5f;
 	font-family: GE SS Unique Bold;
 	font-weight: 700;
 	word-spacing: 10px;
 	font-size: 14px;
+}
+#header_menu  li {
+	display: inline;
+	list-style-type: none;
+	padding: 2px;
+}
+#header_menu  ul {
+	padding: 0;
+}
+#header_menu  li:hover{
+	cursor: pointer;
 }
 #main_menu {
 	background-color: #531262;
@@ -117,9 +131,8 @@ a {
 }
 
 #main_menu  ul {
-	margin: 0px;
 	text-align: center;
-	padding: 10px;
+	padding: 14px;
 	margin: 0px;
 }
 
@@ -210,6 +223,7 @@ a {
 #lastest_news_container .bit_frame, #lastest_news_container a, #lastest_news_container .t {
 	display: block;
 	outline: none;
+	direction: rtl;
 }
 #lastest_news_container .d strong {
 	font-size: 20px;
@@ -321,6 +335,7 @@ a {
 	font-size: 12px;
 	padding: 3px 0;
 	background-color: #fff;
+	direction: rtl;
 }
 .block_41_bit {
 	border-top-width: 0px;
@@ -446,9 +461,16 @@ a {
 	width: 310px;
 }
 
-
 .cat_block .sub_cat_news img {
 	float: right;
 	margin: 8px 20px 10px 10px;
 }
 
+.main_cat_news_body {
+	height: 173px;
+	overflow: hidden;
+}
+
+.main_cat_news_body p{
+	text-overflow: ellipsis;
+}

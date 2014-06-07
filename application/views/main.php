@@ -1,14 +1,23 @@
 <div id="top_area">
 	<div id="sub_main_news_container">
 		<div class="sub_main_news">
-			test
+			<object id="obj178" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="300" height="90">
+	<param name="movie" value="http://www.wattan.tv/data/banners/be_178.swf?clickTAG=http://">
+	<param name="quality" value="High">
+	<embed src="http://www.wattan.tv/data/banners/be_178.swf?clickTAG=http://" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj178" width="300" height="90"></object>
 		</div>
 		<div class="sub_main_news">
-			test
+		<object id="obj154" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="300" height="90">
+	<param name="movie" value="http://www.wattan.tv/data/banners/be_154.swf?clickTAG=http://">
+	<param name="quality" value="High">
+	<embed src="http://www.wattan.tv/data/banners/be_154.swf?clickTAG=http://" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj154" width="300" height="90"></object>
 		</div>
 		<div class="sub_main_news">
-			test
-		</div>
+		<object id="obj176" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="300" height="90">
+	<param name="movie" value="http://www.wattan.tv/data/banners/be_176.swf?clickTAG=http://">
+	<param name="quality" value="High">
+	<embed src="http://www.wattan.tv/data/banners/be_176.swf?clickTAG=http://" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj176" width="300" height="90"></object>
+	</div>
 	</div>
 	<div id="lastest_news_container">
 		<div class="simple_block block_num_3" id="block-2">
@@ -183,7 +192,10 @@
 	</div>
 	<div id="main-container">
 		<div class="empty_container main_block">
-
+<object id="obj151" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="645" height="90">
+	<param name="movie" value="http://www.wattan.tv/data/banners/be_151.swf?clickTAG=http://">
+	<param name="quality" value="High">
+	<embed src="http://www.wattan.tv/data/banners/be_151.swf?clickTAG=http://" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj151" width="645" height="90"></object>
 		</div>
 
 		<div class="main_block cat_block" >
@@ -198,9 +210,9 @@
 					<img src="<?php  if(count($pal_news)): echo HTTP_IMG_PATH.$pal_news[0]->mainphoto; endif;?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php if (count($pal_news)): echo $pal_news[0] -> shortDesc; endif; ?></h1>
-						<p>
+						<div class="main_cat_news_body" >
 							<?php if (count($pal_news)): echo $pal_news[0] -> fullDesc; endif; ?>
-						</p>
+						</div>
 					</div>
 					</a>
 				</div>
@@ -227,7 +239,7 @@
 		</div>
 
 		<div class="empty_container main_block">
-
+             <img src="http://www.wattan.tv/data/banners/be_179.jpg" border="0" target="_blank" alt="" title="" width="645" height="90">
 		</div>
 
 		<div class="main_block cat_block" >
@@ -242,9 +254,9 @@
 					<img src="<?php  if (count($int_news)): echo HTTP_IMG_PATH.$int_news[0]->mainphoto; endif; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php if(count($int_news)): echo $int_news[0] -> shortDesc; endif; ?></h1>
-						<p>
+						<div class="main_cat_news_body" >
 							<?php if(count($int_news)): echo $int_news[0] -> fullDesc; endif; ?>
-						</p>
+						</div>
 					</div>
 					</a>
 				</div>
@@ -281,9 +293,9 @@
 					<img src="<?php  if(count($spo_news)): echo HTTP_IMG_PATH.$spo_news[0]->mainphoto; endif; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php if(count($spo_news)): echo $spo_news[0] -> shortDesc; endif; ?></h1>
-						<p>
+						<div class="main_cat_news_body" >
 							<?php if(count($spo_news)): echo $spo_news[0] -> fullDesc; endif; ?>
-						</p>
+						</div>
 					</div>
 					</a>
 				</div>
@@ -311,7 +323,7 @@
 	</div>
 </div>
 <div id="bottom_area">
-	test
+	&nbsp;
 </div>
 </div>
 </body>

@@ -90,7 +90,7 @@ $("#submitbtn").removeAttr('disabled') ;
 });
 
 });
-		</script>
+</script>
 	</head>
 	<body>
 		<?php $pg = $c; ?>
@@ -110,9 +110,11 @@ $("#submitbtn").removeAttr('disabled') ;
 						<li <?php echo  $pg =='home' ? 'class="active"' : '' ?>>
 							<a href="<?php echo base_url(); ?>admin/">الرئيسية</a>
 						</li>
+						<!--
 						<li <?php echo  $pg =='users' ? 'class="active"' : '' ?>>
 							<a href="<?php echo base_url(); ?>admin/users">المستخدمين</a>
 						</li>
+						-->
 						<li <?php echo  $pg =='category' ? 'class="active"' : '' ?>>
 							<a href="<?php echo base_url(); ?>admin/category">الفئات</a>
 						</li>
