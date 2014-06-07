@@ -45,21 +45,11 @@
 	<div id="slider_container">
  		 <div id="sliderFrame">
 	        <div id="slider">
-	            <a href="#" >
-	                <img src="<?php echo HTTP_IMG_PATH; ?>5.jpg" alt="Test Img slider" />
+	        	<?php if(count($slider)): for($i=0;$i<count($slider);$i++): ?>
+	            <a href="<?php echo base_url().'home/details/'.$slider[$i]->id;?>" >
+	                <img src="<?php echo HTTP_IMG_PATH.$slider[$i]->mainphoto; ?>" alt="<?php echo $slider[$i]->shortDesc;?>" />
 	            </a>
-	            <a href="#" >
-	            	<img src="<?php echo HTTP_IMG_PATH; ?>1.jpg" alt="Test Img slider"/>
-	            </a>
-	            <a href="#" >
-	            	<img src="<?php echo HTTP_IMG_PATH; ?>2.jpg" alt="Test Img slider" />
-	            </a>
-	            <a href="#" >
-	            	<img src="<?php echo HTTP_IMG_PATH; ?>3.jpg" alt="Test Img slider" />
-	            </a>
-	            <a href="#" >
-	            	<img src="<?php echo HTTP_IMG_PATH; ?>4.jpg"  alt="Test Img slider"/>
-				</a>	       
+	            <?php endfor; endif;?>
 	        </div>
 	        
     	</div>
@@ -201,20 +191,22 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="<?php if (count($first_tital)): echo base_url().'home/lists/'.$first_tital[0]->id;?>"><?php echo $first_tital[0] -> title; endif;?></a>
+					<a href="<?php if (count($first_tital)): echo base_url().'home/lists/'.$first_tital[0]->id; endif;?>"><?php  if(count($first_tital)): echo $first_tital[0] -> title; endif;?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
-					<a href="<?php  if (count($pal_news)): echo base_url() . "home/details/" . $pal_news[0] -> id; endif; ?>">
-					<img src="<?php  if(count($pal_news)): echo HTTP_IMG_PATH.$pal_news[0]->mainphoto; endif;?>" width="173" height="173"/>
+					<?php if(count($pal_news)):?>
+					<a href="<?php echo base_url() . "home/details/" . $pal_news[0] -> id;  ?>">
+					<img src="<?php echo HTTP_IMG_PATH.$pal_news[0]->mainphoto; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
-						<h1><?php if (count($pal_news)): echo $pal_news[0] -> shortDesc; endif; ?></h1>
+						<h1><?php  echo $pal_news[0] -> shortDesc; ?></h1>
 						<div class="main_cat_news_body" >
-							<?php if (count($pal_news)): echo $pal_news[0] -> fullDesc; endif; ?>
+							<?php  echo $pal_news[0] -> fullDesc; ?>
 						</div>
 					</div>
 					</a>
+					<?php endif;?>
 				</div>
 				<div class="block_41_container blocklist_img_title">
 					<?php if (count($pal_news)) : for($i= 1;$i<count($pal_news);$i++): ?>
@@ -245,20 +237,22 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="<?php if (count($second_tital)): echo base_url().'home/lists/'.$second_tital[0]->id;?>"><?php echo $second_tital[0] -> title; endif; ?></a>
+					<a href="<?php if (count($second_tital)): echo base_url().'home/lists/'.$second_tital[0]->id; endif;?>"><?php if (count($second_tital)): echo $second_tital[0] -> title; endif; ?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
-					<a href="<?php  if(count($int_news)): echo base_url() . "home/details/" . $int_news[0] -> id; endif;?>">
-					<img src="<?php  if (count($int_news)): echo HTTP_IMG_PATH.$int_news[0]->mainphoto; endif; ?>" width="173" height="173"/>
+					<?php if(count($int_news)): ?>
+					<a href="<?php echo base_url() . "home/details/" . $int_news[0] -> id; ?>">
+					<img src="<?php  echo HTTP_IMG_PATH.$int_news[0]->mainphoto; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
-						<h1><?php if(count($int_news)): echo $int_news[0] -> shortDesc; endif; ?></h1>
+						<h1><?php  echo $int_news[0] -> shortDesc;  ?></h1>
 						<div class="main_cat_news_body" >
-							<?php if(count($int_news)): echo $int_news[0] -> fullDesc; endif; ?>
+							<?php  echo $int_news[0] -> fullDesc; ?>
 						</div>
 					</div>
 					</a>
+					<?php endif;?>
 				</div>
 				<div class="block_41_container blocklist_img_title">
 					<?php if (count($int_news)) : for($i= 1;$i<count($int_news);$i++): ?>
@@ -284,20 +278,22 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="<?php if(count($third_tital)): echo base_url().'home/lists/'.$third_tital[0]->id;?>"><?php echo $third_tital[0] -> title; endif; ?></a>
+					<a href="<?php if(count($third_tital)): echo base_url().'home/lists/'.$third_tital[0]->id;endif;?>"><?php if(count($third_tital)): echo $third_tital[0] -> title; endif; ?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
-					<a href="<?php  if(count($spo_news)): echo base_url() . "home/details/" . $spo_news[0] -> id; endif; ?>">
-					<img src="<?php  if(count($spo_news)): echo HTTP_IMG_PATH.$spo_news[0]->mainphoto; endif; ?>" width="173" height="173"/>
+					<?php if(count($spo_news)): ?> 
+					<a href="<?php echo base_url() . "home/details/" . $spo_news[0] -> id;  ?>">
+					<img src="<?php echo HTTP_IMG_PATH.$spo_news[0]->mainphoto;  ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
-						<h1><?php if(count($spo_news)): echo $spo_news[0] -> shortDesc; endif; ?></h1>
+						<h1><?php  echo $spo_news[0] -> shortDesc;  ?></h1>
 						<div class="main_cat_news_body" >
-							<?php if(count($spo_news)): echo $spo_news[0] -> fullDesc; endif; ?>
+							<?php echo $spo_news[0] -> fullDesc;  ?>
 						</div>
 					</div>
 					</a>
+					<?php endif;?>
 				</div>
 				<div class="block_41_container blocklist_img_title">
 					<?php if (count($spo_news)) : for($i= 1;$i<count($spo_news);$i++): ?>

@@ -10,11 +10,13 @@ class Home extends MY_ControllerMain {
 		$this -> load -> model('news_model');
 		$this -> load -> model('media_model');
 		$this -> load -> model('category_model');
+		$this -> load -> model('slider_model');
 	}
 
 	public function index() {
 
 		$data['menu'] = $this -> menu_model -> get();
+		$data['slider']= $this -> slider_model -> getSliderNews();
 		$where = array('status' =>'approved');
 		$data['lastNews'] = $this -> news_model -> last(10,$where);
 		$where = array('cat_id' => 1);
@@ -45,8 +47,13 @@ class Home extends MY_ControllerMain {
 
 		$data['menu'] = $this -> menu_model -> get();
 		$news = $this -> news_model -> get_by(array('id' => $id));
-		$data['title'] = $this -> category_model -> get_by(array('id' => $news[0] -> cat_id));
-		$data['last_news']= $this->news_model->last(4,array('cat_id'=>$news[0] -> cat_id));
+		if(count($news)){
+			$data['title'] = $this -> category_model -> get_by(array('id' => $news[0] -> cat_id));
+			$data['last_news']= $this->news_model->last(4,array('cat_id'=>$news[0] -> cat_id,'id !='=>$id));	
+		}else{
+			$data['title'] = NULL;
+			$data['last_news']= NULL;
+		}
 		$data['imgs'] = $this -> media_model -> get_by(array('news_id' => $id));
 		$data['news'] = $news;
 		$where = array('cat_id' => 9);
@@ -66,7 +73,7 @@ class Home extends MY_ControllerMain {
 	
 	}
 
-	public function lists($id, $start =0) {
+	public function lists($id, $start = '') {
 
 		$data['menu'] = $this -> menu_model -> get();
 		$where = array('cat_id' => $id);
@@ -91,12 +98,12 @@ class Home extends MY_ControllerMain {
 		$config['per_page'] = 10;
 		$config['num_links'] = 5;
 		$config['uri_segment'] = 5;
-		$config['use_page_numbers'] = TRUE;//to show page number insted of row number
+		//$config['use_page_numbers'] = TRUE;//to show page number insted of row number
  
 		$config['full_tag_open'] = '<div><ul class="pagination"><li>';
 		$config['full_tag_close'] = '</li></ul></div>';
 
-		$config['cur_tag_open'] = '&nbsp;<a href="'. base_url()."Home/lists/" . $id."/1".'" >';
+		$config['cur_tag_open'] = '&nbsp;<a href="'. base_url()."Home/lists/" . $id."/".'" >';
 		$config['cur_tag_close'] = '</a>'; 
 		
 		$this -> pagination -> initialize($config);

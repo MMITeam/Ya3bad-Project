@@ -1,3 +1,4 @@
+
 <div id="main_area" class="main_details_continater">
 
 	<div id="side-container">
@@ -162,7 +163,7 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href=""><?php
+					<a href="<?php if(count($title)): echo base_url().'home/lists/'.$title[0]->id; endif; ?>"><?php
 					if (count($title)) : echo $title[0] -> title;
 					endif;
  ?></a>
@@ -173,10 +174,11 @@
 				<div class="main_cat_news_words">
 				    <div class="image_container">
 				    	<div class="item_page_gallery_out"> 
+				    		<?php if(count($news)):?>
 				    		<a href="<?php echo HTTP_IMG_PATH . $news[0] -> mainphoto; ?>" rel="lightbox" title="test">
 				    			<img src="<?php echo HTTP_IMG_PATH . $news[0] -> mainphoto; ?>" title="test" alt="test" width="300" height="200" style="border-width:0; margin:0; padding:0;">
-				    			
 				    		</a>
+				    		<?php endif;?>
 				    	</div>
 				    	<div class="clear">
 				    			
