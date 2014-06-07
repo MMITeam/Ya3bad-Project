@@ -171,7 +171,7 @@ class MY_Model extends CI_Model {
 
 		return $c;
 	}
-
+		
 	function get_approved_count() {
 		$this -> db -> where('status', 'approved');
 		$this -> db -> from($this -> _table_name);

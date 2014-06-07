@@ -1,4 +1,7 @@
-     <?php $c = $this -> uri -> rsegment(1); ?>
+     <?php $c = $this -> uri -> rsegment(1); 
+     $this->load->model('slider_model');
+     
+     ?>
 <meta charset="utf-8">
 	<script src="<?php echo HTTP_JS_PATH; ?>ckeditor.js"></script>
 
