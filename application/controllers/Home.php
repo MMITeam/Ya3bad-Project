@@ -43,7 +43,7 @@ class Home extends MY_ControllerMain {
 		$this -> load -> templatemain("main.php", $data);
 	}
 
-	public function details($id) {
+	public function details($id='') {
 
 		$data['menu'] = $this -> menu_model -> get();
 		$news = $this -> news_model -> get_by(array('id' => $id));
@@ -73,7 +73,7 @@ class Home extends MY_ControllerMain {
 	
 	}
 
-	public function lists($id, $start = '') {
+	public function lists($id='', $start = '') {
 
 		$data['menu'] = $this -> menu_model -> get();
 		$where = array('cat_id' => $id);
