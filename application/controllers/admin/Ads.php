@@ -13,9 +13,34 @@ class Ads extends MY_Controller {
 		parent::index();
 	}
 
-	public function save() {
-		$fields = array("title", "image");
-		parent::save($fields);
+	public function save($id  = null) {
+		$data['a'] = "a";
+		if ($this -> input -> post("submit")) {
+
+			$config['upload_path'] = "./assets/ads/";
+			$config['allowed_types'] = 'gif|jpg|png|swf';
+			$config['file_name'] = 'yabad_ads';
+
+			$config['max_size'] = '10000000';
+			$config['max_width'] = '1000000';
+			$config['max_height'] = '7680';
+			$mainphoto = $this -> input -> post("adsfile");
+			$this -> load -> library('upload', $config);
+
+			if (!$this -> upload -> do_upload('adsfile')) {
+				$error = array('error' => $this -> upload -> display_errors());
+				echo $error['error'];
+				//$this->load->view('admin/news/news_save', $error);
+			} else {
+				$data = array('upload_data' => $this -> upload -> data());
+
+				$data['adsfile'] = $data['upload_data']['file_name'];
+			}
+		}
+		
+		
+		$fields = array("title");
+		parent::save($fields,$id,$data);
 
 	}
 
