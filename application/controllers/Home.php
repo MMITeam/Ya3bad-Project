@@ -60,7 +60,9 @@ class Home extends MY_ControllerMain {
 		$where = array('cat_id' => 12);
 		$data['seventh_tital'] = $this -> category_model -> get_by(array("id" => 12));
 		$data['most_news'] = $this->news_model->last(3,$where);
+		$this->news_model->visits($id);
 		$this -> load -> templatemain("details.php", $data);
+	
 	}
 
 	public function lists($id, $start =0) {
