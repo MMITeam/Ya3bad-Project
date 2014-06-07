@@ -15,7 +15,8 @@ class Home extends MY_ControllerMain {
 	public function index() {
 
 		$data['menu'] = $this -> menu_model -> get();
-		$data['lastNews'] = $this -> news_model -> last(10);
+		$where = array('status' =>'approved');
+		$data['lastNews'] = $this -> news_model -> last(10,$where);
 		$where = array('cat_id' => 1);
 		$data['pal_news'] = $this -> news_model -> last(6, $where);
 		$data['first_tital'] = $this -> category_model -> get_by(array("id" => 1));
