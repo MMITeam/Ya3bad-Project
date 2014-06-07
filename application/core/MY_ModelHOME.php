@@ -56,6 +56,7 @@ class MY_ModelHOME extends CI_Model {
 	}
 
 	public function get_by($where, $single = FALSE, $per_page = 1, $start = 0) {
+		$where['status']='approved';
 		$this -> db -> where($where);
 		return $this -> get(NULL, $single);
 	}
@@ -72,7 +73,9 @@ class MY_ModelHOME extends CI_Model {
 	}
 
 	public function get_by_pagination($where, $single = FALSE, $per_page = 10, $start = 0) {
+		$this -> db -> order_by("id", "desc");
 		$this -> db -> limit($per_page, $start);
+			$where['status']='approved';
 		return $this -> search_by($where, $single = FALSE);
 	}
 
@@ -95,6 +98,7 @@ class MY_ModelHOME extends CI_Model {
 		$this -> db -> order_by("id", "desc");
 		$this -> db -> limit($number);
 		if ($where != null) {
+			$where['status']='approved';
 			$this -> db -> where($where);
 		}
 

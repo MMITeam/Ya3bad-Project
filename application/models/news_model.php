@@ -10,16 +10,16 @@ class News_model extends MY_ModelHOME {
 	}
 	
 	
-	public function get_count($cat_id) {
+	public function get_count($cat_id) { 
 		$this->db->where('cat_id', $cat_id);
+		$this->db->where('status', 'approved');
 		$this->db->from('news');
 		return $this->db->count_all_results();
 	}
-		public function visits($id) {
+	public function visits($id) {
 		$this->db->where('id', $id);
-$this->db->set('visits', 'visits+1', FALSE);
-$this->db->update('news');
-	
+		$this->db->set('visits', 'visits+1', FALSE);
+		$this->db->update('news');
 	}
 	
 }

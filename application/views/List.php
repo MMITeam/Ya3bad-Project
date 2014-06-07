@@ -174,7 +174,7 @@
 					<div class="main_cat_news_words">
 						<h1><?php echo $new -> shortDesc; ?></php></h1>
 						<p>
-						  <?php echo $new -> fullDesc; ?>
+						  <?php echo substr($new -> fullDesc,0,200); ?>
 						</p>
 					</div>
 					</a>
