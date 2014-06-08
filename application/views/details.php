@@ -204,7 +204,7 @@
 				    <div class="more_block cat_block" >
 						<div class="bh">
 							<div>
-								<a href=""><?php
+								<a href="<?php if(count($title)): echo base_url().'home/lists/'.$title[0]->id; endif; ?>"><?php
 								if (count($title)) : echo $title[0] -> title;
 								endif;
  ?></a>

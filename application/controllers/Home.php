@@ -14,7 +14,6 @@ class Home extends MY_ControllerMain {
 	}
 
 	public function index() {
-
 		$data['menu'] = $this -> menu_model -> get();
 		$data['slider']= $this -> slider_model -> getSliderNews();
 		$where = array('status' =>'approved');
@@ -39,7 +38,7 @@ class Home extends MY_ControllerMain {
 		$data['heb_news'] = $this->news_model->last(3,$where);
 		$where = array('cat_id' => 12);
 		$data['seventh_tital'] = $this -> category_model -> get_by(array("id" => 12));
-		$data['most_news'] = $this->news_model->last(3,$where);
+		$data['most_news'] = $this -> news_model -> mostVisited(3);
 		$this -> load -> templatemain("main.php", $data);
 	}
 
@@ -67,7 +66,7 @@ class Home extends MY_ControllerMain {
 		$data['heb_news'] = $this->news_model->last(3,$where);
 		$where = array('cat_id' => 12);
 		$data['seventh_tital'] = $this -> category_model -> get_by(array("id" => 12));
-		$data['most_news'] = $this->news_model->last(3,$where);
+		$data['most_news'] = $this -> news_model -> mostVisited(3);
 		$this->news_model->visits($id);
 		$this -> load -> templatemain("details.php", $data);
 	
@@ -90,7 +89,7 @@ class Home extends MY_ControllerMain {
 		$data['heb_news'] = $this->news_model->last(3,$where);
 		$where = array('cat_id' => 12);
 		$data['seventh_tital'] = $this -> category_model -> get_by(array("id" => 12));
-		$data['most_news'] = $this->news_model->last(3,$where);
+		$data['most_news'] = $this -> news_model -> mostVisited(3);
 		//   pagination
 		$this -> load -> library('pagination');
 		$config['base_url'] = base_url() . "Home/lists/" . $id;
