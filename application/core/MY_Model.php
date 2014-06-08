@@ -79,12 +79,11 @@ class MY_Model extends CI_Model {
 
 	public function save($data, $id = NULL) {
 
-		// Set timestamps
-		if ($this -> _timestamps == TRUE) {
+		
 			$date = new DateTime();
-			$id || $data['created'] = $date->getTimestamp();
+			 $data['created'] = $date->getTimestamp();
 			$data['modified'] = $date->getTimestamp();
-		}
+		
 
 		// Insert
 		if ($id === NULL) {

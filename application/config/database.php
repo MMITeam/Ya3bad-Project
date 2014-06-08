@@ -53,10 +53,11 @@ $db['default']['username'] = 'yabod';
 $db['default']['password'] = 'a0595102001A@';
 $db['default']['database'] = 'yabod';
 */
+
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = ''; 
-$db['default']['database'] = 'yabad'; 
+$db['default']['database'] = 'yabad';  
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

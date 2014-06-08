@@ -18,7 +18,7 @@ class News extends MY_Controller {
 
 			$config['upload_path'] = "./assets/images/";
 			$config['allowed_types'] = 'gif|jpg|png';
-			$config['file_name'] = 'allllli';
+			$config['file_name'] = 'main';
 
 			$config['max_size'] = '1000000';
 			$config['max_width'] = '10000';
@@ -76,7 +76,7 @@ class News extends MY_Controller {
 	public function uploadhandler($id) {
 
 		define("_UPLOADS", "./assets/images/");
-		define("_THUMBNAIL", "<?php echo  base_url();  ?>assets/uploads/");
+		define("_THUMBNAIL", "./assets/images/thumb/");
 
 		$img = file_get_contents('php://input');
 		$temp = explode(',', $img);

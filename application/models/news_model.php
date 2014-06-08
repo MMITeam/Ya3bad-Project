@@ -24,8 +24,9 @@ class News_model extends MY_ModelHOME {
 	
 	public function mostVisited($number)
 	{
-		$this -> db -> order_by("id", "desc");
 		$this -> db -> order_by("visits", "desc");
+		$this -> db -> order_by("id", "desc");
+		
 		$this -> db -> limit($number); 
 
 		$singel = $number == 1 ? True : False;

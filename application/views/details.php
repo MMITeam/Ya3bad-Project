@@ -192,7 +192,8 @@
 				    	</div>
 				    	<div style="text-align: center">
 				    		<?php
-				    		$date = new DateTime($news[0]->modified);
+				    		$date = new DateTime();
+							$date->setTimestamp($news[0]->modified);
 							$day = date('l', $date->getTimestamp());
 							echo $days[$day].'  '.$date ->format('d') . " - " . $date -> format(' m'), " - " . $date -> format('y').'  الساعة '.$date -> format(' h') . ":" . $date -> format('i');
 							?>
