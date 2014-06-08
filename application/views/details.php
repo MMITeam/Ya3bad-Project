@@ -1,4 +1,12 @@
-
+<?php $days = array(
+    'Sunday'=>'الاحد',
+    'Monday'=>'الاثنين',
+    'Tuesday'=>'الثلاثاء',
+    'Wednesday'=>'الاربعاء',
+    'Thursday'=>'الخميس',
+    'Friday'=>'الجمعة',
+    'Saturday'=>'السبت',
+);?>
 <div id="main_area" class="main_details_continater">
 
 	<div id="side-container">
@@ -167,7 +175,8 @@
 					if (count($title)) : echo $title[0] -> title;
 					endif;
  ?></a>
-				</div><span></span>
+				</div>
+				<span></span>
 			</div>
 			<div class="bc">
 				
@@ -179,6 +188,14 @@
 				    			<img src="<?php echo HTTP_IMG_PATH . $news[0] -> mainphoto; ?>" title="test" alt="test" width="300" height="200" style="border-width:0; margin:0; padding:0;">
 				    		</a>
 				    		<?php endif;?>
+				    		
+				    	</div>
+				    	<div style="text-align: center">
+				    		<?php
+				    		$date = new DateTime($news[0]->modified);
+							$day = date('l', $date->getTimestamp());
+							echo $days[$day].'  '.$date ->format('d') . " - " . $date -> format(' m'), " - " . $date -> format('y').'  الساعة '.$date -> format(' h') . ":" . $date -> format('i');
+							?>
 				    	</div>
 				    	<div class="clear">
 				    			
