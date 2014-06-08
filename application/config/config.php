@@ -17,7 +17,8 @@
 $config['base_url']	= 'http://localhost/yabod/';
 define('HTTP_CSS_PATH', $config['base_url'].'assets/css/'); 
 define('HTTP_JS_PATH', $config['base_url'].'assets/js/'); 
-define('HTTP_IMG_PATH', $config['base_url'].'assets/images/'); 
+define('HTTP_IMG_PATH', $config['base_url'].'assets/images/thumb');
+define('HTTP_IMGHQ_PATH', $config['base_url'].'assets/images/');  
 define('HTTP_FONT_PATH', $config['base_url'].'assets/font/'); 
 
 /*
