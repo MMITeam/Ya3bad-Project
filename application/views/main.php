@@ -29,7 +29,9 @@
 
 					<?php if(count($lastNews)): foreach ($lastNews as $news):
 						
-						$date = new DateTime($news->created);
+						$date = new DateTime();
+						$date->setTimeStamp($news->created);
+						
 						?>
 						
 					<a href="<?php  echo base_url() . "home/details/" . $news -> id; ?>"> <span class="bit_frame block_2_bit">
