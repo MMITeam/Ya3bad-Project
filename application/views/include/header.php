@@ -12,27 +12,27 @@
 		<script type="text/javascript" language="JavaScript">
 			$(document).ready(function() {
 				$('#fb_share_icons').hover(function() {
-					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_f_active.png');
+					$(this).attr('src', '<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_f_active.png');
 					}, function() {
-					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_f.png');
+					$(this).attr('src', '<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_f.png');
 				});
 
 				$('#tw_share_icons').hover(function() {
-					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_t_active.png');
+					$(this).attr('src', '<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_t_active.png');
 					}, function() {
-					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_t.png');
+					$(this).attr('src', '<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_t.png');
 				});
 			
 				$('#yt_share_icons').hover(function() {
-					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_y_active.png');
+					$(this).attr('src', '<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_y_active.png');
 					}, function() {
-					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_y.png');
+					$(this).attr('src', '<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_y.png');
 				});
 			
 				$('#rss_share_icons').hover(function() {
-					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_rss_active.png');
+					$(this).attr('src', '<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_rss_active.png');
 					}, function() {
-					$(this).attr('src', '<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_rss.png');
+					$(this).attr('src', '<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_rss.png');
 				});
 
 	});
@@ -46,10 +46,10 @@
 					&nbsp;
 				</div>
 				<div id="share_icons">
-					<img id="fb_share_icons" src="<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_f.png" />
-					<img id="tw_share_icons" src="<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_t.png" />
-					<img id="yt_share_icons" src="<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_y.png" />
-					<img id="rss_share_icons" src="<?php  echo HTTP_IMG_PATH; ?>/heade_find_us_rss.png" />
+					<img id="fb_share_icons" src="<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_f.png" />
+					<img id="tw_share_icons" src="<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_t.png" />
+					<img id="yt_share_icons" src="<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_y.png" />
+					<img id="rss_share_icons" src="<?php  echo HTTP_IMGHQ_PATH; ?>/heade_find_us_rss.png" />
 				</div>
 				<div id="header_menu">
 					<ul>
