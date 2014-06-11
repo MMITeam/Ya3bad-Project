@@ -1,3 +1,4 @@
+
 <?php $days = array(
     'Sunday'=>'الاحد',
     'Monday'=>'الاثنين',
@@ -192,6 +193,7 @@
 				    	</div>
 				    	<div style="text-align: center">
 				    		<?php
+				    		
 				    		$date = new DateTime();
 							$date->setTimestamp($news[0]->modified);
 							$day = date('l', $date->getTimestamp());

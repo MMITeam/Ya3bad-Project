@@ -1,3 +1,4 @@
+
 <div id="main_area" class="main_details_continater">
 
 	<div id="side-container">
