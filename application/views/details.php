@@ -185,8 +185,8 @@
 				    <div class="image_container">
 				    	<div class="item_page_gallery_out"> 
 				    		<?php if(count($news)):?>
-				    		<a href="<?php echo HTTP_IMG_PATH . $news[0] -> mainphoto; ?>" rel="lightbox" title="test">
-				    			<img src="<?php echo HTTP_IMG_PATH . $news[0] -> mainphoto; ?>" title="test" alt="test" width="300" height="200" style="border-width:0; margin:0; padding:0;">
+				    		<a href="<?php echo HTTP_IMGHQ_PATH . $news[0] -> mainphoto; ?>" rel="lightbox" title="test">
+				    			<img src="<?php echo HTTP_IMGHQ_PATH . $news[0] -> mainphoto; ?>" title="test" alt="test" width="300" height="200" style="border-width:0; margin:0; padding:0;">
 				    		</a>
 				    		<?php endif;?>
 				    		
@@ -245,9 +245,9 @@
 					
 					<div id="menu">
 						<?php if(count($imgs)): for($i=0;$i<count($imgs);$i++): if($imgs[$i]->type==1):?>
-						<a class="fancybox" rel="gallery1" href="<?php echo HTTP_IMG_PATH . $imgs[$i] -> path; ?>" 
+						<a class="fancybox" rel="gallery1" href="<?php echo HTTP_IMGHQ_PATH . $imgs[$i] -> path; ?>" 
 							title="<?php echo $news[0] -> shortDesc; ?>">
-							<img src="<?php echo HTTP_IMG_PATH . $imgs[$i] -> path; ?>" alt="" />
+							<img src="<?php echo HTTP_IMGHQ_PATH.$imgs[$i] -> path; ?>" alt="" />
 						</a>
 						<?php endif;endfor; endif; ?>
 					</div>
