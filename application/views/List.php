@@ -128,11 +128,10 @@
 			<div class="bh">
 				<div>
 					<a href="<?php
-					if (count($seventh_tital)) : echo base_url() . 'home/lists/' . $seventh_tital[0] -> id;
-					endif;
+					echo base_url() . 'home/lists/';
+					
 				?>"> <?php
-					if (count($seventh_tital)) : echo $seventh_tital[0] -> title;
-					endif;
+					 echo $seventh_tital;
 				?> </a>
 				</div><span></span>
 			</div>

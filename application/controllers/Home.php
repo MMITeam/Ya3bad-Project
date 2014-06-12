@@ -37,7 +37,7 @@ class Home extends MY_ControllerMain {
 		$data['sixth_tital'] = $this -> category_model -> get_by(array("id" => 11));
 		$data['heb_news'] = $this -> news_model -> last(3, $where);
 		$where = array('cat_id' => 12);
-		$data['seventh_tital'] = $this -> category_model -> get_by(array("id" => 12));
+		$data['seventh_tital'] = "الاكثر قرائة";
 		$data['most_news'] = $this -> news_model -> mostVisited(3);
 		$this -> load -> templatemain("main.php", $data);
 	}
@@ -62,7 +62,7 @@ class Home extends MY_ControllerMain {
 		$data['sixth_tital'] = $this -> category_model -> get_by(array("id" => 11));
 		$data['heb_news'] = $this -> news_model -> last(3, $where);
 		$where = array('cat_id' => 12);
-		$data['seventh_tital'] = $this -> category_model -> get_by(array("id" => 12));
+		$data['seventh_tital'] = "الاكثر قرائة";
 		$data['most_news'] = $this -> news_model -> mostVisited(3);
 		$this -> news_model -> visits($id);
 		$this -> load -> templatemain("details.php", $data);
@@ -87,7 +87,7 @@ class Home extends MY_ControllerMain {
 		$data['sixth_tital'] = $this -> category_model -> get_by(array("id" => 11));
 		$data['heb_news'] = $this -> news_model -> last(3, $where);
 		$where = array('cat_id' => 12);
-		$data['seventh_tital'] = $this -> category_model -> get_by(array("id" => 12));
+		$data['seventh_tital'] = "الاكثر قرائة";
 		$data['most_news'] = $this -> news_model -> mostVisited(3);
 		//   pagination
 		$this -> load -> library('pagination');

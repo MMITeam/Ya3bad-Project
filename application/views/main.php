@@ -158,7 +158,7 @@
 		<div class="simple_wattan_block block_num_13">
 			<div class="bh">
 				<div>
-					<a href="<?php if(count($seventh_tital)): echo base_url().'home/lists/'.$seventh_tital[0]->id; endif;?>"> <?php if(count($seventh_tital)): echo $seventh_tital[0]->title; endif;?> </a>
+					<a href="<?php echo base_url().'home/lists/';  ?>"> <?php echo $seventh_tital;?> </a>
 				</div><span></span>
 			</div>
 			<div class="bc">
