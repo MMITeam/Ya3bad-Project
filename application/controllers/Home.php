@@ -46,10 +46,10 @@ class Home extends MY_ControllerMain {
 
 		$data['menu'] = $this -> menu_model -> get();
 		$news = $this -> news_model -> get_by(array('id' => $id));
-	
-			$data['title'] = $this -> category_model -> get_by(array('id' => $news[0] -> cat_id));
-			$data['last_news'] = $this -> news_model -> last(4, array('cat_id' => $news[0] -> cat_id, 'id !=' => $id));
-		
+
+		$data['title'] = $this -> category_model -> get_by(array('id' => $news[0] -> cat_id));
+		$data['last_news'] = $this -> news_model -> last(4, array('cat_id' => $news[0] -> cat_id, 'id !=' => $id));
+
 		$data['imgs'] = $this -> media_model -> get_by(array('news_id' => $id));
 		$data['news'] = $news;
 		$where = array('cat_id' => 9);
@@ -70,7 +70,7 @@ class Home extends MY_ControllerMain {
 	}
 
 	public function lists($id = '', $start = '') {
-            
+
 		$data['menu'] = $this -> menu_model -> get();
 		$where = array('cat_id' => $id);
 		$data['title'] = $this -> category_model -> get_by(array('id' => $id));

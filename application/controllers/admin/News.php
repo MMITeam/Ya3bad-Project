@@ -18,12 +18,13 @@ class News extends MY_Controller {
 
 			$config['upload_path'] = "./assets/images/";
 			$config['allowed_types'] = 'gif|jpg|png';
-			$config['file_name'] = 'main';
+			$config['file_name'] = 'main' . time();
 
 			$config['max_size'] = '1000000';
 			$config['max_width'] = '10000';
 			$config['max_height'] = '7680';
 			$mainphoto = $this -> input -> post("mainphoto");
+
 			$this -> load -> library('upload', $config);
 
 			if (!$this -> upload -> do_upload('mainphoto')) {
@@ -31,6 +32,41 @@ class News extends MY_Controller {
 				echo $error['error'];
 				//$this->load->view('admin/news/news_save', $error);
 			} else {
+				// create thumb
+						$name = "";//source
+						$filename= "";//destination
+						$new_w= "150";
+						$new_h="150";
+						$system = explode(".", $name);
+						if (preg_match("/jpg|jpeg/", $system[1])) {$src_img = imagecreatefromjpeg($name);
+						}
+						if (preg_match("/png/", $system[1])) {$src_img = imagecreatefrompng($name);
+						}
+						$old_x = imageSX($src_img);
+						$old_y = imageSY($src_img);
+						if ($old_x > $old_y) {
+							$thumb_w = $new_w;
+							$thumb_h = $old_y * ($new_h / $old_x);
+						}
+						if ($old_x < $old_y) {
+							$thumb_w = $old_x * ($new_w / $old_y);
+							$thumb_h = $new_h;
+						}
+						if ($old_x == $old_y) {
+							$thumb_w = $new_w;
+							$thumb_h = $new_h;
+						}
+						$dst_img = ImageCreateTrueColor($thumb_w, $thumb_h);
+						imagecopyresampled($dst_img, $src_img, 0, 0, 0, 0, $thumb_w, $thumb_h, $old_x, $old_y);
+						if (preg_match("/png/", $system[1])) {
+							imagepng($dst_img, $filename);
+						} else {
+							imagejpeg($dst_img, $filename);
+						}
+						imagedestroy($dst_img);
+						imagedestroy($src_img); 
+										
+				//
 				$data = array('upload_data' => $this -> upload -> data());
 
 				$data['mainphoto'] = $data['upload_data']['file_name'];
@@ -38,7 +74,7 @@ class News extends MY_Controller {
 		}
 		$fields = array("shortDesc", "fullDesc", "cat_id", "pro");
 		$this -> load -> model('admin/category_model');
-			$this -> load -> model('admin/slider_model');
+		$this -> load -> model('admin/slider_model');
 		$data['category'] = $this -> category_model -> get();
 		$data['isSlider'] = $this -> slider_model -> checkSlider($id);
 		parent::save($fields, $id, $data);
@@ -67,7 +103,7 @@ class News extends MY_Controller {
 
 			}
 
-			redirect(base_url() . "admin/news/upload/" . $news_id);
+			//redirect(base_url() . "admin/news/upload/" . $news_id);
 
 		}
 
