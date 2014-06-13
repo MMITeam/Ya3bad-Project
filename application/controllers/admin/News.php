@@ -32,9 +32,13 @@ class News extends MY_Controller {
 				echo $error['error'];
 				//$this->load->view('admin/news/news_save', $error);
 			} else {
+				
+				$data = array('upload_data' => $this -> upload -> data());
+
+				$data['mainphoto'] = $data['upload_data']['file_name'];
 				// create thumb
-						$name = "";//source
-						$filename= "";//destination
+						$name = base_url()."assets/images/".$data['mainphoto'];//source
+						$filename= "./assets/images/thumb/".$data['mainphoto'];//destination
 						$new_w= "150";
 						$new_h="150";
 						$system = explode(".", $name);
@@ -67,9 +71,6 @@ class News extends MY_Controller {
 						imagedestroy($src_img); 
 										
 				//
-				$data = array('upload_data' => $this -> upload -> data());
-
-				$data['mainphoto'] = $data['upload_data']['file_name'];
 			}
 		}
 		$fields = array("shortDesc", "fullDesc", "cat_id", "pro");
@@ -103,7 +104,7 @@ class News extends MY_Controller {
 
 			}
 
-			//redirect(base_url() . "admin/news/upload/" . $news_id);
+			redirect(base_url() . "admin/news/upload/" . $news_id);
 
 		}
 

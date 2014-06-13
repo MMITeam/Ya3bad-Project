@@ -16,8 +16,8 @@ class Category extends MY_Controller {
 	public function save($id = null) {
 		$fields = array();
 		$data['news_id'] = $id;
-		
-		parent::save($fields,null,$data);
+
+		parent::save($fields, null, $data);
 
 	}
 

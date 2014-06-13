@@ -4,46 +4,48 @@ class MY_Controller extends CI_Controller {
 	protected $_userId = '';
 	function __construct() {
 		parent::__construct();
-           $this->check_isvalidated();
-   
+		$this -> check_isvalidated();
+
 		$c = $this -> uri -> rsegment(1) . "_model";
 		$this -> _userId = $this -> session -> userdata('id');
 		$this -> load -> model('admin/' . $c);
- 
+
 	}
-	 private function check_isvalidated(){
-        if(! $this->session->userdata('validated')){
-            redirect('login');
-        }
-	 }
-	  public function logout(){
-        $this->session->sess_destroy();
-        redirect($this->config->base_url().'login');
-    }
+
+	private function check_isvalidated() {
+		if (!$this -> session -> userdata('validated')) {
+			redirect('login');
+		}
+	}
+
+	public function logout() {
+		$this -> session -> sess_destroy();
+		redirect($this -> config -> base_url() . 'login');
+	}
+
 	public function index() {
-		
-   
-   
-   	$c  = $this -> uri -> rsegment(1) ;
-		$f  = $this -> uri -> rsegment(2) ;
-		$cm = $c."_model";
-		$cv  =  $c."_".$f;
-        
-       $data[$c]  =  $this->$cm->get();
-		$this->load->template("admin/".$c."/".$cv,$data);
+
+		$c = $this -> uri -> rsegment(1);
+		$f = $this -> uri -> rsegment(2);
+		$cm = $c . "_model";
+		$cv = $c . "_" . $f;
+
+		$data[$c] = $this -> $cm -> get();
+		$this -> load -> template("admin/" . $c . "/" . $cv, $data);
 	}
-		public function upload($id) {
-		$c  = $this -> uri -> rsegment(1) ;
-		$f  = $this -> uri -> rsegment(2) ;
-		$cm = $c."_model";
-		$cv  =  $c."_".$f;
-        
-       $data['id']  =  $id;
-		$this->load->template("admin/".$c."/".$cv,$data);
+
+	public function upload($id) {
+		$c = $this -> uri -> rsegment(1);
+		$f = $this -> uri -> rsegment(2);
+		$cm = $c . "_model";
+		$cv = $c . "_" . $f;
+
+		$data['id'] = $id;
+		$this -> load -> template("admin/" . $c . "/" . $cv, $data);
 	}
-     public  function  edit()
-	 {
-	 		$c = $this -> uri -> rsegment(1);
+
+	public function edit() {
+		$c = $this -> uri -> rsegment(1);
 		$f = $this -> uri -> rsegment(2);
 		$cm = $c . "_model";
 		$cv = $c . "_" . $f;
@@ -53,53 +55,46 @@ class MY_Controller extends CI_Controller {
 			$data['user'] = $this -> _userId;
 			$this -> $cm -> save($data);
 
-		}
-		else {
+		} else {
 			$this -> load -> template("admin/" . $c . "/" . $cv);
 		}
-		
-		
-	 }
-	public function save($fields,$id  = NULL,$datar=null) {
 
+	}
+
+	public function save($fields, $id = NULL, $datar = null) { 
 		$c = $this -> uri -> rsegment(1);
 		$f = $this -> uri -> rsegment(2);
 		$cm = $c . "_model";
 		$cv = $c . "_" . $f;
-   
+
 		if ($this -> input -> post('submit')) {
-			$data = $this -> $cm -> array_from_post($fields);
-			   if(isset($datar['mainphoto']))
-	  {
-	  	$data['mainphoto'] = $datar['mainphoto'];
-		
-	  }
+			$data = $this -> $cm -> array_from_post($fields); 
+			if (isset($datar['mainphoto'])) {
+				$data['mainphoto'] = $datar['mainphoto'];
+
+			}
 			$data['user'] = $this -> _userId;
-			  if($id != NULL){
-			$this -> $cm -> save($data,$id);
-				  
-			  }else{
-	
-			  	$this -> $cm -> save($data);
-			  }
+			if ($id != NULL) {
+				$this -> $cm -> save($data, $id);
+
+			} else {
+
+				$this -> $cm -> save($data);
+			}
 
 		}
-		 
-		  $data[$c] = "";
-		  if($id!=NULL)
-		  {
-		  	$where =  array("id"=>$id);
-			
-		  	$datar[$c] = $this-> $cm  -> get_by($where,True);
-			
-		  }
-			$this -> load -> template("admin/" . $c . "/" . $cv,$datar);
-		
+
+		$data[$c] = "";
+		if ($id != NULL) {
+			$where = array("id" => $id);
+
+			$datar[$c] = $this -> $cm -> get_by($where, True);
+
+		}
+		$this -> load -> template("admin/" . $c . "/" . $cv, $datar);
 
 	}
-	
 
-   
 	public function delete() {
 		$id = $this -> input -> post("id");
 		$c = $this -> uri -> rsegment(1) . "_model";
@@ -142,8 +137,8 @@ class MY_Controller extends CI_Controller {
 		$this -> $c -> save($data, $id);
 
 	}
-     
-	 	public function block() {
+
+	public function block() {
 		$c = $this -> uri -> rsegment(1) . "_model";
 		$id = $this -> input -> post('id');
 		$data = array('status' => 'block');
@@ -151,6 +146,7 @@ class MY_Controller extends CI_Controller {
 		$this -> $c -> save($data, $id);
 
 	}
+
 	public function archive() {
 		$c = $this -> uri -> rsegment(1) . "_model";
 		$id = $this -> input -> post('id');
@@ -176,13 +172,13 @@ class MY_Controller extends CI_Controller {
 		}
 
 	}
-	
-	public function last($number=1,$where=NULL){
+
+	public function last($number = 1, $where = NULL) {
 		$c = $this -> uri -> rsegment(1);
 		$f = $this -> uri -> rsegment(2);
 		$cm = $c . "_model";
 		$cv = $c . "_" . $f;
-		return $this -> $cm ->last($number,$where);
+		return $this -> $cm -> last($number, $where);
 	}
-	
+
 }

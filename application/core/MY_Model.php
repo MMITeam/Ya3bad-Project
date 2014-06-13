@@ -46,13 +46,13 @@ class MY_Model extends CI_Model {
 		/*if (!count($this->db->ar_orderby)) {
 		 $this->db->order_by($this->_order_by);
 		 }*/
-		 $ret  =  $this -> db -> get($this -> _table_name) -> $method();
-		 	$q = $this -> db -> affected_rows();
-			if ($q > 0) {
-				return $ret;
-			} else {
-				return  NULL;
-			}
+		$ret = $this -> db -> get($this -> _table_name) -> $method();
+		$q = $this -> db -> affected_rows();
+		if ($q > 0) {
+			return $ret;
+		} else {
+			return NULL;
+		}
 	}
 
 	public function get_by($where, $single = FALSE, $per_page = 1, $start = 0) {
@@ -72,24 +72,23 @@ class MY_Model extends CI_Model {
 	}
 
 	public function get_by_pagination($where, $single = FALSE, $per_page = 10, $start = 0) {
-		$this->db->order_by('id','desc');
+		$this -> db -> order_by('id', 'desc');
 		$this -> db -> limit($per_page, $start);
 		return $this -> search_by($where, $single = FALSE);
 	}
 
 	public function save($data, $id = NULL) {
 
-		
-			$date = new DateTime();
-			 $data['created'] = $date->getTimestamp();
-			$data['modified'] = $date->getTimestamp();
-		
+		$date = new DateTime();
+		$data['created'] = $date -> getTimestamp();
+		$data['modified'] = $date -> getTimestamp();
 
 		// Insert
 		if ($id === NULL) {
 			!isset($data[$this -> _primary_key]) || $data[$this -> _primary_key] = NULL;
 
 			$data['status'] = "pennding";
+
 			$this -> db -> set($data);
 			$this -> db -> insert($this -> _table_name);
 			//echo $id = $this->db->id;
@@ -101,7 +100,7 @@ class MY_Model extends CI_Model {
 			} else {
 				$this -> session -> set_flashdata('error_msg', 'Record did not Saved Succefully');
 			}
-			
+
 		}
 		// Update
 		else {
@@ -170,7 +169,7 @@ class MY_Model extends CI_Model {
 
 		return $c;
 	}
-		
+
 	function get_approved_count() {
 		$this -> db -> where('status', 'approved');
 		$this -> db -> from($this -> _table_name);
@@ -178,13 +177,13 @@ class MY_Model extends CI_Model {
 
 		return $c;
 	}
-	
-	public function last ($number=1,$where=null){
-			$this->db->order_by("id", "desc");
-            $this->db->limit($number);
-			$this->db->where($where);
-			$singel = $number == 1 ? True : False;
-            return $this->get(null,$singel);
+
+	public function last($number = 1, $where = null) {
+		$this -> db -> order_by("id", "desc");
+		$this -> db -> limit($number);
+		$this -> db -> where($where);
+		$singel = $number == 1 ? True : False;
+		return $this -> get(null, $singel);
 	}
 
 }
