@@ -2,12 +2,16 @@
 class MY_Controller extends CI_Controller {
 
 	protected $_userId = '';
+	protected $_userType = '';
+	
 	function __construct() {
 		parent::__construct();
 		$this -> check_isvalidated();
 
 		$c = $this -> uri -> rsegment(1) . "_model";
 		$this -> _userId = $this -> session -> userdata('id');
+			$this -> _userType = $this -> session -> userdata('type');
+		
 		$this -> load -> model('admin/' . $c);
 
 	}
@@ -72,7 +76,12 @@ class MY_Controller extends CI_Controller {
 			if (isset($datar['mainphoto'])) {
 				$data['mainphoto'] = $datar['mainphoto'];
 
-			}
+			}else
+				if(isset($datar['adsfile']))
+				{
+									$data['adsfile'] = $datar['adsfile'];
+					
+				}
 			$data['user'] = $this -> _userId;
 			if ($id != NULL) {
 				$this -> $cm -> save($data, $id);

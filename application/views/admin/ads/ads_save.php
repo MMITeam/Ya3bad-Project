@@ -16,7 +16,7 @@
 <div class="form-group">
   <label class="col-md-3 control-label" for="shortDesc">عنوان الاعلان</label>  
   <div class="col-md-8">
-  <input id="shortDesc" name="shortDesc" type="text" placeholder="عنوان الاعلان" class="form-control input-md" required=""   value  =  "<?php $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->shortDesc : ""  ; echo $val;?>"  >
+  <input id="title" name="title" type="text" placeholder="عنوان الاعلان" class="form-control input-md" required=""   value  =  "<?php $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->title : ""  ; echo $val;?>"  >
     
   </div>
 </div>
@@ -40,6 +40,22 @@
     	for($i = 1 ; $i <=2 ;  $i++){ 
     	?>
       <option value="<?php  echo  $i ?>" <?php   $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->type : ""  ; if($val == $i) echo "selected";    ?>   ><?php  echo  $types[$i]; ?></option>
+<?php   } ?>
+    </select>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-3 control-label" for="type">الموقع</label>
+  <div class="col-md-5">
+    <select id="pos" name="pos" class="form-control">
+    	
+    	<?php 
+   
+    	for($i = 1 ; $i <=10 ;  $i++){ 
+    	?>
+      <option value="<?php  echo  $i ?>" <?php   $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->pos : ""  ; if($val == $i) echo "selected";    ?>   ><?php  echo  $i; ?></option>
 <?php   } ?>
     </select>
   </div>

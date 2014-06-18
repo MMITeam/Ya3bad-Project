@@ -115,6 +115,13 @@ $("#submitbtn").removeAttr('disabled') ;
 							<a href="<?php echo base_url(); ?>admin/users">المستخدمين</a>
 						</li>
 						-->
+					
+						</li>
+							<li <?php echo  $pg =='users' ? 'class="active"' : '' ?>>
+							<a href="<?php echo base_url(); ?>admin/users">المستخدمين</a>
+						</li>
+						
+						
 						<li <?php echo  $pg =='category' ? 'class="active"' : '' ?>>
 							<a href="<?php echo base_url(); ?>admin/category">الفئات</a>
 						</li>
@@ -125,6 +132,9 @@ $("#submitbtn").removeAttr('disabled') ;
 
 						<li <?php echo  $pg =='news' ? 'class="active"' : '' ?>>
 							<a href="<?php echo base_url(); ?>admin/news">الاخبار</a>
+						</li>
+							<li <?php echo  $pg =='ads' ? 'class="active"' : '' ?>>
+							<a href="<?php echo base_url(); ?>admin/ads">الاعلانات</a>
 						</li>
 						
 							<li >

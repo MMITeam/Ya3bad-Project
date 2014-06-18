@@ -38,6 +38,31 @@
 
 <!-- Text input-->
 <div class="form-group">
+  <label class="col-md-4 control-label" for="email">صلاحيات المستخدم</label>  
+  <div class="col-md-5">
+  	<select name="type" class="form-control">  
+  	   <?php 
+  	   $types[0] = "كامل الصلاحيات";
+  	   $types[1] = "محرر اخبار";
+  	   $types[2] = "مسؤول اعلانات";
+  	   $types[3] = "مراسل";
+	   
+	   for($i = 0 ;  $i<4; $i++)
+	   {
+	   	?>
+	   	<option value  = "<?php echo $i; ?>" <?php   $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->type : ""  ; if($val == $i) echo "selected";    ?>   >  <?php  echo $types[$i]; ?>   </option>
+	   	<?php
+	   }
+  	     
+  	   ?>
+  	</select>
+     <div id  =  "type_err" ></div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
   <label class="col-md-4 control-label" for="username">اسم المستخدم</label>  
   <div class="col-md-5">
   <input id="username" value  =  "<?php $val  =  isset(${$c}) && !empty(${$c}) ?   ${$c}->username : ""  ;echo $val;?>" name="username" type="text" placeholder="اسم المستخدم" class="form-control input-md" required="">

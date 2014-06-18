@@ -39,7 +39,7 @@ class Ads extends MY_Controller {
 		}
 		
 		
-		$fields = array("title");
+		$fields = array("title","type","pos");
 		parent::save($fields,$id,$data);
 
 	}

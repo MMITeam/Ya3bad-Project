@@ -87,7 +87,7 @@ class MY_Model extends CI_Model {
 		if ($id === NULL) {
 			!isset($data[$this -> _primary_key]) || $data[$this -> _primary_key] = NULL;
 
-			$data['status'] = "pennding";
+			$data['status'] = "approved";
 
 			$this -> db -> set($data);
 			$this -> db -> insert($this -> _table_name);

@@ -34,8 +34,8 @@
     file_class: "list-i",
     file_filter: "",
     image_thumb: false,
-	icon_path: "FileIcons/",
-			icon_default: "FileIcons/_blank.png",
+	icon_path: "/yabod/assets/FileIcons/",
+			icon_default: "/yabod/assets/FileIcons/_blank.png",
     limit: 0,
     ajax: {
         url: '<?php echo base_url();  ?>admin/news/uploadhandler/<?php echo  $id;  ?>',
@@ -89,8 +89,18 @@
             console.log("Its uploaded ");
           
             
-        }
-       
+        },
+     
+
+    watermark: { 
+        text: "www.yabod.net", // {string} Text
+        color: "grey", // {string} string or hex format like css "Gray, White", #000, #fff, #9e9e9e"
+        alpha: 0.7, // {double} Alpha value between 0 and 1
+        font_size: "55px", // {string} font-size like css "px" or "em" format "55px, 1em, 10px"
+        font: "bold sans-serif", // {string} font type
+        position: "center mid" // {string} position value vertical:top,center,bottom and horizantal:left,mid,right
+    }
+
         
 });
     </script>

@@ -126,7 +126,7 @@ class News extends MY_Controller {
 		$imgname = $t . $name;
 		$link = mysql_connect('localhost', 'root', '');
 		mysql_select_db("yabad");
-		mysql_query("insert into  media(news_id,path,type) values('$id','$imgname','1')");
+		mysql_query("insert into  media(news_id,path,type,user,status) values('$id','$imgname','1','$this->_userId','approved')");
 
 		$success = file_put_contents($file, $data);
 
