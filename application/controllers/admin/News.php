@@ -14,6 +14,7 @@ class News extends MY_Controller {
 	}
 
 	public function save($id = null) {
+        $news_id = $id;
 		if ($this -> input -> post("submit")) {
 
 			$config['upload_path'] = "./assets/images/";
@@ -29,7 +30,7 @@ class News extends MY_Controller {
 
 			if (!$this -> upload -> do_upload('mainphoto')) {
 				$error = array('error' => $this -> upload -> display_errors());
-				echo $error['error'];
+			//	echo $error['error'];
 				//$this->load->view('admin/news/news_save', $error);
 			} else {
 				
@@ -42,9 +43,10 @@ class News extends MY_Controller {
 						$new_w= "150";
 						$new_h="150";
 						$system = explode(".", $name);
-						if (preg_match("/jpg|jpeg/", $system[1])) {$src_img = imagecreatefromjpeg($name);
+                    $j = count($system)-1;
+						if (preg_match("/jpg|jpeg|JPG|JPEG/", $system[$j])) {$src_img = imagecreatefromjpeg($name);
 						}
-						if (preg_match("/png/", $system[1])) {$src_img = imagecreatefrompng($name);
+						if (preg_match("/png/", $system[$j])) {$src_img = imagecreatefrompng($name);
 						}
 						$old_x = imageSX($src_img);
 						$old_y = imageSY($src_img);
@@ -79,6 +81,7 @@ class News extends MY_Controller {
 		$data['category'] = $this -> category_model -> get();
 		$data['isSlider'] = $this -> slider_model -> checkSlider($id);
 		parent::save($fields, $id, $data);
+        if( $this -> db -> insert_id() != 0)
 		$news_id = $this -> db -> insert_id();
 		$fields = $this -> news_model -> array_from_post(array("slider"));
 
@@ -103,7 +106,7 @@ class News extends MY_Controller {
 				}
 
 			}
-
+      
 			redirect(base_url() . "admin/news/upload/" . $news_id);
 
 		}
@@ -124,7 +127,7 @@ class News extends MY_Controller {
 		$data = base64_decode($img);
 		$file = _UPLOADS . $t . $name;
 		$imgname = $t . $name;
-		$link = mysql_connect('localhost', 'root', '');
+		$link = mysql_connect('yabod.db.11589867.hostedresource.com', 'yabad', 'a0595102001A@');
 		mysql_select_db("yabad");
 		mysql_query("insert into  media(news_id,path,type,user,status) values('$id','$imgname','1','$this->_userId','approved')");
 
