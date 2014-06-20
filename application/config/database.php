@@ -58,7 +58,7 @@ $db['default']['database'] = 'yabod';
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
-$db['default']['database'] = 'yabod';
+$db['default']['database'] = 'yabad';
 
 
 $db['default']['dbdriver'] = 'mysql';
