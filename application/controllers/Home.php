@@ -16,6 +16,10 @@ class Home extends MY_ControllerMain {
 
 	public function index() {
 		$data['menu'] = $this -> menu_model -> get();
+		$data['ads_location_1'] = $this->ads_model->getBylocation(1);
+		$data['ads_location_2'] = $this->ads_model->getBylocation(2);
+		$data['ads_location_3'] = $this->ads_model->getBylocation(3);
+		$data['ads_location_4'] = $this->ads_model->getBylocation(4);
 		$data['ads_location_5'] = $this->ads_model->getBylocation(5);
 		$data['ads_location_6'] = $this->ads_model->getBylocation(6);
 		$data['slider'] = $this -> slider_model -> getSliderNews();
