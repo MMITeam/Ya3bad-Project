@@ -52,8 +52,12 @@ class Home extends MY_ControllerMain {
 	public function details($id = '') {
 
 		$data['menu'] = $this -> menu_model -> get();
+		$data['ads_location_1'] = $this->ads_model->getBylocation(1);
+		$data['ads_location_2'] = $this->ads_model->getBylocation(2);
+		$data['ads_location_3'] = $this->ads_model->getBylocation(3);
+		$data['ads_location_4'] = $this->ads_model->getBylocation(4);
 		$news = $this -> news_model -> get_by(array('id' => $id));
-
+		
 		$data['title'] = $this -> category_model -> get_by(array('id' => $news[0] -> cat_id));
 		$data['last_news'] = $this -> news_model -> last(4, array('cat_id' => $news[0] -> cat_id, 'id !=' => $id));
 
@@ -76,13 +80,18 @@ class Home extends MY_ControllerMain {
 
 	}
 
-	public function lists($id = '', $start = '') {
-
+	public function lists($id = '', $start = '') { 
 		$data['menu'] = $this -> menu_model -> get();
+		$data['ads_location_1'] = $this->ads_model->getBylocation(1);
+		$data['ads_location_2'] = $this->ads_model->getBylocation(2);
+		$data['ads_location_3'] = $this->ads_model->getBylocation(3);
+		$data['ads_location_4'] = $this->ads_model->getBylocation(4);
+		
 		$where = array('cat_id' => $id);
 		$data['title'] = $this -> category_model -> get_by(array('id' => $id));
 		$data['news'] = $this -> news_model -> get_by_pagination($where, FALSE, 10, $start);
-		if (count($data['news']) == 0) { redirect(base_url());
+		if (count($data['news']) == 0) {
+			 redirect(base_url());
 		}
 		$where = array('cat_id' => 9);
 		$data['fourth_tital'] = $this -> category_model -> get_by(array("id" => 9));
@@ -104,7 +113,8 @@ class Home extends MY_ControllerMain {
 		$config['num_links'] = 5;
 		$config['uri_segment'] = 5;
 		//$config['use_page_numbers'] = TRUE;//to show page number insted of row number
-
+		//
+		//
 		$config['full_tag_open'] = '<div><ul class="pagination"><li>';
 		$config['full_tag_close'] = '</li></ul></div>';
 
@@ -119,6 +129,10 @@ class Home extends MY_ControllerMain {
 
 	function video() {
 		$data['menu'] = $this -> menu_model -> get();
+		$data['ads_location_1'] = $this->ads_model->getBylocation(1);
+		$data['ads_location_2'] = $this->ads_model->getBylocation(2);
+		$data['ads_location_3'] = $this->ads_model->getBylocation(3);
+		$data['ads_location_4'] = $this->ads_model->getBylocation(4);
 
 		$this -> load -> templatemain("video.php", $data);
 

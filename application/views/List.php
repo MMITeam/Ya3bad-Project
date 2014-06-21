@@ -181,8 +181,10 @@
 				</div>
 				<?php endforeach; endif; ?>
 				
-				</div>  
-		 		<?php echo $pages; ?>  
+				</div>
+			           <?php echo $pages; ?> 
+			      
+		 		 
 		</div>
 	
 	</div>
