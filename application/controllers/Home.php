@@ -11,10 +11,13 @@ class Home extends MY_ControllerMain {
 		$this -> load -> model('media_model');
 		$this -> load -> model('category_model');
 		$this -> load -> model('slider_model');
+		$this -> load -> model('ads_model');
 	}
 
 	public function index() {
 		$data['menu'] = $this -> menu_model -> get();
+		$data['ads_location_5'] = $this->ads_model->getBylocation(5);
+		$data['ads_location_6'] = $this->ads_model->getBylocation(6);
 		$data['slider'] = $this -> slider_model -> getSliderNews();
 		$where = array('status' => 'approved');
 		$data['lastNews'] = $this -> news_model -> last(10, $where);
