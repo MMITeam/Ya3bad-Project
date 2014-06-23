@@ -27,14 +27,34 @@ class MY_Controller extends CI_Controller {
 		redirect($this -> config -> base_url() . 'login');
 	}
 
-	public function index() {
+	public function index($start='') {
 
 		$c = $this -> uri -> rsegment(1);
 		$f = $this -> uri -> rsegment(2);
 		$cm = $c . "_model";
 		$cv = $c . "_" . $f;
 
-		$data[$c] = $this -> $cm -> get();
+		$data[$c] = $this -> $cm -> get_by_pagination(null,FALSE,10,$start);
+		$this -> load -> library('pagination');
+		$config['base_url'] = base_url() . "admin/news/index/";
+		$config['total_rows'] = $this -> $cm -> get_count();
+		$config['per_page'] = 10; 
+		$config['uri_segment'] = 4;
+		//$config['use_page_numbers'] = TRUE;//to show page number insted of row number
+		//
+		//
+		$config['full_tag_open'] = '<ul class="pagination"><li>';
+		$config['full_tag_close'] = '</li></ul>';
+
+		$config['first_link'] = 'First'; 
+		$config['first_tag_open'] = '<li>'; 
+		$config['first_tag_close'] = '</li>'; 
+		$config['last_link'] = 'Last'; 
+		$config['last_tag_open'] = '<li>'; 
+		$config['last_tag_close'] = '</li>'; 
+		
+		$this -> pagination -> initialize($config);
+		$data['pages'] = $this -> pagination -> create_links();
 		$this -> load -> template("admin/" . $c . "/" . $cv, $data);
 	}
 

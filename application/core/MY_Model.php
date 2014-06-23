@@ -61,13 +61,16 @@ class MY_Model extends CI_Model {
 	}
 
 	public function search_by($where, $single = FALSE, $per_page = 1, $start = 0) {
-		foreach ($where as $k => $v) {
-			if (is_string($v)) {
-				$this -> db -> like($where);
-			} else {
-				$this -> db -> where($where);
+		if (isset($where)) {
+			foreach ($where as $k => $v) {
+				if (is_string($v)) {
+					$this -> db -> like($where);
+				} else {
+					$this -> db -> where($where);
+				}
 			}
 		}
+
 		return $this -> get(NULL, $single);
 	}
 

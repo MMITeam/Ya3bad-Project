@@ -109,18 +109,23 @@ class Home extends MY_ControllerMain {
 		$this -> load -> library('pagination');
 		$config['base_url'] = base_url() . "Home/lists/" . $id;
 		$config['total_rows'] = $this -> news_model -> get_count($id);
-		$config['per_page'] = 10;
-		$config['num_links'] = 5;
-		$config['uri_segment'] = 5;
+		$config['per_page'] = 10; 
+		$config['uri_segment'] = 4;
 		//$config['use_page_numbers'] = TRUE;//to show page number insted of row number
 		//
 		//
-		$config['full_tag_open'] = '<div><ul class="pagination"><li>';
-		$config['full_tag_close'] = '</li></ul></div>';
+		
+		
+		$config['full_tag_open'] = '<ul class="pagination"><li>';
+		$config['full_tag_close'] = '</li></ul>';
 
-		$config['cur_tag_open'] = '&nbsp;<a href="' . base_url() . "Home/lists/" . $id . "/" . '" >';
-		$config['cur_tag_close'] = '</a>';
-
+		$config['first_link'] = 'First'; 
+		$config['first_tag_open'] = '<li>'; 
+		$config['first_tag_close'] = '</li>'; 
+		$config['last_link'] = 'Last'; 
+		$config['last_tag_open'] = '<li>'; 
+		$config['last_tag_close'] = '</li>'; 
+		
 		$this -> pagination -> initialize($config);
 		$data['pages'] = $this -> pagination -> create_links();
 		// end pagination
