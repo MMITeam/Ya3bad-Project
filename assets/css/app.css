@@ -1,5 +1,5 @@
 * {
-	font-family: GE SS Unique Bold;
+	font-family: 'janna', Tahoma, Geneva, sans-serif;
 	margin: 0 auto 0 auto;
 }
 body {
@@ -11,12 +11,18 @@ body {
  */
 
 @font-face {
-	font-family: "GE SS Unique Bold";
-	src: url(../fonts/GE_SS_Unique_Bold.eot) format("eot"), url(../fonts/GE_SS_Unique_Bold.woff) format("woff"), url(../fonts/GE_SS_Unique_Bold.ttf) format("truetype"), url("GE_SS_Unique_Bold.svg#GESSUniqueBold-Bold") format("svg");
-	font-weight: normal;
+	font-family: "janna";
+	src: format("eot"), url(../font/janna_bold.woff) format("woff"), url(../fonts/Bahij Janna-Regular.ttf) format("truetype"), url("GE_SS_Unique_Bold.svg#GESSUniqueBold-Bold") format("svg");
+	font-weight: bold;
 	font-style: normal;
 }
 
+@font-face {
+	font-family: "janna bold";
+	src: format("eot"), url(../font/janna_regular.woff) format("woff"), url(../fonts/Bahij Janna-Regular.ttf) format("truetype"), url("GE_SS_Unique_Bold.svg#GESSUniqueBold-Bold") format("svg");
+	font-weight: bold;
+	font-style: normal;
+}
 /*
  * main container
  */
@@ -132,7 +138,7 @@ a {
 
 #main_menu  ul {
 	text-align: center;
-	padding: 14px;
+	padding: 10px;
 	margin: 0px;
 }
 
