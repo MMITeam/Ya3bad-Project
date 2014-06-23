@@ -80,7 +80,7 @@ a {
 	padding: 11px;
 	float: left;
 }
-#share_icons img:hover{
+#share_icons img:hover {
 	cursor: pointer;
 }
 #ad1 {
@@ -105,7 +105,7 @@ a {
 #header_menu  ul {
 	padding: 0;
 }
-#header_menu  li:hover{
+#header_menu  li:hover {
 	cursor: pointer;
 }
 #main_menu {
@@ -471,6 +471,40 @@ a {
 	overflow: hidden;
 }
 
-.main_cat_news_body p{
+.main_cat_news_body p {
 	text-overflow: ellipsis;
+}
+.new_leastest_news {
+	float: right;
+	margin: 2px;
+	width: 211px;
+	background-color: #eee;
+}
+.new_leastest_news img{
+	float: right;
+	text-align: right;
+	margin: 2px;
+}
+.new_leastest_news .t {
+	float: right;
+	text-align: right;
+}
+.new_leastest_news .d {
+	color: #8F8F8F;
+	width: 80px;
+	float: right;
+	display: block;
+	font-family: GE SS Unique Bold;
+	font-size: 10px;
+	text-align: center;
+	line-height: 100%;
+	margin: 1px 0;
+}
+.new_leastest_news .tt {
+	font-size: 15px;
+	text-align: center;
+	line-height: 100%;
+	margin-top: 3px;
+	width: 211px;
+	height: 68px; 
 }

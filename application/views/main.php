@@ -29,10 +29,10 @@
  		 <div id="sliderFrame">
 	        <div id="slider">
 	        	<?php if(count($slider)): for($i=count($slider);$i<-0;$i--): ?>
-	            <a href="<?php echo base_url().'home/details/'.$slider[$i]->id;?>" >
-	                <img src="<?php echo HTTP_IMG_PATH.$slider[$i]->mainphoto; ?>" alt="<?php echo $slider[$i]->shortDesc;?>" />
+	            <a href="<?php echo base_url() . 'home/details/' . $slider[$i] -> id; ?>" >
+	                <img src="<?php echo HTTP_IMG_PATH . $slider[$i] -> mainphoto; ?>" alt="<?php echo $slider[$i] -> shortDesc; ?>" />
 	            </a>
-	            <?php endfor; endif;?>
+	            <?php endfor; endif; ?>
 	        </div>
 	        
     	</div>
@@ -40,6 +40,7 @@
 </div>
 
 <div id="main_area">
+<<<<<<< HEAD
 <?php include 'include/sideContainer.php'; ?>
 	<div id="main-container">
 		<div class="empty_container main_block">
@@ -53,27 +54,223 @@
 						<embed src="<?php echo $ads_location_5[0]->adsfile;?>" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj178" width="649" height="90">
 					</object>		
 			<?php endif;endif;?>
+=======
+
+	<div id="side-container">
+
+		<div class="simple_wattan_block block_num_13" >
+			<div class="bh">
+				<div>
+					<a href="<?php
+					if (count($fourth_tital)) : echo base_url() . 'home/lists/' . $fourth_tital[0] -> id;
+					endif;
+				?>"> <?php
+				if (count($fourth_tital)) : echo $fourth_tital[0] -> title;
+				endif;
+				?> </a>
+				</div><span></span>
+			</div>
+			<div class="bc">
+				<div class="block_41_container blocklist_img_title">
+					<?php if(count($opi_news)): for($i=0;$i<count($opi_news);$i++):?>
+					<a href="<?php echo base_url() . 'home/details/' . $opi_news[$i] -> id; ?>">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="<?php echo HTTP_IMG_PATH . $opi_news[$i] -> mainphoto; ?>" title="" alt="" width="70" height="40">
+						 	 		</span><?php echo $opi_news[$i] -> shortDesc; ?></span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+		 	 		<?php endfor; endif; ?>
+				</div>
+				<div class="clear"></div>
+
+			</div>
+
+		</div>
+
+		<div class="simple_wattan_block block_num_13">
+			<div class="bh">
+				<div>
+			<a href="<?php
+			if (count($fifth_tital)) : echo base_url() . 'home/lists/' . $fifth_tital[0] -> id;
+			endif;
+				?>"> <?php
+				if (count($fifth_tital)) : echo $fifth_tital[0] -> title;
+				endif;
+				?> </a>
+				</div><span></span>
+			</div>
+			<div class="bc">
+				<div class="block_41_container blocklist_img_title">
+					<?php if(count($yabad_news)): for($i=0;$i<count($yabad_news);$i++):?>
+					<a href="<?php echo base_url() . 'home/details/' . $yabad_news[$i] -> id; ?>">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="<?php echo HTTP_IMG_PATH . $yabad_news[$i] -> mainphoto; ?>" title="" alt="" width="70" height="40">
+						 	 		</span><?php echo $yabad_news[$i] -> shortDesc; ?></span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+		 	 		<?php endfor; endif; ?>
+				</div>
+				<div class="clear"></div>
+
+			</div>
+
+		</div>
+
+		<div class="simple_wattan_block block_num_13">
+			<div class="bh">
+				<div>
+					<a href="<?php
+					if (count($sixth_tital)) : echo base_url() . 'home/lists/' . $sixth_tital[0] -> id;
+					endif;
+				?>"> <?php
+				if (count($sixth_tital)) : echo $sixth_tital[0] -> title;
+				endif;
+				?> </a>
+				</div><span></span>
+			</div>
+			<div class="bc">
+				<div class="block_41_container blocklist_img_title">
+					<?php if(count($heb_news)): for($i=0;$i<count($heb_news);$i++):?>
+					<a href="<?php echo base_url() . 'home/details/' . $heb_news[$i] -> id; ?>">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="<?php echo HTTP_IMG_PATH . $heb_news[$i] -> mainphoto; ?>" title="" alt="" width="70" height="40">
+						 	 		</span><?php echo $heb_news[$i] -> shortDesc; ?></span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+		 	 		<?php endfor; endif; ?>
+				</div>
+				<div class="clear"></div>
+
+			</div>
+
+		</div>
+
+		<div class="simple_wattan_block block_num_13">
+			<div class="bh">
+				<div>
+					<a href="#">الطقس</a>
+				</div><span></span>
+			</div>
+			<div class="bc">
+				<div class="block_41_container blocklist_img_title">
+					<div class="weather" id="weatherfeed" > </div>
+					</div>
+				<div class="clear"></div>
+
+			</div>
+
+		</div>
+		<div class="simple_wattan_block block_num_13">
+			<div class="bh">
+				<div>
+					<a href="<?php echo base_url() . 'home/lists/'; ?>"> <?php echo $seventh_tital; ?> </a>
+				</div><span></span>
+			</div>
+			<div class="bc">
+				<div class="block_41_container blocklist_img_title">
+					<?php if(count($most_news)): for($i=0;$i<count($most_news);$i++):?>
+					<a href="<?php echo base_url() . 'home/details/' . $most_news[$i] -> id; ?>">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="<?php echo HTTP_IMG_PATH . $most_news[$i] -> mainphoto; ?>" title="" alt="" width="70" height="40">
+						 	 		</span><?php echo $most_news[$i] -> shortDesc; ?></span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+		 	 		<?php endfor; endif; ?>
+				</div>
+				<div class="clear"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<div id="main-container">
+		<div class="empty_container main_block">
+			<div class="new_leastest_news">
+				<a href="http://localhost/yabod/home/details/161">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
+						 	 	</span>
+						 	 	<h1 class="tt">خبر جديد عين على يعبد  </h1>
+						 	 </span>
+						 	 <span class="d"><strong> 08:08	 </strong>08 -  06 - 14</span> 
+						 	 <span class="clear"></span> 
+			 	 		</span> 
+		 	 	</a>
+			</div>
+			<div class="new_leastest_news">
+				<a href="http://localhost/yabod/home/details/161">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
+						 	 		</span><h1 class="tt">خبر جديد عين على يعبد  </h1></span>
+						 	 		<span class="d"><strong> 08:08						 </strong>08 -  06 - 14</span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+			</div>
+			<div class="new_leastest_news">
+				<a href="http://localhost/yabod/home/details/161">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
+						 	 		</span><h1 class="tt">خبر جديد عين على يعبد  </h1></span>
+						 	 		<span class="d"><strong> 08:08						 </strong>08 -  06 - 14</span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+			</div>
+		</div>
+		<div class="empty_container main_block">
+			<object id="obj151" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="645" height="90">
+				<param name="movie" value="http://www.wattan.tv/data/banners/be_151.swf?clickTAG=http://">
+				<param name="quality" value="High">
+				<embed src="http://www.wattan.tv/data/banners/be_151.swf?clickTAG=http://" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj151" width="645" height="90">
+			</object>
+>>>>>>> c9a6456606b4a234ce4614c3af239a195a4fdd61
 		</div>
 
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="<?php if (count($first_tital)): echo base_url().'home/lists/'.$first_tital[0]->id; endif;?>"><?php  if(count($first_tital)): echo $first_tital[0] -> title; endif;?></a>
+					<a href="<?php
+					if (count($first_tital)) : echo base_url() . 'home/lists/' . $first_tital[0] -> id;
+					endif;
+				?>"><?php
+				if (count($first_tital)) : echo $first_tital[0] -> title;
+				endif;
+				?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
 					<?php if(count($pal_news)):?>
-					<a href="<?php echo base_url() . "home/details/" . $pal_news[0] -> id;  ?>">
-					<img src="<?php echo HTTP_IMG_PATH.$pal_news[0]->mainphoto; ?>" width="173" height="173"/>
+					<a href="<?php echo base_url() . "home/details/" . $pal_news[0] -> id; ?>">
+					<img src="<?php echo HTTP_IMG_PATH . $pal_news[0] -> mainphoto; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
 						<h1><?php  echo $pal_news[0] -> shortDesc; ?></h1>
 						<div class="main_cat_news_body" >
-							<?php  echo substr($pal_news[0] -> fullDesc,0,200); ?>
+							<?php  echo substr($pal_news[0] -> fullDesc, 0, 200); ?>
 						</div>
 					</div>
 					</a>
-					<?php endif;?>
+					<?php endif; ?>
 				</div>
 				<div class="block_41_container blocklist_img_title">
 					<?php if (count($pal_news)) : for($i= 1;$i<count($pal_news);$i++): ?>
@@ -81,7 +278,7 @@
 						<span class="bit_frame block_41_bit">
 							 <span class="t">
 							 	<span class="m">
-							 		<img src="<?php  echo HTTP_IMG_PATH.$pal_news[$i] ->mainphoto; ?>"
+							 		<img src="<?php  echo HTTP_IMG_PATH . $pal_news[$i] -> mainphoto; ?>"
 							 	 	title="" alt="" width="70" height="40">
 								 </span><?php echo $pal_news[$i] -> shortDesc; ?></span> 
 							 <span class="clear"> 	
@@ -113,22 +310,28 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="<?php if (count($second_tital)): echo base_url().'home/lists/'.$second_tital[0]->id; endif;?>"><?php if (count($second_tital)): echo $second_tital[0] -> title; endif; ?></a>
+					<a href="<?php
+					if (count($second_tital)) : echo base_url() . 'home/lists/' . $second_tital[0] -> id;
+					endif;
+				?>"><?php
+				if (count($second_tital)) : echo $second_tital[0] -> title;
+				endif;
+ ?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
 					<?php if(count($int_news)): ?>
 					<a href="<?php echo base_url() . "home/details/" . $int_news[0] -> id; ?>">
-					<img src="<?php  echo HTTP_IMG_PATH.$int_news[0]->mainphoto; ?>" width="173" height="173"/>
+					<img src="<?php  echo HTTP_IMG_PATH . $int_news[0] -> mainphoto; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
-						<h1><?php  echo $int_news[0] -> shortDesc;  ?></h1>
+						<h1><?php  echo $int_news[0] -> shortDesc; ?></h1>
 						<div class="main_cat_news_body" >
-							<?php  echo substr($int_news[0] -> fullDesc,0,200); ?>
+							<?php  echo substr($int_news[0] -> fullDesc, 0, 200); ?>
 						</div>
 					</div>
 					</a>
-					<?php endif;?>
+					<?php endif; ?>
 				</div>
 				<div class="block_41_container blocklist_img_title">
 					<?php if (count($int_news)) : for($i= 1;$i<count($int_news);$i++): ?>
@@ -136,7 +339,7 @@
 						<span class="bit_frame block_41_bit">
 							 <span class="t">
 							 	<span class="m">
-							 		<img src="<?php  echo HTTP_IMG_PATH.$int_news[$i]->mainphoto; ?>"
+							 		<img src="<?php  echo HTTP_IMG_PATH . $int_news[$i] -> mainphoto; ?>"
 							 	 	title="" alt="" width="70" height="40">
 								 </span><?php echo $int_news[$i] -> shortDesc; ?></span> 
 							 <span class="clear"> 	
@@ -154,22 +357,28 @@
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
-					<a href="<?php if(count($third_tital)): echo base_url().'home/lists/'.$third_tital[0]->id;endif;?>"><?php if(count($third_tital)): echo $third_tital[0] -> title; endif; ?></a>
+					<a href="<?php
+					if (count($third_tital)) : echo base_url() . 'home/lists/' . $third_tital[0] -> id;
+					endif;
+				?>"><?php
+				if (count($third_tital)) : echo $third_tital[0] -> title;
+				endif;
+ ?></a>
 				</div><span></span>
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
 					<?php if(count($spo_news)): ?> 
-					<a href="<?php echo base_url() . "home/details/" . $spo_news[0] -> id;  ?>">
-					<img src="<?php echo HTTP_IMG_PATH.$spo_news[0]->mainphoto;  ?>" width="173" height="173"/>
+					<a href="<?php echo base_url() . "home/details/" . $spo_news[0] -> id; ?>">
+					<img src="<?php echo HTTP_IMG_PATH . $spo_news[0] -> mainphoto; ?>" width="173" height="173"/>
 					<div class="main_cat_news_words">
-						<h1><?php  echo $spo_news[0] -> shortDesc;  ?></h1>
+						<h1><?php  echo $spo_news[0] -> shortDesc; ?></h1>
 						<div class="main_cat_news_body" >
-							<?php echo substr($spo_news[0] -> fullDesc,0,200);  ?>
+							<?php echo substr($spo_news[0] -> fullDesc, 0, 200); ?>
 						</div>
 					</div>
 					</a>
-					<?php endif;?>
+					<?php endif; ?>
 				</div>
 				<div class="block_41_container blocklist_img_title">
 					<?php if (count($spo_news)) : for($i= 1;$i<count($spo_news);$i++): ?>
@@ -177,7 +386,7 @@
 						<span class="bit_frame block_41_bit">
 							 <span class="t">
 							 	<span class="m">
-							 		<img src="<?php  echo HTTP_IMG_PATH.$spo_news[$i]->mainphoto; ?> "
+							 		<img src="<?php  echo HTTP_IMG_PATH . $spo_news[$i] -> mainphoto; ?> "
 							 	 	title="" alt="" width="70" height="40">
 								 </span><?php echo $spo_news[$i] -> shortDesc; ?></span> 
 							 <span class="clear"> 	
@@ -206,8 +415,9 @@
     
 
  <script>
- $(document).ready(function () {
-	$('#weatherfeed').weatherfeed(['26160']);
-});</script>
+	$(document).ready(function() {
+		$('#weatherfeed').weatherfeed(['26160']);
+	});
+</script>
 
 </html>
