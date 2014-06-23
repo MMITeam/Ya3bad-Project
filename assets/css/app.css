@@ -320,6 +320,7 @@ a {
 	float: right;
 	height: 40px;
 	overflow: hidden;
+	font-weight: bold;
 }
 
 .blocklist_img_title span.m {
