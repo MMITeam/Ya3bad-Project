@@ -43,6 +43,46 @@
 <?php include 'include/sideContainer.php'; ?>
 	<div id="main-container">
 		<div class="empty_container main_block">
+ 			<div class="new_leastest_news">
+				<a href="http://localhost/yabod/home/details/161">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+					 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
+						 	 	</span>
+						 	 	<h1 class="tt">خبر جديد عين على يعبد  </h1>
+					 	 </span>
+						 	 <span class="d"><strong> 08:08	 </strong>08 -  06 - 14</span> 
+					 	 <span class="clear"></span> 
+			 	 		</span> 
+		 	 	</a>
+		</div>
+			<div class="new_leastest_news">
+			<a href="http://localhost/yabod/home/details/161">
+						 <span class="bit_frame block_41_bit">
+					 	 <span class="t">
+						 	 	<span class="m">
+					 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
+					 	 		</span><h1 class="tt">خبر جديد عين على يعبد  </h1></span>
+					 	 		<span class="d"><strong> 08:08						 </strong>08 -  06 - 14</span> 
+					 	 		<span class="clear"></span> 
+		 	 		</span> 
+	 	 		</a>
+		</div>
+		<div class="new_leastest_news">
+				<a href="http://localhost/yabod/home/details/161">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
+						 	 		</span><h1 class="tt">خبر جديد عين على يعبد  </h1></span>
+						 	 		<span class="d"><strong> 08:08						 </strong>08 -  06 - 14</span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+			</div>
+		</div>
+		<div class="empty_container main_block">
 		<?php if (count($ads_location_5)): 
 				if($ads_location_5[0]->type == 1): ?>
              <img src="<?php echo $ads_location_5[0]->adsfile;?>" border="0" target="_blank" alt="" title="" width="645" height="90">
@@ -53,6 +93,7 @@
 						<embed src="<?php echo $ads_location_5[0]->adsfile;?>" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj178" width="649" height="90">
 					</object>		
 			<?php endif;endif;?>
+
 
 		</div>
 
