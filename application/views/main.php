@@ -39,7 +39,7 @@
 	</div>
 </div>
 
-<div id="main_area"> 
+<div id="main_area">
 <?php include 'include/sideContainer.php'; ?>
 	<div id="main-container">
 		<div class="empty_container main_block">
