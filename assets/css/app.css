@@ -487,7 +487,7 @@ a {
 	width: 211px;
 	background-color: #eee;
 }
-.new_leastest_news img{
+.new_leastest_news img {
 	float: right;
 	text-align: right;
 	margin: 2px;
@@ -513,5 +513,28 @@ a {
 	line-height: 100%;
 	margin-top: 3px;
 	width: 211px;
-	height: 68px; 
+	height: 68px;
+}
+.empty_container.main_block .new_slider {
+	list-style: square;
+	overflow: hidden;
+	position: relative;
+	top: 0px;
+	margin: 0px;
+	padding: 0px;
+	left: 0px;
+	width: 1740px;
+}
+.empty_container.main_block .new_slider li {
+	padding: 0;
+	overflow: hidden;
+	border: 1px solid #a4a4a4;
+	list-style: none outside none;
+	background: #fff none;
+	float: left;
+	list-style: none;
+}
+.empty_container.main_block.new_slider_container{
+	overflow-x: scroll;
+	height: 94px;
 }

@@ -42,7 +42,9 @@
 <div id="main_area"> 
 <?php include 'include/sideContainer.php'; ?>
 	<div id="main-container">
-		<div class="empty_container main_block">
+		<div class="empty_container main_block new_slider_container">
+			<ul class="new_slider">
+				<li>
  			<div class="new_leastest_news">
 				<a href="http://localhost/yabod/home/details/161">
 						 <span class="bit_frame block_41_bit">
@@ -57,6 +59,8 @@
 			 	 		</span> 
 		 	 	</a>
 		</div>
+		</li>
+		<li>
 			<div class="new_leastest_news">
 			<a href="http://localhost/yabod/home/details/161">
 						 <span class="bit_frame block_41_bit">
@@ -69,6 +73,8 @@
 		 	 		</span> 
 	 	 		</a>
 		</div>
+		</li>
+		<li>
 		<div class="new_leastest_news">
 				<a href="http://localhost/yabod/home/details/161">
 						 <span class="bit_frame block_41_bit">
@@ -81,6 +87,22 @@
 			 	 		</span> 
 		 	 		</a>
 			</div>
+		</li>
+		<li>
+		<div class="new_leastest_news">
+				<a href="http://localhost/yabod/home/details/161">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
+						 	 		</span><h1 class="tt">خبر جديد عين على يعبد  </h1></span>
+						 	 		<span class="d"><strong> 08:08						 </strong>08 -  06 - 14</span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+			</div>
+		</li>
+		</ul>
 		</div>
 		<div class="empty_container main_block">
 		<?php if (count($ads_location_5)): 
