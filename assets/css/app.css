@@ -9,54 +9,16 @@ body {
 /*
  * font -face
  */
-/*
-@font-face {
-	font-family: "janna";
-	src: format("eot"), url(../font/janna_bold.woff) format("woff"), url(../fonts/Bahij Janna-Regular.ttf) format("truetype"), url("GE_SS_Unique_Bold.svg#GESSUniqueBold-Bold") format("svg");
-	font-weight: bold;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "janna bold";
-	src: format("eot"), url(../font/janna_regular.woff) format("woff"), url(../fonts/Bahij Janna-Regular.ttf) format("truetype"), url("GE_SS_Unique_Bold.svg#GESSUniqueBold-Bold") format("svg");
-	font-weight: bold;
-	font-style: normal;
-}
-*/
-
 @font-face {
 	font-family: 'janna';
-	src: url('http://www.wattan.tv/media/fonts/janna_regular.woff');
-        behavior: url(http://www.wattan.tv/media/PIE.htc);
+	src: url('../font/janna_regular.woff');
+        behavior: url(media/PIE.htc);
 
 }
 @font-face {
 	font-family: 'janna bold';
-	src: url('http://www.wattan.tv/media/fonts/janna_bold.woff');
+	src: url('../font/janna_bold.woff');
 }
-
-@font-face {
-  font-family: "BBCNassim";
-  src: url("http://www.wattan.tv/media/fonts/bbc-nassim-regular.eot");
-  src: local("âک؛"),
-    url("http://www.wattan.tv/media/fonts/bbc-nassim-regular.woff") format("woff"),
-    url("http://www.wattan.tv/media/fonts/bbc-nassim-regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "BBCNassim";
-  src: url("http://www.wattan.tv/media/fonts/bbc-nassim-bold.eot");
-  src: local("âک؛"),
-    url("http://www.wattan.tv/media/fonts/bbc-nassim-bold.woff") format("woff"),
-    url("http://www.wattan.tv/media/fonts/bbc-nassim-bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-
 
 /*
  * main container
