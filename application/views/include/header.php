@@ -15,6 +15,52 @@
 		<title>ya3bad</title>
 		<script type="text/javascript" language="JavaScript">
 			$(document).ready(function() {
+				
+							
+
+var cur = 1;
+var max = $(".new_slider li").length;
+setInterval(function () {
+       if (cur+4 > max) {
+    cur=1;
+           $("#panel").animate({
+        marginLeft: "0",
+    }, 1000);
+      return false;
+     }
+    cur++; 
+     $("#panel").animate({
+        marginLeft: "-=211px",
+    }, 1000);
+    },3000);
+$("nav.back").click(function(){
+	 if (cur+4 > max) {
+    cur=1;
+           $("#panel").animate({
+        marginLeft: "0",
+    }, 1000);
+      return false;
+     }
+    cur++; 
+     $("#panel").animate({
+        marginLeft: "-=211px",
+    }, 1000);
+});
+
+$("nav.forward").click(function(){
+	    if (cur == 1 && cur < max){
+	    	cur=1;
+                $("#panel").animate({
+        marginLeft: "0",
+    }, 1000);
+      return false;
+      }
+       cur--;
+
+     $("#panel").animate({
+        marginLeft: "+=211px",
+    }, 1000);
+});
 				$('#fb_share_icons').hover(function() {
 					$(this).attr('src', '<?php  echo HTTP_IMGHQ_PATH; ?>heade_find_us_f_active.png');
 					}, function() {
@@ -38,6 +84,8 @@
 					}, function() {
 					$(this).attr('src', '<?php  echo HTTP_IMGHQ_PATH; ?>heade_find_us_rss.png');
 				});
+
+
 
 	});
 		</script>
@@ -68,12 +116,12 @@
 				<div id="ad1">
 					<?php if (count($ads_location_1)): 
 						if($ads_location_1[0]->type == 1): ?>
-		             <img src="<?php echo $ads_location_1[0]->adsfile;?>" border="0" target="_blank" alt="" title="" width="645" height="90">
+		             <img src="<?php echo HTTP_ADS_PATH.$ads_location_1[0]->adsfile;?>" border="0" target="_blank" alt="" title="" width="728" height="90">
 						<?php else: ?>
-							<object id="obj178" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="649" height="90">
+							<object id="obj178" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="728" height="90">
 								<param name="movie" value="<?php echo $ads_location_1[0]->adsfile;?>">
 								<param name="quality" value="High">
-								<embed src="<?php echo $ads_location_1[0]->adsfile;?>"pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj178" width="649" height="90">
+								<embed src="<?php echo HTTP_ADS_PATH.$ads_location_1[0]->adsfile;?>"pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj178" width="728" height="90">
 							</object>		
 					<?php endif;endif;?>	
 				</div>
