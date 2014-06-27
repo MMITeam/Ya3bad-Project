@@ -41,10 +41,20 @@
 
 <div id="main_area">
 <?php include 'include/sideContainer.php'; ?>
-<div class="empty_container main_block new_slider_container" >
-		
-	<div id="main-container" >
+<div class = "ssl">
+			<div class="main_block cat_block" style = "width:649px;margin:0"  >
+			<div class="bh">
+			آخر الأخبار
+                        
+				<span></span>
+			</div>
+			</div>
+	<div  class="arrowLeft"> < </div>
+			<div  class="arrowRight">  > </div>
 
+
+<div class="empty_container main_block new_slider_container" style = "border:0" >
+	
 		
 			<ul class="new_slider" id="panel">
 				<li>
@@ -186,9 +196,9 @@
 			</div>
 		</li>
 		</ul>
+	
 		</div>
 		</div>
-		
 		<div class="empty_container main_block">
 		<?php if (count($ads_location_5)): 
 				if($ads_location_5[0]->type == 1): ?>
@@ -360,9 +370,10 @@
 
 		</div>
 	</div>
-</div>
+
 <div id="bottom_area">
 	&nbsp;
+</div>
 </div>
 </div>
 </body>

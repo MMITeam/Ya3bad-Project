@@ -126,6 +126,23 @@ a {
 	display: inline-block;
 	margin: -9px 25px;
 }
+.arrowLeft{
+	float:left;width:15px;height:60px;background-color:#eee;border-top:1px solid #ccc;border-bottom:1px solid #ccc;padding-top:33px;
+cursor: pointer;
+}
+.arrowRight{
+	float:right;width:15px;height:60px;background-color:#eee;border-top:1px solid #ccc;border-bottom:1px solid #ccc;padding-top:33px;
+text-align:right;
+cursor: pointer;
+}
+.arrowRight:hover{
+		color:#ff0;
+	background-color:#4C0E5F;
+}
+.arrowLeft:hover{
+	color:#ff0;
+	background-color:#4C0E5F;
+}
 #main_menu  li {
 	display: inline;
 	list-style-type: none;
@@ -211,7 +228,7 @@ a {
 }
 #lastest_news_container .d {
 	color: #8F8F8F;
-	width: 52px;
+	width: 95px;
 	float: right;
 	display: block;
 	font-size: 10px;
@@ -355,10 +372,21 @@ a {
 	float: right;
 	width: 645px;
 }
-
+.ssl{
+	width:649px;
+	float:right;
+	height:134px;
+	border: 2px solid #aa8cab;
+}
 .main_block {
 	float: right;
 	width: 645px;
+	margin-bottom: 5px;
+	display: block;
+}
+.main_block_slider {
+	float: right;
+	width: 619px;
 	margin-bottom: 5px;
 	display: block;
 }
@@ -378,8 +406,10 @@ a {
 .cat_block .bh {
 	background: #F7F7F7;
 	height: 36px;
-	line-height: 36px;
-	font-size: 16px;
+font-weight: 700;
+word-spacing: 4px;
+
+font-size: 19px;
 	color: #4c0e5f;
 	position: relative;
 	border: 2px solid #bababa;
@@ -403,6 +433,11 @@ a {
 .bh a:hover {
 	background-color:#5e1868;
 	color: #ff0;
+}
+.bh:hover {
+	background-color:#5e1868;
+	color: #ff0;
+	cursor: pointer;
 }
 
 
@@ -491,9 +526,12 @@ a {
 .new_leastest_news {
 	float: right;
 	margin: 2px;
-	width: 211px;
+	width: 200px;
 	background-color: #eee;
+	height:90px
 }
+
+
 .new_leastest_news img {
 	float: right;
 	text-align: right;
@@ -505,7 +543,7 @@ a {
 }
 .new_leastest_news .d {
 	color: #8F8F8F;
-	width: 80px;
+	width: 95px;
 	float: right;
 	display: block;
 	font-size: 10px;
@@ -518,7 +556,7 @@ a {
 	text-align: center;
 	line-height: 100%;
 	margin-top: 3px;
-	width: 211px;
+	width: 200px;
 	height: 68px;
 }
 
@@ -544,8 +582,10 @@ arroow nav.forward { float: right; }
 	margin: 0px;
 	padding: 0px;
 	left: 0px;
-	width: 1740px;
+width:5555px;
+
 }
+
 .empty_container.main_block .new_slider li {
 	padding: 0;
 	overflow: hidden;
@@ -558,4 +598,5 @@ arroow nav.forward { float: right; }
 .empty_container.main_block.new_slider_container{
 	overflow:hidden;
 	height: 94px;
+	width:619px
 }

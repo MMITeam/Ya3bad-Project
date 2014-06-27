@@ -3,9 +3,9 @@
 
 		<div class="simple_wattan_block block_num_13" >
 			<div class="bh">
-				<div>
+			
 					<a href="<?php if(count($fourth_tital)): echo base_url().'home/lists/'.$fourth_tital[0]->id; endif;?>"> <?php if(count($fourth_tital)): echo $fourth_tital[0]->title; endif;?> </a>
-				</div><span></span>
+		<span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
@@ -29,9 +29,9 @@
 
 		<div class="simple_wattan_block block_num_13">
 			<div class="bh">
-				<div>
+				
 			<a href="<?php if(count($fifth_tital)): echo base_url().'home/lists/'.$fifth_tital[0]->id; endif;?>"> <?php if(count($fifth_tital)): echo $fifth_tital[0]->title; endif;?> </a>
-				</div><span></span>
+			<span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
@@ -55,9 +55,9 @@
 
 		<div class="simple_wattan_block block_num_13">
 			<div class="bh">
-				<div>
+				
 					<a href="<?php if(count($sixth_tital)): echo base_url().'home/lists/'.$sixth_tital[0]->id; endif;?>"> <?php if(count($sixth_tital)): echo $sixth_tital[0]->title; endif;?> </a>
-				</div><span></span>
+			<span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
@@ -81,9 +81,9 @@
 
 		<div class="simple_wattan_block block_num_13">
 			<div class="bh">
-				<div>
+			
 					<a href="#">الطقس</a>
-				</div><span></span>
+				<span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
@@ -96,9 +96,9 @@
 		</div>
 		<div class="simple_wattan_block block_num_13">
 			<div class="bh">
-				<div>
+			
 					<a href="<?php echo base_url().'home/lists/';  ?>"> <?php echo $seventh_tital;?> </a>
-				</div><span></span>
+				<span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">

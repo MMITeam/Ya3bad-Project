@@ -30,10 +30,10 @@ setInterval(function () {
      }
     cur++; 
      $("#panel").animate({
-        marginLeft: "-=211px",
+        marginLeft: "-=206px",
     }, 1000);
     },3000);
-$("nav.back").click(function(){
+$(".arrowLeft").click(function(){
 	 if (cur+4 > max) {
     cur=1;
            $("#panel").animate({
@@ -43,11 +43,11 @@ $("nav.back").click(function(){
      }
     cur++; 
      $("#panel").animate({
-        marginLeft: "-=211px",
+        marginLeft: "-=206px",
     }, 1000);
 });
 
-$("nav.forward").click(function(){
+$(".arrowRight").click(function(){
 	    if (cur == 1 && cur < max){
 	    	cur=1;
                 $("#panel").animate({
@@ -58,7 +58,7 @@ $("nav.forward").click(function(){
        cur--;
 
      $("#panel").animate({
-        marginLeft: "+=211px",
+        marginLeft: "+=206px",
     }, 1000);
 });
 				$('#fb_share_icons').hover(function() {
