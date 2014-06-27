@@ -337,7 +337,20 @@ a {
 	font-size: 18px;
 	padding-right: 5px;
 }
-
+.newsTitle{
+	
+	
+	color:#ff0;
+	background-color:#4C0E5F;
+	width:100%;
+	font-size:28px;
+	word-wrap:break-word;
+	padding-right:8px;
+	height:60px;
+	text-align:right;
+	
+	
+}
 .blocklist_img_title span.t {
 	display: block;
 	float: right;
@@ -452,7 +465,7 @@ a {
 .cat_block .bc {
 	padding: 5px;
 	margin: 5px;
-	background: #fff;
+	background: #E6E6E6;
 	border: 0px solid #E6E6E6;
 	border-top: none;
 	overflow: hidden;
@@ -494,8 +507,15 @@ a {
 	font-weight: 500;
 	margin-right: 5px;
 	margin-top: 15px;
-	font-size: 12px;
+	font-size: 20px;
 	text-align: right;
+	word-wrap:break-word;
+}
+.main_cat_news_words p:hover {
+	color: #000000;
+	
+	font-size: 20px;
+
 }
 .main_details_continater {
 	margin-top: 40px !important;
