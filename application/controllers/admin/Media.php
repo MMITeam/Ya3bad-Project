@@ -9,8 +9,8 @@ class Media extends MY_Controller {
 
 	}
 
-	public function index() {
-		parent::index();
+	public function index($start='') {
+		parent::index($start);
 	}
 
 	public function save() {
