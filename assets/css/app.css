@@ -515,6 +515,8 @@ a {
 .cat_block .sub_cat_news {
 	float: right;
 	width: 310px;
+	height: 151px;
+	overflow: hidden;
 }
 
 .cat_block .sub_cat_news img {
@@ -535,7 +537,7 @@ a {
 	margin: 2px;
 	width: 200px;
 	background-color: #eee;
-	height: 90px
+	height: 90px;
 }
 
 .new_leastest_news img {
