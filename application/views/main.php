@@ -206,7 +206,7 @@
 
 		<div class="main_block cat_block" >
 			<div class="bh">
-				<div>
+			
 					<a href="<?php
 					if (count($first_tital)) : echo base_url() . 'home/lists/' . $first_tital[0] -> id;
 					endif;
@@ -214,7 +214,7 @@
 				if (count($first_tital)) : echo $first_tital[0] -> title;
 				endif;
 				?></a>
-				</div><span></span>
+			
 			</div>
 			<div class="bc">
 				<div class="main_cat_news">
