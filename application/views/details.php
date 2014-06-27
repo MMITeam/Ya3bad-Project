@@ -190,15 +190,7 @@
 				    		<?php endif;?>
 				    		
 				    	</div>
-				    	<div style="text-align: center">
-				    		<?php
-				    		
-				    		$date = new DateTime();
-							$date->setTimestamp($news[0]->modified);
-							$day = date('l', $date->getTimestamp());
-							echo $days[$day].'  '.$date ->format('d') . " - " . $date -> format(' m'), " - " . $date -> format('y').'  الساعة '.$date -> format(' h') . ":" . $date -> format('i');
-							?>
-				    	</div>
+				    
 				    	<div class="clear">
 				    			
 				    	</div>
@@ -209,7 +201,10 @@
 								<a href="<?php if(count($title)): echo base_url().'home/lists/'.$title[0]->id; endif; ?>"><?php
 								if (count($title)) : echo $title[0] -> title;
 								endif;
+								
  ?></a>
+ 
+ 
 							</div><span></span>
 						</div>
 						<div class="bc">
@@ -237,6 +232,16 @@
 						if (count($news)) : echo $news[0] -> shortDesc;
 						endif;
  ?></h1>
+ 
+ 	<div style="text-align: right">
+				    		<?php
+				    		
+				    		$date = new DateTime();
+							$date->setTimestamp($news[0]->modified);
+							$day = date('l', $date->getTimestamp());
+							echo $days[$day].'  '.$date ->format('d') . " - " . $date -> format(' m'), " - " . $date -> format('y').'  الساعة '.$date -> format(' h') . ":" . $date -> format('i');
+							?>
+				    	</div>
 					<p><?php
 						if (count($news)) : echo $news[0] -> fullDesc;
 						endif;

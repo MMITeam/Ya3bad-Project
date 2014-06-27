@@ -28,7 +28,8 @@
 	<div id="slider_container">
  		 <div id="sliderFrame">
 	        <div id="slider">
-	        	<?php if(count($slider)): for($i=count($slider);$i<-0;$i--): ?>
+	        
+	        	<?php  if(count($slider)): for($i=count($slider)-1;$i>=0;$i--): ?>
 	            <a href="<?php echo base_url() . 'home/details/' . $slider[$i] -> id; ?>" >
 	                <img src="<?php echo HTTP_IMG_PATH . $slider[$i] -> mainphoto; ?>" alt="<?php echo $slider[$i] -> shortDesc; ?>" />
 	            </a>
