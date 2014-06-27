@@ -2,9 +2,14 @@
 "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<header>
-		
-
-
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 			<link rel="stylesheet" media="screen" href="<?php echo HTTP_CSS_PATH; ?>app.css">
