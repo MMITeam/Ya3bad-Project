@@ -57,145 +57,31 @@
 	
 		
 			<ul class="new_slider" id="panel">
+					<?php if(count($lastNews)): foreach ($lastNews as $news):
+						
+						$date = new DateTime();
+						$date->setTimeStamp($news->created);
+						
+						?>
 				<li>
+
  			<div class="new_leastest_news">
-				<a href="http://localhost/yabod/home/details/2">
+				<a href="<?php  echo base_url() . "home/details/" . $news -> id; ?>">
 						 <span class="bit_frame block_41_bit">
 						 	 <span class="t">
 						 	 	<span class="m">
-					 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
+					 	 		<img src="<?php  echo HTTP_IMG_PATH . $news-> mainphoto; ?>" title="" alt="" width="80" height="70">
 						 	 	</span>
-						 	 	<h1 class="tt">خبر جديد عين على يعبد  </h1>
+						 	 	<h1 class="tt"><?php echo $news->shortDesc; ?>  </h1>
 					 	 </span>
-						 	 <span class="d"><strong> 08:08	 </strong>08 -  06 - 14</span> 
+						 	 <span class="d"><strong> <?php echo $date -> format(' h') . ":" . $date -> format('i'); ?>	 </strong><?php echo $date -> format('d') . " - " . $date -> format(' m'), " - " . $date -> format('y'); ?></span> 
 					 	 <span class="clear"></span> 
 			 	 		</span> 
 		 	 	</a>
 		</div>
 		</li>
-		<li>
- 			<div class="new_leastest_news">
-				<a href="http://localhost/yabod/home/details/2">
-						 <span class="bit_frame block_41_bit">
-						 	 <span class="t">
-						 	 	<span class="m">
-					 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
-						 	 	</span>
-						 	 	<h1 class="tt">خبر جديد عين على يعبد  </h1>
-					 	 </span>
-						 	 <span class="d"><strong> 08:08	 </strong>08 -  06 - 14</span> 
-					 	 <span class="clear"></span> 
-			 	 		</span> 
-		 	 	</a>
-		</div>
-		</li>
-		<li>
- 			<div class="new_leastest_news">
-				<a href="http://localhost/yabod/home/details/2">
-						 <span class="bit_frame block_41_bit">
-						 	 <span class="t">
-						 	 	<span class="m">
-					 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
-						 	 	</span>
-						 	 	<h1 class="tt">خبر جديد عين على يعبد  </h1>
-					 	 </span>
-						 	 <span class="d"><strong> 08:08	 </strong>08 -  06 - 14</span> 
-					 	 <span class="clear"></span> 
-			 	 		</span> 
-		 	 	</a>
-		</div>
-		</li>
-		<li>
- 			<div class="new_leastest_news">
-				<a href="http://localhost/yabod/home/details/2">
-						 <span class="bit_frame block_41_bit">
-						 	 <span class="t">
-						 	 	<span class="m">
-					 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
-						 	 	</span>
-						 	 	<h1 class="tt">خبر جديد عين على يعبد  </h1>
-					 	 </span>
-						 	 <span class="d"><strong> 08:08	 </strong>08 -  06 - 14</span> 
-					 	 <span class="clear"></span> 
-			 	 		</span> 
-		 	 	</a>
-		</div>
-		</li>
-		<li>
- 			<div class="new_leastest_news">
-				<a href="http://localhost/yabod/home/details/2">
-						 <span class="bit_frame block_41_bit">
-						 	 <span class="t">
-						 	 	<span class="m">
-					 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
-						 	 	</span>
-						 	 	<h1 class="tt">خبر جديد عين على يعبد  </h1>
-					 	 </span>
-						 	 <span class="d"><strong> 08:08	 </strong>08 -  06 - 14</span> 
-					 	 <span class="clear"></span> 
-			 	 		</span> 
-		 	 	</a>
-		</div>
-		</li>
-		<li>
- 			<div class="new_leastest_news">
-				<a href="http://localhost/yabod/home/details/2">
-						 <span class="bit_frame block_41_bit">
-						 	 <span class="t">
-						 	 	<span class="m">
-					 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
-						 	 	</span>
-						 	 	<h1 class="tt">خبر جديد عين على يعبد  </h1>
-					 	 </span>
-						 	 <span class="d"><strong> 08:08	 </strong>08 -  06 - 14</span> 
-					 	 <span class="clear"></span> 
-			 	 		</span> 
-		 	 	</a>
-		</div>
-		</li>
-		<li>
-			<div class="new_leastest_news">
-			<a href="http://localhost/yabod/home/details/2">
-						 <span class="bit_frame block_41_bit">
-					 	 <span class="t">
-						 	 	<span class="m">
-					 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
-					 	 		</span><h1 class="tt">خبر جديد عين على يعبد  </h1></span>
-					 	 		<span class="d"><strong> 08:08						 </strong>08 -  06 - 14</span> 
-					 	 		<span class="clear"></span> 
-		 	 		</span> 
-	 	 		</a>
-		</div>
-		</li>
-		<li>
-		<div class="new_leastest_news">
-				<a href="http://localhost/yabod/home/details/2">
-						 <span class="bit_frame block_41_bit">
-						 	 <span class="t">
-						 	 	<span class="m">
-						 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
-						 	 		</span><h1 class="tt">خبر جديد عين على يعبد  </h1></span>
-						 	 		<span class="d"><strong> 08:08						 </strong>08 -  06 - 14</span> 
-						 	 		<span class="clear"></span> 
-			 	 		</span> 
-		 	 		</a>
-			</div>
-		</li>
-		<li>
-		<div class="new_leastest_news">
-				<a href="http://localhost/yabod/home/details/2">
-						 <span class="bit_frame block_41_bit">
-						 	 <span class="t">
-						 	 	<span class="m">
-						 	 		<img src="http://localhost/yabod/assets/images/thumb/main14.jpg" title="" alt="" width="80" height="70">
-						 	 		</span><h1 class="tt">خبر جديد عين على يعبد  </h1></span>
-						 	 		<span class="d"><strong> 08:08						 </strong>08 -  06 - 14</span> 
-						 	 		<span class="clear"></span> 
-			 	 		</span> 
-		 	 		</a>
-			</div>
-		</li>
-		</ul>
+			<?php endforeach;  endif; ?>
+				</ul>
 	
 		</div>
 		</div>
