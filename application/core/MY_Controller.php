@@ -36,7 +36,7 @@ class MY_Controller extends CI_Controller {
 
 		$data[$c] = $this -> $cm -> get_by_pagination(null,FALSE,10,$start);
 		$this -> load -> library('pagination');
-		$config['base_url'] = base_url() . "admin/news/index/";
+		$config['base_url'] = base_url() . "admin/".$c."/index/";
 		$config['total_rows'] = $this -> $cm -> get_count();
 		$config['per_page'] = 10; 
 		$config['uri_segment'] = 4;
