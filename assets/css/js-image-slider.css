@@ -51,7 +51,7 @@
     background:none;
 }
 #slider div.mc-caption {
-	font: bold 14px/20px Arial;
+	font: bold 20px Arial;
 	color:#EEE;
 	z-index:4;
 	text-align:center;
@@ -104,7 +104,9 @@
 }
 
 #slider img, #slider>b, #slider a>b {
-	position:absolute; border:none; display:none;
+	position:absolute; border:none; 
+	width:415px;
+	height:290px;
 	
 }
 

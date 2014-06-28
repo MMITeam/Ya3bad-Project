@@ -121,12 +121,12 @@ $(".arrowRight").click(function(){
 				<div id="ad1">
 					<?php if (count($ads_location_1)): 
 						if($ads_location_1[0]->type == 1): ?>
-		             <img src="<?php echo HTTP_ADS_PATH.$ads_location_1[0]->adsfile;?>" border="0" target="_blank" alt="" title="" width="728" height="90">
+		             <img src="<?php echo HTTP_ADS_PATH.$ads_location_1[0]->adsfile;?>" border="0" target="_blank" alt="" title="" width="645" height="90">
 						<?php else: ?>
-							<object id="obj178" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="728" height="90">
+							<object id="obj178" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="645" height="90">
 								<param name="movie" value="<?php echo $ads_location_1[0]->adsfile;?>">
 								<param name="quality" value="High">
-								<embed src="<?php echo HTTP_ADS_PATH.$ads_location_1[0]->adsfile;?>"pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj178" width="728" height="90">
+								<embed src="<?php echo HTTP_ADS_PATH.$ads_location_1[0]->adsfile;?>"pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj178" width="645" height="90">
 							</object>		
 					<?php endif;endif;?>	
 				</div>
