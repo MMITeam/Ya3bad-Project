@@ -216,6 +216,8 @@
 			</div>
 
 		</div>
+		
+		<!-- the reada-->
 		<div class="main_block cat_block" >
 			<div class="bh">
 				<div>
