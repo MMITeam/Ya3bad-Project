@@ -80,15 +80,25 @@
 		</div>
 
 		<div class="simple_wattan_block block_num_13">
-			<div class="bh">
+			<div class="bh" style="">
 			
-					<a href="#">الطقس</a>
+			<a style="display: inline" href="javascript:void(0);" onclick="show('we');">الطقس</a>
+			<a style="display: inline" href="javascript:void(0);" onclick="show('cu')">العملات</a>
 				<span></span>
 			</div>
 			<div class="bc">
 				<div class="block_41_container blocklist_img_title">
-					<div class="weather" id="weatherfeed" > </div>
+					<!--<div class="weather" id="weatherfeed" > </div>-->
+						<div id='we'>
+							<iframe width="100%" height="116" frameborder="0" src="http://www.palweather.ps/temps/days/web_service_new" marginheight="0" marginwidth="0"></iframe>
+						</div>
+						<div id="cu" style="display: none;">
+							<iframe name="AmwalIFrame" src="http://www.amwal.ps/currancy_4sites.asp" width="100%" scrolling="no" border="0" frameborder="0" height="185">
+Your browser does not support inline frames or is currently configured not to display inline frames.
+</iframe>
+						</div>
 					</div>
+					
 				<div class="clear"></div>
 
 			</div>
@@ -120,3 +130,19 @@
 
 		</div>
 </div>
+
+<script type="text/javascript">
+	function show (data) {
+	 
+	  if(data == 'we')
+	  {
+	  	 document.getElementById("we").style.display = 'block';
+   		 document.getElementById("cu").style.display = 'none';
+	  }
+	  else if (data == 'cu')
+	  {
+	  	 document.getElementById("cu").style.display = 'block';
+   		 document.getElementById("we").style.display = 'none';
+	  }
+	}
+</script>
