@@ -1,28 +1,30 @@
 <div id="top_area">
 <?php include 'include/adsContainer.php';?>
 	<div id="lastest_news_container">
-		<div class="simple_block block_num_3" id="block-2">
-			<div class="bt">
-				<span>آخر الاخبار</span>
+		<div class="simple_wattan_block block_num_13">
+			<div class="bh">
+				
+			<a href="<?php if(count($fifth_tital)): echo base_url().'home/lists/'.$fifth_tital[0]->id; endif;?>"> <?php if(count($fifth_tital)): echo $fifth_tital[0]->title; endif;?> </a>
+			<span></span>
 			</div>
 			<div class="bc">
-				<div class="block_2_container">
-
-					<?php if(count($lastNews)): foreach ($lastNews as $news):
-						
-						$date = new DateTime();
-						$date->setTimeStamp($news->created);
-						
-						?>
-						
-					<a href="<?php  echo base_url() . "home/details/" . $news -> id; ?>"> <span class="bit_frame block_2_bit">
-						 <span class="btitle"><span class="d"><strong><?php echo $date -> format(' h') . ":" . $date -> format('i'); ?>
-						 </strong><?php echo $date -> format('d') . " - " . $date -> format(' m'), " - " . $date -> format('y'); ?></span>
-						 <span class="t"></span><?php echo $news->shortDesc?></span> <span class="clear"></span> </span> 
-					</a>
-					<?php endforeach;  endif; ?>
+				<div class="block_41_container blocklist_img_title">
+					<?php if(count($yabad_news)): for($i=0;$i<count($yabad_news);$i++):?>
+					<a href="<?php echo base_url().'home/details/'.$yabad_news[$i]->id;?>">
+						 <span class="bit_frame block_41_bit">
+						 	 <span class="t">
+						 	 	<span class="m">
+						 	 		<img src="<?php echo HTTP_IMG_PATH.$yabad_news[$i]->mainphoto; ?>" title="" alt="" width="70" height="40">
+						 	 		</span><?php echo $yabad_news[$i]->shortDesc;?></span> 
+						 	 		<span class="clear"></span> 
+			 	 		</span> 
+		 	 		</a>
+		 	 		<?php endfor; endif;?>
 				</div>
+				<div class="clear"></div>
+
 			</div>
+
 		</div>
 	</div>
 	<div id="slider_container">

@@ -247,12 +247,13 @@ a {
 	line-height: 100%;
 }
 #lastest_news_container .t {
-	padding-right: 58px;
+	padding-right: 8px;
 }
 #lastest_news_container .bit_frame, #lastest_news_container a, #lastest_news_container .t {
 	display: block;
 	outline: none;
 	direction: rtl;
+	padding-right: 5px;
 }
 #lastest_news_container .d strong {
 	font-size: 20px;
