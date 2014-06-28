@@ -43,7 +43,9 @@
 </div>
 
 <div id="main_area">
+	<div id="side-container">
 <?php include 'include/sideContainer.php'; ?>
+	</div>
 <div class = "ssl">
 			<div class="main_block cat_block" style = "width:649px;margin:0"  >
 			<div class="bh">

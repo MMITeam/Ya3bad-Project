@@ -1,5 +1,5 @@
 
-	<div id="side-container">
+	
 
 		<div class="simple_wattan_block block_num_13" >
 			<div class="bh">
@@ -121,4 +121,3 @@
 			</div>
 
 		</div>
-</div>

@@ -293,7 +293,7 @@ a {
 .simple_wattan_block {
 	box-shadow: 0px 1px 4px #C4C4C4;
 	display: block;
-	overflow: hidden;
+	
 }
 .simple_wattan_block .bh {
 	background: #F7F7F7;
